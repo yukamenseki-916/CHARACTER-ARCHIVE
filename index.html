@@ -1,29 +1,252 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>床面積 CHARACTER ARCHIVE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>床面積 CHARACTER ARCHIVE</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d120c;
+  color: #e8dfc8;
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0 70px;
+}
+
+/* ヘッダー */
+
+.header {
+  text-align: center;
+  padding: 35px 15px 30px;
+  border-top: 1px solid #a88b4a;
+  border-bottom: 1px solid #a88b4a;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 0.15em;
+  color: #d7b866;
+}
+
+.site-subtitle {
+  margin-top: 12px;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: #b9ad91;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #b9ad91;
+}
+
+/* セクション */
+
+.section {
+  margin-top: 45px;
+}
+
+.section-title {
+  margin: 0;
+  color: #d7b866;
+  font-size: 28px;
+  letter-spacing: 0.12em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 1px;
+  background: #a88b4a;
+  margin-top: 12px;
+}
+
+/* 検索 */
+
+.search-box {
+  margin-top: 25px;
+  padding: 25px;
+  border: 1px solid #625536;
+  background: #131a11;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #d7b866;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px;
+  background: #0b0f0a;
+  border: 1px solid #77663f;
+  color: #eee5d0;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: #777261;
+}
+
+/* 件数 */
+
+.archive-info {
+  margin-top: 20px;
+  color: #99927f;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+/* キャラクター欄 */
+
+.character-area {
+  margin-top: 25px;
+  min-height: 180px;
+  border: 1px solid #625536;
+  background: #111710;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.empty-message {
+  color: #777261;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* フッター */
+
+.footer {
+  margin-top: 70px;
+  padding-top: 20px;
+  border-top: 1px solid #4f4633;
+  text-align: center;
+  color: #777261;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* スマートフォン */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: 90%;
+    padding-top: 25px;
+  }
+
+  .site-title {
+    font-size: 38px;
+  }
+
+  .site-subtitle {
+    font-size: 11px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .section-title {
+    font-size: 23px;
+  }
+
+  .search-box {
+    padding: 18px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <h1>床面積</h1>
-  <p>CHARACTER ARCHIVE</p>
+<div class="container">
 
-  <p>TRPG探索者の記録・アーカイブ</p>
+  <header class="header">
 
-  <hr>
+    <h1 class="site-title">床面積</h1>
 
-  <h2>CHARACTER</h2>
+    <div class="site-subtitle">
+      CHARACTER ARCHIVE
+    </div>
 
-  <p>探索者を探す</p>
+    <p class="description">
+      TRPG探索者の記録・アーカイブ
+    </p>
 
-  <input type="text" placeholder="キャラクター名を検索">
+  </header>
 
-  <hr>
 
-  <p>ここに探索者が表示されます。</p>
+  <section class="section">
+
+    <h2 class="section-title">
+      CHARACTER
+    </h2>
+
+    <div class="search-box">
+
+      <label class="search-label">
+        SEARCH EXPLORER
+      </label>
+
+      <input
+        class="search-input"
+        type="text"
+        placeholder="キャラクター名を検索"
+      >
+
+      <div class="archive-info">
+        CURRENT ARCHIVE : 0 CHARACTERS
+      </div>
+
+    </div>
+
+
+    <div class="character-area">
+
+      <div class="empty-message">
+        探索者の記録は、ここに収録されます。<br>
+        CHARACTER ARCHIVE
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+    YUKAMENSEKI CHARACTER ARCHIVE
+  </footer>
+
+</div>
 
 </body>
 </html>
