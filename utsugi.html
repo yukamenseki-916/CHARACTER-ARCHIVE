@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>東郷 空木 | CHARACTER FILE</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <div class="archive-label">CHARACTER ARCHIVE / FILE 007</div>
+
+      <h1 class="character-name">東郷 空木</h1>
+
+      <div class="character-name-kana">
+        とうごう うつぎ
+      </div>
+    </header>
+
+
+    <a class="back" href="index.html">
+      ← BACK TO ARCHIVE
+    </a>
+
+
+    <section class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="utsugi-normal.png"
+        alt="東郷 空木"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('utsugi-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('utsugi-swimsuit.png')"
+        >
+          SWIMSUIT
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PERSONAL DATA
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">AGE</div>
+          <div class="data-value">28</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">GENDER</div>
+          <div class="data-value">男</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">OCCUPATION</div>
+          <div class="data-value">フリーター</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">BIRTHDAY</div>
+          <div class="data-value">6 / 4</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">HEIGHT</div>
+          <div class="data-value">176 cm</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">WEIGHT</div>
+          <div class="data-value">51 kg</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">FIRST PERSON</div>
+          <div class="data-value">僕</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">SECOND PERSON</div>
+          <div class="data-value">君</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">LIKES</div>
+          <div class="data-value">かわいいもの</div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">DISLIKES</div>
+          <div class="data-value">暴力</div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <div class="quote">
+          「そのうち見つかる。そん時にでも若頭任せりゃよかろう。」
+        </div>
+
+        <p>
+          元ヤクザの28歳。現在はフリーターとして暮らしている。
+          父親は東郷組の組長、東郷龍之介。
+          父の跡を継ぐ立場になることを当然のように受け入れ、幼い頃から自然と裏社会の中で生きてきた。
+        </p>
+
+        <p>
+          最初は組の下っ端として働いていたが、その仕事ぶりを認められ、やがて次期若頭に任命された。
+          しかし、周囲からの評価は必ずしも好意的なものではなかった。
+          空木の実力を知っている者からすれば当然の人事だったが、事情を知らない者からは
+          「組長の息子だから贔屓された」と思われていた。
+        </p>
+
+        <p>
+          実際には、父親の龍之介は親だからという理由だけで空木を次期若頭にしたわけではない。
+          仕事における実力をきちんと見た上で判断していた。
+          ただ、空木自身が敬語のふわふわした物腰で、人当たりも柔らかい性格だったため、
+          「大したことのない奴」と舐めてかかる者も少なくなかった。
+        </p>
+
+        <p>
+          そんな中、次期若頭の立場を妬んだ若頭補佐が仲間を5、60人ほど集め、
+          空木を集団で襲撃した。
+          人数差はいかんともしがたく、空木は抵抗しきれないまま痛めつけられ、
+          最終的にはゴミ捨て場で倒れているところを発見されることになる。
+        </p>
+
+        <p>
+          龍之介はこの件を知ると、襲撃を率先して行った若頭補佐にケジメを取らせた。
+          ただし、空木を次期若頭とする話については一旦保留となった。
+          息子が行方不明になったことを心配してはいるものの、
+          龍之介自身は「そのうち見つかる」と考えているらしい。
+        </p>
+
+        <p>
+          一方で、「まだ組長はあいつを次期若頭にするつもりなのか」と考える者たちもいる。
+          彼らは龍之介に空木の居場所が知られる前に、空木を殺してしまおうとしている。
+          空木本人は、自分が今も狙われていることをどこまで把握しているのか定かではない。
+        </p>
+
+        <p>
+          また、空木はこの街を仕切る立場にいた頃、人間とは思えない存在とも関わってきた。
+          その中には犯罪を犯すような者もおり、シマを守るために彼らを相手にすることもあった。
+          しかし、倒した相手から触手が生えたり、身体が溶けたりする光景を目にすることもあり、
+          その場に居合わせた者たちは正気を保つことすら難しい有様だった。
+        </p>
+
+        <p>
+          そんな存在に対抗するため、空木は父から特殊な拳銃を渡されている。
+          その銃には、神話生物に対抗するための特殊な力が込められているらしい。
+          しかし空木自身は、それらを「神話生物」だとは認識していない。
+          父親が何かを知っているらしいことだけは、なんとなく感じている。
+        </p>
+
+        <p>
+          空木がこれまで目にしてきた人間ではない存在は、いずれも自分や周囲に害をなすものばかりだった。
+          だからこそ、相方PCの家族と出会い、彼らが善良な人々であることを知ったときには、
+          「こんな奴らもいるのか」と不思議な気持ちになった。
+        </p>
+
+        <p>
+          もともと小さな子供が好きなこともあり、相方PCのことは非常に可愛がっている。
+          組織の人間に捨てられたところを相方PCに拾ってもらったことについても、
+          心から感謝している。
+          普段の柔らかな物腰も相まって、年上のお兄さんとして接することが多い。
+        </p>
+
+        <p>
+          右腕には肘の少し下あたりまで刺青が入っている。
+          基本的には長袖を着ているため普段は見えないが、
+          夏場などに腕まくりをすると、その一部がちらりと覗くことがある。
+        </p>
+
+        <p>
+          元ヤクザという過去を持ちながらも、本人が好むのはかわいいもの。
+          そして嫌いなのは暴力。
+          柔らかな雰囲気の奥には、裏社会で生きてきた経験と、
+          人ならざるものすら相手にしてきた過去がある。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO PARTICIPATION
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          お兄さんとわたし
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <footer class="footer">
+      FLOOR AREA / CHARACTER ARCHIVE
+    </footer>
+
+  </div>
+
+
+  <script>
+    function changePortrait(image) {
+      document.getElementById("portrait").src = image;
+    }
+  </script>
+
+</body>
+</html>
