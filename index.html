@@ -248,10 +248,11 @@ body {
       </label>
 
       <input
-        class="search-input"
-        type="text"
-        placeholder="キャラクター名を検索"
-      >
+  class="search-input"
+  id="searchInput"
+  type="text"
+  placeholder="キャラクター名・職業などを検索"
+>
 
       <div class="archive-info">
         CURRENT ARCHIVE : 1 CHARACTER
@@ -262,7 +263,7 @@ body {
 
     <div class="character-grid">
 
-      <a class="character-card" href="kaoru.html">
+      <a class="character-card" href="kaoru.html" data-search="月下 香 KILLER 22F 殺し屋">
 
         <img
           class="character-image"
@@ -280,7 +281,7 @@ body {
 
       </a>
       
-      <a class="character-card" href="mio.html">
+      <a class="character-card" href="mio.html" data-search="花園 美桜 UNIVERSITY STUDENT 19F 大学生">
 
         <img
           class="character-image"
@@ -308,6 +309,31 @@ body {
   </footer>
 
 </div>
+
+  <script>
+
+const searchInput = document.getElementById("searchInput");
+const characterCards = document.querySelectorAll(".character-card");
+
+searchInput.addEventListener("input", function() {
+
+  const keyword = searchInput.value.toLowerCase();
+
+  characterCards.forEach(function(card) {
+
+    const searchText = card.dataset.search.toLowerCase();
+
+    if (searchText.includes(keyword)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+
+});
+
+</script>
 
 </body>
 
