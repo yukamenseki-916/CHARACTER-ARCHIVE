@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>花園 美桜 | 床面積 CHARACTER ARCHIVE</title>
+<title>花園 美桜 | CHARACTER FILE</title>
 
 <style>
 
@@ -26,137 +26,158 @@ body {
 
 .container {
   width: 92%;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 40px 0 70px;
+  padding: 30px 0 70px;
 }
 
 /* HEADER */
 
 .header {
   text-align: center;
-  padding: 35px 15px 30px;
+  padding: 30px 15px;
   border-top: 1px solid #a88b4a;
   border-bottom: 1px solid #a88b4a;
 }
 
-.file-label {
-  margin: 0 0 25px;
-  font-size: 13px;
+.archive-label {
+  color: #99927f;
+  font-size: 12px;
   letter-spacing: 0.25em;
-  color: #b9ad91;
 }
 
 .character-name {
-  margin: 0;
+  margin: 15px 0 8px;
   color: #d7b866;
-  font-size: 42px;
-  letter-spacing: 0.15em;
+  font-size: 38px;
+  letter-spacing: 0.12em;
 }
 
-.character-reading {
-  margin-top: 12px;
+.character-name-kana {
   color: #99927f;
-  font-size: 14px;
-  letter-spacing: 0.15em;
+  font-size: 13px;
 }
 
 /* BACK */
 
-.back-link {
-  display: block;
-  margin: 40px 0;
+.back {
+  display: inline-block;
+  margin: 25px 0 10px;
   color: #b9ad91;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
 }
 
-.back-link:hover {
+.back:hover {
   color: #d7b866;
 }
 
 /* PORTRAIT */
 
-.portrait-box {
+.portrait-area {
+  margin-top: 20px;
+  padding: 20px;
   border: 1px solid #625536;
-  padding: 32px;
   background: #111710;
   text-align: center;
 }
 
 .portrait {
   width: 100%;
-  max-height: 850px;
+  max-width: 500px;
+  max-height: 650px;
   object-fit: contain;
-  display: block;
   background: #090d08;
-  margin: 0 auto;
+}
+
+/* DIFFERENCE BUTTON */
+
+.portrait-buttons {
+  margin-top: 18px;
+}
+
+.portrait-button {
+  padding: 9px 18px;
+  margin: 4px;
+  border: 1px solid #77663f;
+  background: #0d120c;
+  color: #b9ad91;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.portrait-button:hover {
+  color: #d7b866;
+  border-color: #d7b866;
 }
 
 /* SECTION */
 
 .section {
-  margin-top: 55px;
+  margin-top: 35px;
 }
 
 .section-title {
   margin: 0;
   color: #d7b866;
-  font-size: 28px;
+  font-size: 22px;
   letter-spacing: 0.12em;
 }
 
 .section-title::after {
   content: "";
   display: block;
-  width: 70px;
+  width: 60px;
   height: 1px;
   background: #a88b4a;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
-/* DATA TABLE */
+/* DATA */
 
-.data-table {
-  width: 100%;
-  margin-top: 30px;
-  border-collapse: collapse;
-}
-
-.data-table th,
-.data-table td {
-  border: 1px solid #4f4633;
-  padding: 18px 22px;
-  text-align: left;
-}
-
-.data-table th {
-  width: 40%;
-  color: #d7b866;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  font-weight: normal;
-}
-
-.data-table td {
-  color: #e8dfc8;
-  font-size: 16px;
+.data-box {
+  margin-top: 20px;
+  border: 1px solid #625536;
   background: #111710;
+}
+
+.data-row {
+  display: flex;
+  border-bottom: 1px solid #3f392b;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  width: 38%;
+  padding: 13px;
+  color: #a88b4a;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-right: 1px solid #3f392b;
+}
+
+.data-value {
+  width: 62%;
+  padding: 13px;
+  color: #e8dfc8;
 }
 
 /* PROFILE */
 
 .profile-box {
-  margin-top: 30px;
-  padding: 35px;
+  margin-top: 20px;
+  padding: 22px;
   border: 1px solid #625536;
   background: #111710;
   line-height: 2;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .profile-box p {
-  margin: 0 0 25px;
+  margin: 0 0 20px;
 }
 
 .profile-box p:last-child {
@@ -165,27 +186,29 @@ body {
 
 /* SCENARIO */
 
-.scenario-box {
-  margin-top: 30px;
-  padding: 20px 25px;
-  border: 1px solid #625536;
-  background: #111710;
+.scenario-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
 }
 
-.scenario-box p {
-  margin: 0;
-  color: #e8dfc8;
+.scenario-list li {
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  border: 1px solid #4f4633;
+  background: #111710;
+  color: #d0c7b2;
 }
 
 /* FOOTER */
 
 .footer {
-  margin-top: 70px;
+  margin-top: 60px;
   padding-top: 20px;
   border-top: 1px solid #4f4633;
   text-align: center;
   color: #777261;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.1em;
 }
 
@@ -193,31 +216,20 @@ body {
 
 @media (max-width: 600px) {
 
-  .container {
-    width: 90%;
-    padding-top: 25px;
-  }
-
   .character-name {
-    font-size: 36px;
+    font-size: 30px;
   }
 
-  .portrait-box {
-    padding: 32px;
+  .portrait {
+    max-height: 560px;
   }
 
-  .section-title {
-    font-size: 23px;
+  .data-label {
+    width: 40%;
   }
 
-  .data-table th,
-  .data-table td {
-    padding: 15px;
-  }
-
-  .profile-box {
-    padding: 25px;
-    font-size: 14px;
+  .data-value {
+    width: 60%;
   }
 
 }
@@ -230,31 +242,33 @@ body {
 
 <div class="container">
 
+
   <header class="header">
 
-    <p class="file-label">
+    <div class="archive-label">
       CHARACTER FILE
-    </p>
+    </div>
 
     <h1 class="character-name">
       花園 美桜
     </h1>
 
-    <div class="character-reading">
+    <div class="character-name-kana">
       はなぞの みお
     </div>
 
   </header>
 
 
-  <a class="back-link" href="index.html">
+  <a class="back" href="index.html">
     ← CHARACTER ARCHIVE
   </a>
 
 
-  <div class="portrait-box">
+  <div class="portrait-area">
 
     <img
+      id="portrait"
       class="portrait"
       src="mio-normal.png"
       alt="花園 美桜"
@@ -269,59 +283,59 @@ body {
       PERSONAL DATA
     </h2>
 
-    <table class="data-table">
+    <div class="data-box">
 
-      <tr>
-        <th>AGE</th>
-        <td>19</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">AGE</div>
+        <div class="data-value">19</div>
+      </div>
 
-      <tr>
-        <th>GENDER</th>
-        <td>女</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">GENDER</div>
+        <div class="data-value">女</div>
+      </div>
 
-      <tr>
-        <th>OCCUPATION</th>
-        <td>大学生</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">OCCUPATION</div>
+        <div class="data-value">大学生</div>
+      </div>
 
-      <tr>
-        <th>BIRTHDAY</th>
-        <td>3月27日</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">BIRTHDAY</div>
+        <div class="data-value">3月27日</div>
+      </div>
 
-      <tr>
-        <th>HEIGHT</th>
-        <td>152 cm</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">HEIGHT</div>
+        <div class="data-value">152 cm</div>
+      </div>
 
-      <tr>
-        <th>WEIGHT</th>
-        <td>41 kg</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">WEIGHT</div>
+        <div class="data-value">41 kg</div>
+      </div>
 
-      <tr>
-        <th>FIRST PERSON</th>
-        <td>美桜</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">FIRST PERSON</div>
+        <div class="data-value">美桜</div>
+      </div>
 
-      <tr>
-        <th>SECOND PERSON</th>
-        <td>あなた</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">SECOND PERSON</div>
+        <div class="data-value">あなた</div>
+      </div>
 
-      <tr>
-        <th>LIKES</th>
-        <td>赤色のゼラニウム</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">LIKES</div>
+        <div class="data-value">赤色のゼラニウム</div>
+      </div>
 
-      <tr>
-        <th>DISLIKES</th>
-        <td>虫</td>
-      </tr>
+      <div class="data-row">
+        <div class="data-label">DISLIKES</div>
+        <div class="data-value">虫</div>
+      </div>
 
-    </table>
+    </div>
 
   </section>
 
@@ -335,7 +349,7 @@ body {
     <div class="profile-box">
 
       <p>
-        KPCの事が大好きで大好きでたまらない女の子。
+        KPCのことが大好きで大好きでたまらない女の子。
         甘えたくて、何もできないフリのようなことをしている。
         髪の毛を結んでもらったり、服のボタンをとめてもらったり、
         リボンを結んでもらったり、ご飯を食べさせてもらったりなど、
@@ -409,13 +423,13 @@ body {
       SCENARIO RECORD
     </h2>
 
-    <div class="scenario-box">
+    <ul class="scenario-list">
 
-      <p>
+      <li>
         やさしい世界と呼吸法
-      </p>
+      </li>
 
-    </div>
+    </ul>
 
   </section>
 
@@ -423,6 +437,7 @@ body {
   <footer class="footer">
     YUKAMENSEKI CHARACTER ARCHIVE
   </footer>
+
 
 </div>
 
