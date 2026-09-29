@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>逢望 栄飛 ─ CHARACTER ARCHIVE</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d120c;
+  color: #e8dfc8;
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0 70px;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #a88b4a;
+  border-bottom: 1px solid #a88b4a;
+}
+
+.archive-label {
+  color: #99927f;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+}
+
+.character-name {
+  margin: 15px 0 8px;
+  color: #d7b866;
+  font-size: 38px;
+  letter-spacing: 0.12em;
+}
+
+.character-name-kana {
+  color: #99927f;
+  font-size: 13px;
+}
+
+.back {
+  display: inline-block;
+  margin: 25px 0 10px;
+  color: #b9ad91;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.back:hover {
+  color: #d7b866;
+}
+
+.portrait-area {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+  text-align: center;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 500px;
+  max-height: 650px;
+  object-fit: contain;
+  background: #090d08;
+}
+
+.section {
+  margin-top: 35px;
+}
+
+.section-title {
+  margin: 0;
+  color: #d7b866;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #a88b4a;
+  margin-top: 10px;
+}
+
+.data-box {
+  margin-top: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+}
+
+.data-row {
+  display: flex;
+  border-bottom: 1px solid #3f392b;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  width: 38%;
+  padding: 13px;
+  color: #a88b4a;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-right: 1px solid #3f392b;
+}
+
+.data-value {
+  width: 62%;
+  padding: 13px;
+  color: #e8dfc8;
+}
+
+.profile-box {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid #625536;
+  background: #111710;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.profile-box p {
+  margin: 0 0 20px;
+}
+
+.profile-box p:last-child {
+  margin-bottom: 0;
+}
+
+.quote {
+  margin: 0 0 20px;
+  padding: 15px;
+  border-left: 2px solid #a88b4a;
+  color: #d7b866;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.scenario-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-list li {
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  border: 1px solid #4f4633;
+  background: #111710;
+  color: #d0c7b2;
+}
+
+.sheet-link-area {
+  margin-top: 18px;
+  text-align: right;
+}
+
+.sheet-link {
+  color: #777261;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.sheet-link:hover {
+  color: #d7b866;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #4f4633;
+  text-align: center;
+  color: #777261;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+
+  .character-name {
+    font-size: 30px;
+  }
+
+  .portrait {
+    max-height: 560px;
+  }
+
+  .data-label {
+    width: 40%;
+  }
+
+  .data-value {
+    width: 60%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE / FILE 010
+    </div>
+
+    <h1 class="character-name">
+      逢望 栄飛
+    </h1>
+
+    <div class="character-name-kana">
+      あぼう えいひ
+    </div>
+
+  </header>
+
+
+  <a href="index.html" class="back">
+    ← CHARACTER ARCHIVE
+  </a>
+
+
+  <!-- PORTRAIT -->
+
+  <div class="portrait-area">
+
+    <img
+      id="portrait"
+      class="portrait"
+      src="eihi-normal.png"
+      alt="逢望 栄飛"
+    >
+
+  </div>
+
+
+  <!-- PERSONAL DATA -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+      PERSONAL DATA
+    </h2>
+
+    <div class="data-box">
+
+      <div class="data-row">
+        <div class="data-label">AGE</div>
+        <div class="data-value">15歳</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">GENDER</div>
+        <div class="data-value">男</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">OCCUPATION</div>
+        <div class="data-value">中学生</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">BIRTHDAY</div>
+        <div class="data-value">4月14日</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">HEIGHT</div>
+        <div class="data-value">152cm</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">WEIGHT</div>
+        <div class="data-value">42kg</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">FIRST PERSON</div>
+        <div class="data-value">僕</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">SECOND PERSON</div>
+        <div class="data-value">あなた・お前</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">LIKES</div>
+        <div class="data-value">優しい人</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">DISLIKES</div>
+        <div class="data-value">愛されないこと</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROFILE -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+      PROFILE
+    </h2>
+
+    <div class="profile-box">
+
+      <div class="quote">
+        「少しでも愛されてると思ってた僕がバカみたい」
+      </div>
+
+      <p>
+        隣町の中学校に通う少年。
+        兄に対して強い執着と愛情を抱いており、
+        人見知りな兄に代わって自分が積極的に引っ張っていく
+        「兄さんっ子」として振る舞っている。
+      </p>
+
+      <p>
+        兄の前では自分の名前を一人称にし、
+        「しゅう兄さん！」と甘える無邪気な弟を演じている。
+        しかし、他の人と話す時には、
+        本来の少しひねくれた年相応の顔や、
+        反抗的な態度を見せる。
+      </p>
+
+      <p>
+        普段は家族に対してもどこか反抗的で、
+        父親に対してはあえて悪態をつくなど、
+        年相応の難しい年頃の一面を見せている。
+      </p>
+
+      <p>
+        しかし、大好きな兄の前では嫌われたくない一心で
+        徹底して猫を被っている。
+        兄と父が同席する場では常に兄を優先し、
+        可愛らしい弟を演じ続けている。
+      </p>
+
+      <p>
+        愛情に飢えた複雑な背景や、
+        誰にも見せない孤独や葛藤を心の奥に隠しながらも、
+        今日も大切な兄の隣で、
+        愛される良い弟を演じている。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SCENARIO -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+      SCENARIO
+    </h2>
+
+    <ul class="scenario-list">
+
+      <li>
+        AI KILLED YOU
+      </li>
+
+    </ul>
+
+
+    <div class="sheet-link-area">
+
+      <a
+        href="https://iachara.com/view/7064070"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sheet-link"
+      >
+        いあきゃら ─ Character Sheet
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+    YUKAMENSEKI / CHARACTER ARCHIVE
+  </footer>
+
+</div>
+
+</body>
+</html>
