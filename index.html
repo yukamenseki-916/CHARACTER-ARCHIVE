@@ -337,8 +337,7 @@ body {
 
     <div class="character-grid">
 
-      <a class="character-card" href="kaoru.html" data-search="月下 香 KILLER 22F 殺し屋">
-
+      <a class="character-card" href="kaoru.html" data-search="月下 香 KILLER 22F 殺し屋" data-gender="female" data-birth-month="6">
         <img
           class="character-image"
           src="kaoru-normal.png"
@@ -355,8 +354,7 @@ body {
 
       </a>
       
-      <a class="character-card" href="mio.html" data-search="花園 美桜 UNIVERSITY STUDENT 19F 大学生">
-
+      <a class="character-card" href="mio.html" data-search="花園 美桜 UNIVERSITY STUDENT 19F 大学生" data-gender="female" data-birth-month="3">
         <img
           class="character-image"
           src="mio-normal.png"
@@ -373,8 +371,7 @@ body {
 
       </a>
 
-      <a class="character-card" href="shou.html" data-search="御薬袋 渉羽 おみなえ しょう MENTAL THERAPIST 26M メンタルセラピスト">
-
+      <a class="character-card" href="shou.html" data-search="御薬袋 渉羽 おみなえ しょう MENTAL THERAPIST 26M メンタルセラピスト" data-gender="male" data-birth-month="8">
   <img
     class="character-image"
     src="shou-normal.png"
@@ -391,8 +388,7 @@ body {
 
 </a>
 
-      <a class="character-card" href="rias.html" data-search="入狗 梨明日 いりく りあす HIGH SCHOOL STUDENT 16F 高校生">
-
+      <a class="character-card" href="rias.html" data-search="入狗 梨明日 いりく りあす HIGH SCHOOL STUDENT 16F 高校生" data-gender="female" data-birth-month="7">
   <img
     class="character-image"
     src="rias-normal.png"
@@ -409,8 +405,7 @@ body {
 
 </a>
 
-      <a class="character-card" href="saku.html" data-search="春川 咲 はるかわ さく COMPANY EMPLOYEE 25M 会社員">
-
+      <a class="character-card" href="saku.html" data-search="春川 咲 はるかわ さく COMPANY EMPLOYEE 25M 会社員" data-gender="male" data-birth-month="3">
   <img
     class="character-image"
     src="saku-normal.png"
@@ -427,8 +422,7 @@ body {
 
 </a>
 
-      <a class="character-card" href="susane.html" data-search="燈下 珠心 とうか すさね HIGH SCHOOL STUDENT 15F 高校生">
-
+      <a class="character-card" href="susane.html" data-search="燈下 珠心 とうか すさね HIGH SCHOOL STUDENT 15F 高校生" data-gender="female" data-birth-month="11">
   <img
     class="character-image"
     src="susane-normal.png"
@@ -445,13 +439,13 @@ body {
 
 </a>
 
-      <a class="character-card" href="utsugi.html" data-search="東郷 空木 とうごう うつぎ FREETER 28M フリーター">
+      <a class="character-card" href="utsugi.html" data-search="東郷 空木 とうごう うつぎ FREETER 28M フリーター" data-gender="male" data-birth-month="6">
   <img class="character-image" src="utsugi-normal.png" alt="東郷 空木">
   <h3 class="character-name">東郷 空木</h3>
   <p class="character-job">FREETER / 28M</p>
 </a>
 
-      <a class="character-card" href="iyori.html" data-search="新井 伊縁 あらい いより JUNIOR HIGH SCHOOL STUDENT 14M 中学生">
+      <a class="character-card" href="iyori.html" data-search="新井 伊縁 あらい いより JUNIOR HIGH SCHOOL STUDENT 14M 中学生" data-gender="male" data-birth-month="12">
   <img class="character-image" src="iyori-normal.png" alt="新井 伊縁">
   <h3 class="character-name">新井 伊縁</h3>
   <p class="character-job">JUNIOR HIGH SCHOOL STUDENT / 14M</p>
@@ -471,17 +465,32 @@ body {
   <script>
 
 const searchInput = document.getElementById("searchInput");
+const genderFilter = document.getElementById("genderFilter");
+const birthMonthFilter = document.getElementById("birthMonthFilter");
 const characterCards = document.querySelectorAll(".character-card");
 
-searchInput.addEventListener("input", function() {
+function filterCharacters() {
 
   const keyword = searchInput.value.toLowerCase();
+  const gender = genderFilter.value;
+  const birthMonth = birthMonthFilter.value;
 
   characterCards.forEach(function(card) {
 
     const searchText = card.dataset.search.toLowerCase();
+    const cardGender = card.dataset.gender;
+    const cardBirthMonth = card.dataset.birthMonth;
 
-    if (searchText.includes(keyword)) {
+    const matchesKeyword = searchText.includes(keyword);
+    const matchesGender = gender === "" || cardGender === gender;
+    const matchesBirthMonth =
+      birthMonth === "" || cardBirthMonth === birthMonth;
+
+    if (
+      matchesKeyword &&
+      matchesGender &&
+      matchesBirthMonth
+    ) {
       card.style.display = "";
     } else {
       card.style.display = "none";
@@ -489,9 +498,13 @@ searchInput.addEventListener("input", function() {
 
   });
 
-});
+}
 
-</script>
+searchInput.addEventListener("input", filterCharacters);
+genderFilter.addEventListener("change", filterCharacters);
+birthMonthFilter.addEventListener("change", filterCharacters);
+
+  </script>
 
 </body>
 
