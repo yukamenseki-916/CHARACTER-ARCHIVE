@@ -83,6 +83,25 @@ body {
   background: #090d08;
 }
 
+  .portrait-buttons {
+  margin-top: 18px;
+}
+
+.portrait-button {
+  padding: 9px 18px;
+  margin: 4px;
+  border: 1px solid #77663f;
+  background: #0d120c;
+  color: #b9ad91;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.portrait-button:hover {
+  color: #d7b866;
+  border-color: #d7b866;
+}
+
 .section {
   margin-top: 35px;
 }
@@ -451,6 +470,14 @@ body {
   </footer>
 
 </div>
+
+  <script>
+
+function changePortrait(imageName) {
+  document.getElementById("portrait").src = imageName;
+}
+
+</script>
 
 </body>
 </html>
