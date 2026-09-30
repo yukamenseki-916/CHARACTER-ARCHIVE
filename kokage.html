@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>神無月 狐影 | CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE
+    </div>
+
+    <h1 class="character-name">
+      神無月 狐影
+    </h1>
+
+    <div class="character-name-kana">
+      かんなづき こかげ
+    </div>
+
+  </header>
+
+
+  <a class="back" href="index.html">
+    ← BACK TO ARCHIVE
+  </a>
+
+
+  <div class="portrait-area">
+
+    <img
+      id="portrait"
+      class="portrait"
+      src="kokage-normal.png"
+      alt="神無月 狐影"
+    >
+
+    <div class="portrait-buttons">
+
+      <button
+        class="portrait-button"
+        onclick="changePortrait('kokage-normal.png')"
+      >
+        NORMAL
+      </button>
+
+      <button
+        class="portrait-button"
+        onclick="changePortrait('kokage-mask.png')"
+      >
+        FOX MASK
+      </button>
+
+      <button
+        class="portrait-button"
+        onclick="changePortrait('kokage-burn.png')"
+      >
+        BURN
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <section class="section">
+
+    <h2 class="section-title">
+      PERSONAL DATA
+    </h2>
+
+    <div class="data-box">
+
+      <div class="data-row">
+        <div class="data-label">AGE</div>
+        <div class="data-value">22</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">GENDER</div>
+        <div class="data-value">MALE</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">OCCUPATION</div>
+        <div class="data-value">殺し屋</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">BIRTHDAY</div>
+        <div class="data-value">10/05</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">HEIGHT</div>
+        <div class="data-value">183 cm</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">WEIGHT</div>
+        <div class="data-value">64 kg</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">FIRST PERSON</div>
+        <div class="data-value">俺</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">SECOND PERSON</div>
+        <div class="data-value">お前・君</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">LIKES</div>
+        <div class="data-value">顔のいい女</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">DISLIKES</div>
+        <div class="data-value">男</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">UNDERWORLD NAME</div>
+        <div class="data-value">野狐（やこ）</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2 class="section-title">
+      PROFILE
+    </h2>
+
+    <div class="profile-box">
+
+      <div class="quote">
+        「そこのお姉さーん、かわいーね♡」
+      </div>
+
+      <p>
+        馬鹿イケメン。
+        学生の頃から物凄いモテ男で、多くの女と遊んできた。
+        基本的には多くの女の子を交代制かと思うほど次々と渡り歩いており、周囲の男子からは大変嫌われている。
+      </p>
+
+      <p>
+        親は金持ちで、基本的に自分のことへ口を出してこない。
+        そのため本人も非常に自由奔放で、人の彼女を奪ったり、金をアホみたいに使ったりと、好き勝手に生きてきた。
+        その奔放さゆえに、周囲の男たちからは大変な恨みを買っている。
+      </p>
+
+      <p>
+        しかし、ある出来事をきっかけに顔へ大きな火傷を負い、顔には酷い火傷の痕が残った。
+        それは本人にとって何よりも最悪な出来事だった。
+      </p>
+
+      <p>
+        火傷を負った顔を見て笑われたり、気味悪がられたりしたことで、現在の顔には悪い記憶しかない。
+        かつて女に囲まれていた自分とは正反対に、今の顔では女の子が相手をしてくれない。
+        その経験は次第に顔そのものへの強烈なコンプレックスへと変わっていった。
+      </p>
+
+      <p>
+        そこで彼は、顔のいい男を殺し、その顔の皮を剥いでお面のように加工し、自らの顔として被るようになった。
+        他人の顔を纏うことで、再び以前のように街へ出て、女の子をナンパしている。
+      </p>
+
+      <p>
+        彼らが引き起こしている殺人事件は、「ドッペルゲンガーに会うと死んでしまう」という噂の原因となっている。
+        標的と同じ顔をした人間が現れ、その人間によって殺されたように見える状況を作り上げ、死体を利用して事件そのものを徹底的に隠蔽する。
+        その結果、周囲からは「ドッペルゲンガーに遭遇した人間が死んだ」という怪異として認識されることになる。
+      </p>
+
+      <p>
+        普段は他人の顔を被って街へ出て、ナンパをしている。
+        一方で、相方PCと共通の知り合いなどに会う場合には、自分たちが「ドッペルゲンガー」という現象を引き起こしている殺し屋だと知られないよう、狐面を被って姿を隠している。
+      </p>
+
+      <p>
+        裏社会では、<strong>「野狐（やこ）」</strong>の名で通っている。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2 class="section-title">
+      SCENARIO
+    </h2>
+
+    <ul class="scenario-list">
+
+      <li>
+        コードネーム：ドッペルゲンガー
+      </li>
+
+    </ul>
+
+    <div class="sheet-link-area">
+
+      <a
+        href="https://iachara.com/view/8094137"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sheet-link"
+      >
+        いあきゃら ─ Character Sheet
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+    YUKAMENSEKI / CHARACTER ARCHIVE
+  </footer>
+
+
+</div>
+
+
+<script>
+
+function changePortrait(imageName) {
+  document.getElementById("portrait").src = imageName;
+}
+
+</script>
+
+
+</body>
+</html>
