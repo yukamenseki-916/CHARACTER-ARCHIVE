@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>冷泉 一葉 ─ CHARACTER ARCHIVE</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d120c;
+  color: #e8dfc8;
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0 70px;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #a88b4a;
+  border-bottom: 1px solid #a88b4a;
+}
+
+.archive-label {
+  color: #99927f;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+}
+
+.character-name {
+  margin: 15px 0 8px;
+  color: #d7b866;
+  font-size: 38px;
+  letter-spacing: 0.12em;
+}
+
+.character-name-kana {
+  color: #99927f;
+  font-size: 13px;
+}
+
+.back {
+  display: inline-block;
+  margin: 25px 0 10px;
+  color: #b9ad91;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.back:hover {
+  color: #d7b866;
+}
+
+.portrait-area {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+  text-align: center;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 500px;
+  max-height: 650px;
+  object-fit: contain;
+  background: #090d08;
+}
+
+.portrait-buttons {
+  margin-top: 18px;
+}
+
+.portrait-button {
+  padding: 9px 18px;
+  margin: 4px;
+  border: 1px solid #77663f;
+  background: #0d120c;
+  color: #b9ad91;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.portrait-button:hover {
+  color: #d7b866;
+  border-color: #d7b866;
+}
+
+.section {
+  margin-top: 35px;
+}
+
+.section-title {
+  margin: 0;
+  color: #d7b866;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #a88b4a;
+  margin-top: 10px;
+}
+
+.data-box {
+  margin-top: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+}
+
+.data-row {
+  display: flex;
+  border-bottom: 1px solid #3f392b;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  width: 38%;
+  padding: 13px;
+  color: #a88b4a;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-right: 1px solid #3f392b;
+}
+
+.data-value {
+  width: 62%;
+  padding: 13px;
+  color: #e8dfc8;
+}
+
+.profile-box {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid #625536;
+  background: #111710;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.profile-box p {
+  margin: 0 0 20px;
+}
+
+.profile-box p:last-child {
+  margin-bottom: 0;
+}
+
+.quote {
+  margin: 0 0 20px;
+  padding: 15px;
+  border-left: 2px solid #a88b4a;
+  color: #d7b866;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.scenario-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-list li {
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  border: 1px solid #4f4633;
+  background: #111710;
+  color: #d0c7b2;
+}
+
+.sheet-link-area {
+  margin-top: 18px;
+  text-align: right;
+}
+
+.sheet-link {
+  color: #777261;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.sheet-link:hover {
+  color: #d7b866;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #4f4633;
+  text-align: center;
+  color: #777261;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+
+  .character-name {
+    font-size: 30px;
+  }
+
+  .portrait {
+    max-height: 560px;
+  }
+
+  .data-label {
+    width: 40%;
+  }
+
+  .data-value {
+    width: 60%;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE / FILE 012
+    </div>
+
+    <h1 class="character-name">
+      冷泉 一葉
+    </h1>
+
+    <div class="character-name-kana">
+      れいぜい かずは
+    </div>
+
+  </header>
+
+
+  <a class="back" href="index.html">
+    ← CHARACTER ARCHIVE
+  </a>
+
+
+  <div class="portrait-area">
+
+    <img
+      id="portrait"
+      class="portrait"
+      src="kazuha-normal.png"
+      alt="冷泉 一葉"
+    >
+
+    <div class="portrait-buttons">
+
+      <button
+        class="portrait-button"
+        onclick="changePortrait('kazuha-normal.png')"
+      >
+        NORMAL
+      </button>
+
+      <button
+        class="portrait-button"
+        onclick="changePortrait('kazuha-alt.png')"
+      >
+        ALT
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <section class="section">
+
+    <h2 class="section-title">
+      DATA
+    </h2>
+
+    <div class="data-box">
+
+      <div class="data-row">
+        <div class="data-label">AGE</div>
+        <div class="data-value">20</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">GENDER</div>
+        <div class="data-value">MALE</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">OCCUPATION</div>
+        <div class="data-value">UNIVERSITY STUDENT</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">BIRTHDAY</div>
+        <div class="data-value">3 / 22</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">HEIGHT</div>
+        <div class="data-value">180 cm</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">WEIGHT</div>
+        <div class="data-value">64 kg</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">FIRST PERSON</div>
+        <div class="data-value">僕</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">SECOND PERSON</div>
+        <div class="data-value">君</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">LIKES</div>
+        <div class="data-value">相方PC</div>
+      </div>
+
+      <div class="data-row">
+        <div class="data-label">DISLIKES</div>
+        <div class="data-value">正解</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2 class="section-title">
+      PROFILE
+    </h2>
+
+    <div class="profile-box">
+
+      <div class="quote">
+        「君と出会うまでは正解のある人間にしか会わなかったから、僕は君に出会えてよかった。」
+      </div>
+
+      <p>
+        「ヒトとの会話の返答には、ある程度『正解』というのが存在する」
+      </p>
+
+      <p>
+        「その正解から大きく外れる人間は、変なやつというレッテルが貼られるんだ」
+      </p>
+
+      <p>
+        「君との会話にはその正解がなくて、僕は好きだよ。」
+      </p>
+
+      <p>
+        ……つまり言いたいのは、別に正解はあってもいいんだよ。
+        誰にだって欲しい返事はあるだろうからね。
+        でも、その自分の正解を他人の正解と同じだと考えて、
+        人に自分の正解を押し付ける考え方が嫌いなんだ。
+        ……うん。ごめん。僕はよく言葉足らずだと言われる。
+      </p>
+
+      <p>
+        一人っ子。
+        相方PCと同じく文系で、文学部に通っている。
+        お酒には弱い。お酒自体は好きでも嫌いでもない。
+      </p>
+
+      <p>
+        ちょっと変わった男の子。
+        ……というより、単純に「嫌なやつ」と言ったほうが近いかもしれない。
+      </p>
+
+      <p>
+        ヒトと話すとき、普通ならわざわざ口にしないようなことを平然と言い、
+        周囲をドン引きさせることがある。
+        小学生の頃にもそのような出来事があり、そのとき初めて、
+        自分が周囲とは少し違ったことを言っているのだと気づいた。
+      </p>
+
+      <p>
+        例えば、
+        「これ可愛くない？」
+        と聞かれたとする。
+        これは「うん、可愛いね」という返事を期待しているのだろう、と一葉は考える。
+        しかし彼は、
+        「見る人によって可愛いか可愛くないかは違うんじゃないかな？」
+        「僕は君のように、人に言いたくなるほど可愛いとは思わないけれど」
+        といった、わざわざ言わなくてもいいような返答をしてしまう。
+      </p>
+
+      <p>
+        当然のように周囲からは「変なやつ」だと思われている。
+        「友達がいるなんて珍しい！」と言われることもある。
+      </p>
+
+      <p>
+        両親は悪い人ではない。
+        ただし教育方針はかなり大雑把。
+        テストで良い点を取っても悪い点を取っても、
+        「そういう日もある」で済ませる。
+        相談にはほとんど乗ってくれなかった。
+      </p>
+
+      <p>
+        そのため一葉自身も、
+        親にまともな相談をすることはほとんどなかった。
+        とはいえ、優しい両親ではあった。
+        欲しいものは買ってくれたし、やりたいことは自由にやらせてくれた。
+        両親に対して特別な好き嫌いはない。
+      </p>
+
+      <p>
+        「子は生みの親に感謝するべきだって言われてるし、僕も感謝はしているよ。」
+      </p>
+
+      <p>
+        そして、一葉は相方PCに対してだけ、
+        他の人とは明らかに異なる感情を抱いている。
+      </p>
+
+      <p>
+        自分には相方PCしかいない。
+        けれど、相方PCにとっては自分だけではない。
+        その事実を理解しているからこそ、
+        「相方PCが自分に堕ちてくれたらいいのに」と、
+        心の奥では思っている。
+      </p>
+
+      <p>
+        ただし、その感情を本人に伝えたことはない。
+        束縛することもなく、行動に出しているつもりもない。
+        それでも、他の人と比べれば相方PCには明らかに甘い。
+      </p>
+
+      <p>
+        好きな相手には「好き」と普通に言えるタイプ。
+        恥ずかしいような台詞も、本人にとっては特別なことではなく、
+        真顔のままさらりと口にする。
+        無自覚に相手を口説いてしまうような、
+        いわゆる「無意識のタラシ」でもある。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2 class="section-title">
+      SCENARIO
+    </h2>
+
+    <ul class="scenario-list">
+
+      <li>
+        辜月のN
+      </li>
+
+      <li>
+        終夜
+      </li>
+
+    </ul>
+
+
+    <div class="sheet-link-area">
+
+      <a
+        href="https://iachara.com/view/7416802"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sheet-link"
+      >
+        いあきゃら ─ Character Sheet
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+    YUKAMENSEKI / CHARACTER ARCHIVE
+  </footer>
+
+
+</div>
+
+
+<script>
+
+function changePortrait(imageName) {
+  document.getElementById("portrait").src = imageName;
+}
+
+</script>
+
+
+</body>
+</html>
