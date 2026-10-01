@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>伏翼 天鼠 ─ CHARACTER ARCHIVE</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d120c;
+  color: #e8dfc8;
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0 70px;
+}
+
+.header {
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid #a88b4a;
+  border-bottom: 1px solid #a88b4a;
+}
+
+.archive-label {
+  color: #99927f;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+}
+
+.character-name {
+  margin: 15px 0 8px;
+  color: #d7b866;
+  font-size: 38px;
+  letter-spacing: 0.12em;
+}
+
+.character-name-kana {
+  color: #99927f;
+  font-size: 13px;
+}
+
+.back {
+  display: inline-block;
+  margin: 25px 0 10px;
+  color: #b9ad91;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.back:hover {
+  color: #d7b866;
+}
+
+.portrait-area {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+  text-align: center;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 500px;
+  max-height: 650px;
+  object-fit: contain;
+  background: #090d08;
+}
+
+.portrait-buttons {
+  margin-top: 18px;
+}
+
+.portrait-button {
+  padding: 9px 18px;
+  margin: 4px;
+  border: 1px solid #77663f;
+  background: #0d120c;
+  color: #b9ad91;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.portrait-button:hover {
+  color: #d7b866;
+  border-color: #d7b866;
+}
+
+.section {
+  margin-top: 35px;
+}
+
+.section-title {
+  margin: 0;
+  color: #d7b866;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: #a88b4a;
+  margin-top: 10px;
+}
+
+.data-box {
+  margin-top: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+}
+
+.data-row {
+  display: flex;
+  border-bottom: 1px solid #3f392b;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.data-label {
+  width: 38%;
+  padding: 13px;
+  color: #a88b4a;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-right: 1px solid #3f392b;
+}
+
+.data-value {
+  width: 62%;
+  padding: 13px;
+  color: #e8dfc8;
+}
+
+.profile-box {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid #625536;
+  background: #111710;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.profile-box p {
+  margin: 0 0 20px;
+}
+
+.profile-box p:last-child {
+  margin-bottom: 0;
+}
+
+.quote {
+  margin: 0 0 20px;
+  padding: 15px;
+  border-left: 2px solid #a88b4a;
+  color: #d7b866;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.scenario-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.scenario-list li {
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  border: 1px solid #4f4633;
+  background: #111710;
+  color: #d0c7b2;
+}
+
+.sheet-link-area {
+  margin-top: 18px;
+  text-align: right;
+}
+
+.sheet-link {
+  color: #777261;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.sheet-link:hover {
+  color: #d7b866;
+}
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #4f4633;
+  text-align: center;
+  color: #777261;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 600px) {
+
+  .character-name {
+    font-size: 30px;
+  }
+
+  .portrait {
+    max-height: 560px;
+  }
+
+  .data-label {
+    width: 40%;
+  }
+
+  .data-value {
+    width: 60%;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<header class="header">
+
+  <div class="archive-label">
+    CHARACTER ARCHIVE / FILE 017
+  </div>
+
+  <h1 class="character-name">
+    伏翼 天鼠
+  </h1>
+
+  <div class="character-name-kana">
+    ふくよく てんそ
+  </div>
+
+</header>
+
+
+<a
+  href="index.html"
+  class="back"
+>
+  ← BACK TO ARCHIVE
+</a>
+
+
+<div class="portrait-area">
+
+  <img
+    id="portrait"
+    class="portrait"
+    src="tenso-normal.png"
+    alt="伏翼 天鼠"
+  >
+
+  <div class="portrait-buttons">
+
+    <button
+      class="portrait-button"
+      onclick="changePortrait('tenso-normal.png')"
+    >
+      NORMAL
+    </button>
+
+    <button
+      class="portrait-button"
+      onclick="changePortrait('tenso-serious.png')"
+    >
+      SERIOUS
+    </button>
+
+  </div>
+
+</div>
+
+
+<section class="section">
+
+  <h2 class="section-title">
+    DATA
+  </h2>
+
+  <div class="data-box">
+
+    <div class="data-row">
+      <div class="data-label">
+        AGE
+      </div>
+
+      <div class="data-value">
+        21
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        GENDER
+      </div>
+
+      <div class="data-value">
+        男
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        OCCUPATION
+      </div>
+
+      <div class="data-value">
+        大学生
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        BIRTHDAY
+      </div>
+
+      <div class="data-value">
+        4月17日
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        HEIGHT
+      </div>
+
+      <div class="data-value">
+        169 cm
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        WEIGHT
+      </div>
+
+      <div class="data-value">
+        56 kg
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        FIRST PERSON
+      </div>
+
+      <div class="data-value">
+        自分・俺・僕
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        SECOND PERSON
+      </div>
+
+      <div class="data-value">
+        君・お前
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        LIKES
+      </div>
+
+      <div class="data-value">
+        なし
+      </div>
+    </div>
+
+
+    <div class="data-row">
+      <div class="data-label">
+        DISLIKES
+      </div>
+
+      <div class="data-value">
+        努力
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section">
+
+  <h2 class="section-title">
+    PROFILE
+  </h2>
+
+  <div class="profile-box">
+
+    <div class="quote">
+      『天才』の努力は報われるけど、<br>
+      『凡才』の努力は報われないなんて、<br>
+      不平等にも程がある。<br><br>
+      だから俺は、「頑張る」事が嫌いだ。
+    </div>
+
+
+    <p>
+      一人っ子。幼い頃から厳しい親の期待を一身に背負い、
+      勉強も部活も「上位でなければ意味がない」という環境で育ってきた。
+      何をするにも親に怒られながら努力してきた結果、
+      人の顔色を窺い、ご機嫌を取ることだけは上手くなった。
+    </p>
+
+    <p>
+      しかし、どれだけ努力しても上には上がいる。
+      「無理なものは無理なのだから、諦めなければきりがない」という考え方をするようになり、
+      何事に対しても諦めが早い傾向がある。
+      少々捻くれた性格に育っており、決して人当たりの良い人物というわけではない。
+    </p>
+
+    <p>
+      現在は親から半ば見放されており、以前ほど干渉されることもなくなった。
+      親から見れば、ニコニコと機嫌を取るように振る舞う息子の姿は、
+      どこか気持ち悪いものとして映っている。
+      現在は一人暮らしをしており、親の干渉から離れて気楽に暮らしている。
+    </p>
+
+    <p>
+      基本的には敬語で話すが、年下に対しては優しい口調のタメ口を使う。
+      人当たりよく振る舞うこと自体は得意だが、
+      それは必ずしも善意から来るものではない。
+    </p>
+
+    <p>
+      最近は特に、努力しても思うような結果が得られないことが多い。
+      そのため、自分には努力というものがとことん向いていない、
+      何をやっても上手くいかないのだと考えるようになり、
+      以前にも増して無気力に生きている。
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<section class="section">
+
+  <h2 class="section-title">
+    SCENARIO
+  </h2>
+
+  <ul class="scenario-list">
+
+    <li>
+      狂気山脈
+    </li>
+
+  </ul>
+
+
+  <div class="sheet-link-area">
+
+    <a
+      href="https://iachara.com/view/8571150"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="sheet-link"
+    >
+      いあきゃら ─ Character Sheet
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer class="footer">
+  YUKAMENSEKI / CHARACTER ARCHIVE
+</footer>
+
+
+</div>
+
+
+<script>
+
+function changePortrait(imageName) {
+  document.getElementById("portrait").src = imageName;
+}
+
+</script>
+
+
+</body>
+
+</html>
