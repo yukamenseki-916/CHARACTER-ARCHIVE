@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>八尋 凪 | 床面積 CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .table-video-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .table-video-list li {
+      margin-bottom: 4px;
+      padding: 14px 10px;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .table-video-link {
+      display: block;
+      position: relative;
+      padding-left: 22px;
+      color: #d0c7b2;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .table-video-link::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #a88b4a;
+      font-size: 10px;
+    }
+
+    .table-video-link:hover {
+      color: #d7b866;
+    }
+
+    .table-video-link:hover::before {
+      color: #d7b866;
+    }
+
+    .table-video-name {
+      display: block;
+    }
+
+    .table-video-label {
+      display: block;
+      margin-top: 2px;
+      color: #777261;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE / FILE 032
+      </div>
+
+      <h1 class="character-name">
+        八尋 凪
+      </h1>
+
+      <div class="character-name-kana">
+        やしろ なぎ
+      </div>
+
+    </header>
+
+
+    <a href="index.html" class="back">
+      ← CHARACTER ARCHIVE
+    </a>
+
+
+    <div class="portrait-area">
+
+      <img
+        class="portrait"
+        src="nagi-normal.png"
+        alt="八尋 凪"
+      >
+
+    </div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        DATA
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">
+            AGE
+          </div>
+          <div class="data-value">
+            26
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            GENDER
+          </div>
+          <div class="data-value">
+            男性
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            OCCUPATION
+          </div>
+          <div class="data-value">
+            教師
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+          <div class="data-value">
+            6月12日
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            HEIGHT
+          </div>
+          <div class="data-value">
+            174cm
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            WEIGHT
+          </div>
+          <div class="data-value">
+            62kg
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+          <div class="data-value">
+            僕
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+          <div class="data-value">
+            貴方
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            LIKES
+          </div>
+          <div class="data-value">
+            生きもの
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            DISLIKES
+          </div>
+          <div class="data-value">
+            牛乳
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <p>
+          校内では常に物腰が柔らかく、笑顔を絶やさない養護教諭。
+          生徒たちの小さな心の傷や、同僚の些細な動揺にも真っ先に気づき、
+          「何か僕にお手伝いできることはありますか？」と優しく手を差し伸べる。
+          面倒見がよく、相手の様子を細やかに観察しながら自然に必要な気遣いを差し出すため、
+          周囲からは「頼りになる優しい先生」として好意的に受け止められている。
+        </p>
+
+        <p>
+          しかし、その完璧すぎる笑顔の裏側には、
+          どこか底知れない冷たさと、感情の輪郭が抜け落ちたような空虚さが潜んでいる。
+          他人が恐怖や焦燥から声を荒げたり、自己保身のために醜い本性を露わにしたりする場面でも、
+          凪自身が取り乱すことはほとんどない。
+          周囲の感情が激しく揺れ動くほど、むしろ静かにその様子を観察しているようにも見える。
+        </p>
+
+        <p>
+          「暴力や理不尽」を嫌悪し、倫理や正論を静かに説く姿は、
+          一見すると強い正義感の表れのようにも映る。
+          しかし、彼が何を正しく、何を間違いだと判断しているのかという基準は、
+          世間一般の常識とはほんの少しだけずれているようにも感じる。
+          その言葉は穏やかで理性的であるからこそ、ときに妙な違和感を残す。
+        </p>
+
+        <p>
+          人に優しくすることを当然のように選び、
+          傷ついた者には手を差し伸べる。
+          けれど、その優しさが純粋な善意だけから生まれているのか、
+          あるいは彼自身の中にある別の何かによって形作られているのかは分からない。
+        </p>
+
+        <p>
+          彼の優しさは、人を救うためのものなのか。
+          それとも、別の何かへ導くためのものなのか。
+          その答えを知っているのは、八尋凪本人だけなのかもしれない。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          ソープスクール
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        TABLE VIDEO
+      </h2>
+
+      <ul class="table-video-list">
+
+        <li>
+          <a
+            href="https://youtube.com/playlist?list=PLMa_0VvS5dlE&si=uPYxL-4afucPZ3BC"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="table-video-link"
+          >
+            <span class="table-video-name">
+              ソープスクール
+            </span>
+
+            <span class="table-video-label">
+              YouTube
+            </span>
+
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <div class="sheet-link-area">
+
+      <a
+        href="https://iachara.com/view/13805504"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sheet-link"
+      >
+        いあきゃら ─ Character Sheet
+      </a>
+
+    </div>
+
+
+    <footer class="footer">
+      FLOOR AREA CHARACTER ARCHIVE
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
