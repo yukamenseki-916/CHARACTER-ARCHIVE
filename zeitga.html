@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>イスト・ツァイトガ ─ CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE / FILE 022
+      </div>
+
+      <h1 class="character-name">
+        イスト・ツァイトガ
+      </h1>
+
+      <div class="character-name-kana">
+        いすと・つぁいとが
+      </div>
+
+    </header>
+
+
+    <a
+      class="back"
+      href="index.html"
+    >
+      ← BACK TO ARCHIVE
+    </a>
+
+
+    <div class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="zeitga-normal.png"
+        alt="イスト・ツァイトガ"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('zeitga-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('zeitga-serious.png')"
+        >
+          SERIOUS
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('zeitga-angry.png')"
+        >
+          ANGRY
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('zeitga-surprised.png')"
+        >
+          SURPRISED
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PERSONAL DATA
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">
+            AGE
+          </div>
+          <div class="data-value">
+            24
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            GENDER
+          </div>
+          <div class="data-value">
+            男
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            OCCUPATION
+          </div>
+          <div class="data-value">
+            作曲家
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+          <div class="data-value">
+            10月1日
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            HEIGHT
+          </div>
+          <div class="data-value">
+            178cm
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            WEIGHT
+          </div>
+          <div class="data-value">
+            57kg
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+          <div class="data-value">
+            僕
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+          <div class="data-value">
+            君
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            LIKES
+          </div>
+          <div class="data-value">
+            音楽
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            DISLIKES
+          </div>
+          <div class="data-value">
+            なし
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <div class="quote">
+          「静寂も、騒音も、僕の音の前では跪く。」
+          <br><br>
+          「君はこの"時代の精神(ツァイトガイスト)"を聴く耳があるかな？」
+        </div>
+
+        <p>
+          圧倒的な自信と、自身の才能に対する揺るぎない信頼を持つ作曲家。
+          自分以外の音楽を否定することはないが、
+          「自分の音楽こそが正解である」という確信を持っているため、
+          自分の音楽以外を「正解ではない」と考えている。
+        </p>
+
+        <p>
+          他者を見下しているわけではない。
+          ただ、他人の音楽を理解しようとする必要性を感じていない。
+          自分には自分だけの正解があり、それを疑う理由がないからである。
+          その揺るぎない自信こそが、彼の作曲家としての大きな特徴となっている。
+        </p>
+
+        <p>
+          音楽のコンクールにもたびたび参加しており、
+          周囲からは「天才作曲家」として名を挙げられることも多い。
+          幼少期から自身の才能を評価され続けてきたことで、
+          「自分は特別な人間である」という意識が自然と根付いている。
+        </p>
+
+        <p>
+          代々続く音楽一家に生まれ、両親もそれぞれ名門音楽院の出身。
+          幼い頃から質の高い音楽に囲まれ、
+          音楽に触れることが当たり前の環境で育った。
+          父方の祖父からは特に大きな期待を寄せられ、
+          作曲家としての道を歩むために多くの援助を受けている。
+        </p>
+
+        <p>
+          両親は当初、必ずしも音楽の道へ進む必要はないと考えていた。
+          しかし、幼い頃から音楽の才能を発揮するようになると、
+          その才能を伸ばすためにさまざまな経験を与えるようになった。
+          ピアノとヴァイオリンも一通り演奏することができ、
+          作曲だけにとどまらず、音楽そのものへの造詣も深い。
+        </p>
+
+        <p>
+          家族との仲は悪くなく、家族愛も確かに存在している。
+          ただし、家族全員が非常にストイックな性格であり、
+          「ツァイトガの名を世界に轟かせる」ことを期待されてきたため、
+          厳しい指導を受けることも少なくなかった。
+          もっとも、本人は自身の音楽こそが正解だと信じているため、
+          間違っていると感じたことには素直に耳を傾けない。
+          そのため、厳しく指導する家族と頑として譲らない本人という、
+          ある意味ではお互い様の関係でもある。
+        </p>
+
+        <p>
+          それでも彼にとって音楽は、努力して身につけたものというよりも、
+          生まれた時から当然のように傍にあったものだ。
+          自分の才能を疑うことなく、今日もまた自身の「正解」を音にしている。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          怪人に捧ぐ鎮魂歌
+        </li>
+
+      </ul>
+
+      <div class="sheet-link-area">
+
+        <a
+          href="https://iachara.com/view/11825737"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sheet-link"
+        >
+          いあきゃら ─ Character Sheet
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <footer class="footer">
+      床面積 CHARACTER ARCHIVE
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    function changePortrait(imageName) {
+      document.getElementById("portrait").src = imageName;
+    }
+
+  </script>
+
+</body>
+
+</html>
