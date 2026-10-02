@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>白宮 由良 ─ CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+    .table-video-list {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.table-video-list li {
+  margin-bottom: 10px;
+  padding: 13px 15px;
+  border: 1px solid #4f4633;
+  background: #111710;
+}
+
+.table-video-link {
+  display: block;
+  color: #d0c7b2;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.table-video-link:hover {
+  color: #d7b866;
+}
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE
+      </div>
+
+      <h1 class="character-name">
+        白宮 由良
+      </h1>
+
+      <div class="character-name-kana">
+        しろみや ゆら
+      </div>
+
+    </header>
+
+
+    <a href="index.html" class="back">
+      ← CHARACTER LIST
+    </a>
+
+
+    <div class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="yura-normal.png"
+        alt="白宮 由良"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('yura-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('yura-private.png')"
+        >
+          PRIVATE
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        DATA
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">
+            AGE
+          </div>
+
+          <div class="data-value">
+            24
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            GENDER
+          </div>
+
+          <div class="data-value">
+            男性
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            OCCUPATION
+          </div>
+
+          <div class="data-value">
+            ミュージシャン
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+
+          <div class="data-value">
+            10月16日
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            HEIGHT
+          </div>
+
+          <div class="data-value">
+            176cm
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            WEIGHT
+          </div>
+
+          <div class="data-value">
+            58kg
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+
+          <div class="data-value">
+            俺
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+
+          <div class="data-value">
+            あんた
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            LIKES
+          </div>
+
+          <div class="data-value">
+            音楽・仲間
+          </div>
+        </div>
+
+
+        <div class="data-row">
+          <div class="data-label">
+            DISLIKES
+          </div>
+
+          <div class="data-value">
+            強制されること
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <div class="quote">
+          「これから鳴る音は、今日しか聞けない音だから。<br>
+          捕まえなきゃ逃げちゃうよ。」
+        </div>
+
+
+        <p>
+          白宮由良は、自由奔放な音楽性を持つミュージシャンであり、所属するバンド「𝐄𝐝𝐦𝐨𝐧𝐝」では楽曲の作詞・作曲を担当している。猫を思わせる気ままさを持ち、「音楽は自由でいい」という考えを何よりも大切にしている。
+        </p>
+
+        <p>
+          決められた形に音楽を当てはめることを好まず、練習では一度も試していなかったアレンジを本番で突然取り入れることすらある。その瞬間にしか生まれない音を楽しみ、自分がやりたいと思ったことをそのまま音にすることが、彼にとっての音楽だった。
+        </p>
+
+        <p>
+          一方で、努力そのものを嫌っているわけではない。ただ、努力はわざわざ人に見せびらかすものではないと考えている。練習していることを自慢することもなければ、「才能がある」「天才だ」と言われることを否定することもない。むしろ、それらは素直に褒め言葉として受け取っている。
+        </p>
+
+        <p>
+          努力していることに気づかれなくても構わない。むしろ、苦労など何もしていないように、さらりとできてしまうほうが格好いい。実際、由良には生来の音楽的な才能があり、周囲から見ても「天才」と呼ばれる側の人間ではある。
+        </p>
+
+        <p>
+          ただし、非常に気分屋でもある。練習したくないときは練習しないし、バンド全体の練習であっても、気分が乗らなければ驚くほど適当になる。それでも、本当に必要な場面ではきちんと練習する程度の責任感は持ち合わせている。
+        </p>
+
+        <p>
+          幼少期の由良は、周囲から「静かすぎる子」と言われるほど無口だった。保育園や小学校でもほとんど喋らず、絵を描いたり、積み木やパズルで遊んだりと、一人で完結する遊びを好んでいた。
+        </p>
+
+        <p>
+          特に、言葉よりも「音」に対する反応が極端に鋭かった。周囲の子供たちが騒いでいる中でも、由良だけはその喧騒に耳を澄ませていることがあり、教師からも「音をよく聞いている子」だと言われていた。
+        </p>
+
+        <p>
+          両親は優しく穏やかな一般企業の会社員で、決して由良を否定していたわけではない。ただ、由良とは物事の捉え方が大きく異なっていた。「もっと友達と遊びなさい」「ちゃんと声を出して返事をしなさい」と、一般的な子供らしさを求められることも多かった。
+        </p>
+
+        <p>
+          あまり喋らない性格のため、周囲からは暗い子、無愛想な子だと誤解されることもあり、軽い仲間外れを経験したこともある。しかし、由良自身はそれを「寂しい」と感じるよりも、人と一緒にいることで音が乱れてしまうことのほうを強く嫌っていた。
+        </p>
+
+        <p>
+          そんな彼にとって、音楽だけは誰にも邪魔されない安全な場所だった。音を聴いているとき、そして自分自身で音を生み出しているときだけは、周囲に合わせる必要も、自分を説明する必要もなかった。
+        </p>
+
+        <p>
+          それでも、𝐄𝐝𝐦𝐨𝐧𝐝というバンドに所属してからは、少しずつ考え方が変わっていった。自分一人では生み出せないほど良い音を、仲間と一緒なら奏でることができる。その事実を知ったことで、「人といると音が乱れる」という不自由ささえも、これだけの音を生み出せるのなら許せると思うようになった。
+        </p>
+
+        <p>
+          今では、仲間とともに音を鳴らすことそのものを楽しんでいる。予定調和に収まらない音、二度と同じ形では生まれない瞬間を追いかけながら、由良は今日も自由に音楽を奏でている。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          誰がロックを殺すのか
+        </li>
+
+        <li>
+          「」よはく
+        </li>
+
+        <li>
+          NOISY NOTE
+        </li>
+
+        <li>
+          Holiday's Midnight
+        </li>
+
+        <li>
+          ロックンロール・スカイダイブ
+        </li>
+
+      </ul>
+
+      <section class="section">
+
+  <h2 class="section-title">
+    TABLE VIDEO
+  </h2>
+
+  <ul class="table-video-list">
+
+    <li>
+      <a
+        href="https://youtube.com/playlist?list=PLPZK6Cd1f_uM&si=X_-eS3ifaqMYgPee"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="table-video-link"
+      >
+        誰がロックを殺すのか ─ YouTube
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://youtu.be/6--qnEUMThI?si=oXDbN11F6TXl_2Pk"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="table-video-link"
+      >
+        「」よはく ─ YouTube
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://youtu.be/TmcC_HVz9Js?si=6zRMZKw8ZrUVCuum"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="table-video-link"
+      >
+        NOISY NOTE ─ YouTube
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://youtu.be/-oXwfWPRibc?si=LpWVdgBTAw4bpSAJ"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="table-video-link"
+      >
+        Holiday's Midnight ─ YouTube
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="https://youtu.be/j_7Q530jLTc?si=0YEqcDvpetB2CeOA"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="table-video-link"
+      >
+        ロックンロール・スカイダイブ ─ YouTube
+      </a>
+    </li>
+
+  </ul>
+
+</section>
+
+
+      <div class="sheet-link-area">
+
+        <a
+          href="https://iachara.com/view/12152468"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sheet-link"
+        >
+          いあきゃら ─ Character Sheet
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <footer class="footer">
+      YUKAMENSEKI CHARACTER ARCHIVE
+    </footer>
+
+
+  </div>
+
+
+  <script>
+
+    function changePortrait(imageName) {
+      document.getElementById("portrait").src = imageName;
+    }
+
+  </script>
+
+
+</body>
+
+</html>
