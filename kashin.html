@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>九重 快信 | 床面積 CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .table-video-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .table-video-list li {
+      margin-bottom: 4px;
+      padding: 14px 10px;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .table-video-link {
+      display: block;
+      position: relative;
+      padding-left: 22px;
+      color: #d0c7b2;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .table-video-link::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #a88b4a;
+      font-size: 10px;
+    }
+
+    .table-video-link:hover {
+      color: #d7b866;
+    }
+
+    .table-video-link:hover::before {
+      color: #d7b866;
+    }
+
+    .table-video-name {
+      display: block;
+    }
+
+    .table-video-label {
+      display: block;
+      margin-top: 2px;
+      color: #777261;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE / FILE 029
+      </div>
+
+      <h1 class="character-name">
+        九重 快信
+      </h1>
+
+      <div class="character-name-kana">
+        ここのえ かいしん
+      </div>
+
+    </header>
+
+
+    <a
+      href="index.html"
+      class="back"
+    >
+      ← CHARACTER ARCHIVE
+    </a>
+
+
+    <div class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="kashin-normal.png"
+        alt="九重 快信"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('kashin-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('kashin-uniform.png')"
+        >
+          BASEBALL UNIFORM
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">
+            AGE
+          </div>
+          <div class="data-value">
+            17
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            GENDER
+          </div>
+          <div class="data-value">
+            男性
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            OCCUPATION
+          </div>
+          <div class="data-value">
+            高校生
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+          <div class="data-value">
+            8月19日
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            HEIGHT
+          </div>
+          <div class="data-value">
+            172cm
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            WEIGHT
+          </div>
+          <div class="data-value">
+            61kg
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+          <div class="data-value">
+            俺
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+          <div class="data-value">
+            お前
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            LIKES
+          </div>
+          <div class="data-value">
+            野球
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            DISLIKES
+          </div>
+          <div class="data-value">
+            喧嘩
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="profile-box">
+
+        <p class="quote">
+          「1番好きな野球っちゅースポーツで、俺は、俺たちはここにおるんやぞって知らしめたいんや！」
+        </p>
+
+        <p>
+          よく笑い、よく騒ぐ、明るく快活な少年。関西弁を話すが、関西圏に住んでいたわけではなく、親の出身が関西圏であり、その影響で自然と関西弁が身についた。
+        </p>
+
+        <p>
+          結果に対しては自分に厳しく、失敗した日の帰宅後には、室内で素振りを続けてしまうこともある。しかし、失敗そのものをいつまでも引きずるタイプではない。起こってしまったことは仕方がなく、それよりも、これからどう行動するかが重要だと考えている。
+        </p>
+
+        <p>
+          自尊心は低めで、自分自身を褒めることはあまりない。それでも普段は明るく振る舞い、努力を惜しまない。軽口を叩きながら周囲を笑わせる一方で、心の奥底には「自分なんかいてもいなくても一緒なのではないか」という思いがあり、自分の存在価値に対する不安を抱えている。
+        </p>
+
+        <p>
+          その不安を払拭するように、彼は努力を続けてきた。足はそこそこ速く、反応は非常によく、捕球も上手い。打球の予測を大きく外すこともない。基本的には何でもこなせる選手だが、そのどの能力も突出してはいない。
+        </p>
+
+        <p>
+          野球の世界は、「一番」がある人間を評価する世界でもある。強打者、強肩、快足、守備職人。快信はそのどれにもなれるだけの力を持っていた。しかし、どれにも「なりきれなかった」。
+        </p>
+
+        <p>
+          「ここがお前の居場所だ」と言われたことがない。だからこそ、心の奥には「代わりはいくらでもいる」という感覚が消えずに残っている。
+        </p>
+
+        <p>
+          人生で一度も主人公になったことがない。いつも誰かの隣にいた。それが嫌だったわけではなく、むしろ誰かを支え、隣にいることを誇らしく思っていた。
+        </p>
+
+        <p>
+          それでも、一度くらいは――。
+        </p>
+
+        <p>
+          誰かを見返したいわけではない。ただ、ずっと脇役だと思っていた自分が、大好きな野球という場所だけでは、主人公になってみたい。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          女神は君に微笑まない
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        TABLE VIDEO
+      </h2>
+
+      <ul class="table-video-list">
+
+        <li>
+          <a
+            href="https://youtube.com/playlist?list=PLciVkrtccyEmtrznT4b172OMwxP9_JvDv&si=X9Z1wFvScgDFhF70"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="table-video-link"
+          >
+            <span class="table-video-name">
+              女神は君に微笑まない
+            </span>
+
+            <span class="table-video-label">
+              YouTube
+            </span>
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <div class="sheet-link-area">
+
+      <a
+        href="https://iachara.com/view/13099144"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sheet-link"
+      >
+        いあきゃら ─ Character Sheet
+      </a>
+
+    </div>
+
+
+    <footer class="footer">
+      YUKAMENSEKI CHARACTER ARCHIVE
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    function changePortrait(imageName) {
+      document.getElementById("portrait").src = imageName;
+    }
+
+  </script>
+
+</body>
+
+</html>
