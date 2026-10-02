@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>四葩 集真 ─ CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .table-video-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .table-video-list li {
+      margin-bottom: 4px;
+      padding: 14px 10px;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .table-video-link {
+      display: block;
+      position: relative;
+      padding-left: 22px;
+      color: #d0c7b2;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .table-video-link::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #a88b4a;
+      font-size: 10px;
+    }
+
+    .table-video-link:hover {
+      color: #d7b866;
+    }
+
+    .table-video-link:hover::before {
+      color: #d7b866;
+    }
+
+    .table-video-name {
+      display: block;
+    }
+
+    .table-video-label {
+      display: block;
+      margin-top: 2px;
+      color: #777261;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <main class="container">
+
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE / FILE 026
+      </div>
+
+      <h1 class="character-name">
+        四葩 集真
+      </h1>
+
+      <div class="character-name-kana">
+        よひら あづま
+      </div>
+
+    </header>
+
+
+    <a
+      href="index.html"
+      class="back"
+    >
+      ← CHARACTER ARCHIVE
+    </a>
+
+
+    <!-- PORTRAIT -->
+
+    <div class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="azuma-normal.png"
+        alt="四葩 集真"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('azuma-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('azuma-battle.png')"
+        >
+          BATTLE
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROFILE DATA -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">
+            AGE
+          </div>
+          <div class="data-value">
+            38
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            GENDER
+          </div>
+          <div class="data-value">
+            男
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            OCCUPATION
+          </div>
+          <div class="data-value">
+            警察官
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+          <div class="data-value">
+            6月3日
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            HEIGHT
+          </div>
+          <div class="data-value">
+            184 cm
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            WEIGHT
+          </div>
+          <div class="data-value">
+            76 kg
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+          <div class="data-value">
+            俺
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+          <div class="data-value">
+            お前
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            LIKES
+          </div>
+          <div class="data-value">
+            煙草
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            DISLIKES
+          </div>
+          <div class="data-value">
+            人間
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROFILE -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <p class="quote">
+          「お前だけは、俺の前から居なくならないでくれよ。」
+        </p>
+
+        <p>
+          表向きは適当で皮肉屋な人物であり、人間にもアンドロイドにも距離を置き、
+          「嫌いだ」と突き放す。無愛想で冷たく見え、面倒ごとを避けるように振る舞うが、
+          その実、誰よりも諦めが悪く、身近な人間や部下を守ろうとするマメな人間である。
+        </p>
+
+        <p>
+          「全てを嫌っている」ように見えるのは、愛してやまない存在を失い続けてきたため。
+          その喪失から目を逸らすために、「嫌いだ」「どうでもいい」と言い放つことで、
+          自分自身を守っている。
+        </p>
+
+        <p>
+          妻と息子を事故で失った過去を抱えており、その傷について語ることを極端に避けている。
+          口にすること自体が感情を抉り、失った事実を改めて突きつけられる苦痛になるからである。
+          そのため基本的には寡黙で感情を抑えているが、仲間が危険にさらされれば誰よりも早く前に立ち、
+          身を挺して庇おうとする。
+        </p>
+
+        <p>
+          息子が亡くなる原因にもなったアンドロイドに対しては強い嫌悪を示す一方、
+          相方PCであるアンドロイドには毎朝「調子は？」と確認するなど、
+          細かな気配りを忘れない。
+        </p>
+
+        <p>
+          諦めたように見えて、何も諦めていない男。
+          冷たさの裏には、人間らしい執着と優しさが滲んでいる。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCENARIO -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          VOID
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- TABLE VIDEO -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        TABLE VIDEO
+      </h2>
+
+      <ul class="table-video-list">
+
+        <li>
+
+          <a
+            href="https://youtube.com/playlist?list=PLdsx3RB90c64&si=BDYEUf8XC1QQfzJK"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="table-video-link"
+          >
+
+            <span class="table-video-name">
+              VOID
+            </span>
+
+            <span class="table-video-label">
+              YouTube
+            </span>
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- IACHARA -->
+
+    <div class="sheet-link-area">
+
+      <a
+        href="https://iachara.com/view/12339517"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sheet-link"
+      >
+        いあきゃら ─ Character Sheet
+      </a>
+
+    </div>
+
+
+    <footer class="footer">
+      YUKAMENSEKI CHARACTER ARCHIVE
+    </footer>
+
+
+  </main>
+
+
+  <script>
+
+    function changePortrait(imageName) {
+
+      document.getElementById("portrait").src = imageName;
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
