@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>柏原 碇 ─ CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE / FILE 023
+      </div>
+
+      <h1 class="character-name">
+        柏原 碇
+      </h1>
+
+      <div class="character-name-kana">
+        かいばら いかり
+      </div>
+
+    </header>
+
+
+    <a
+      class="back"
+      href="index.html"
+    >
+      ← BACK TO ARCHIVE
+    </a>
+
+
+    <div class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="ikari-normal.png"
+        alt="柏原 碇"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('ikari-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('ikari-serious.png')"
+        >
+          SERIOUS
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PERSONAL DATA
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+          <div class="data-label">
+            AGE
+          </div>
+          <div class="data-value">
+            16
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            GENDER
+          </div>
+          <div class="data-value">
+            男
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            OCCUPATION
+          </div>
+          <div class="data-value">
+            高校生
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+          <div class="data-value">
+            3月13日
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            HEIGHT
+          </div>
+          <div class="data-value">
+            176cm
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            WEIGHT
+          </div>
+          <div class="data-value">
+            57kg
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+          <div class="data-value">
+            僕・俺
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+          <div class="data-value">
+            君・お前
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            LIKES
+          </div>
+          <div class="data-value">
+            支配
+          </div>
+        </div>
+
+        <div class="data-row">
+          <div class="data-label">
+            DISLIKES
+          </div>
+          <div class="data-value">
+            思い通りにならない事
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <div class="quote">
+          「全てを嫌ったお前は、結局は俺のところに戻ってくる。必ずね。」
+        </div>
+
+        <p>
+          学校では生徒会長を務める、真面目で誠実な優等生。
+          誰に対しても礼儀正しく、いつも穏やかな笑顔を絶やさない。
+          成績は学年トップクラスで、スポーツも万能。
+          そのうえ努力も怠らないことから、
+          学内では「完璧な生徒会長」「理想のリーダー」として知られている。
+        </p>
+
+        <p>
+          しかし、それはあくまで表向きの顔に過ぎない。
+          柏原 碇は、自分が周囲から抱かれている「正義」のイメージを
+          崩さないことを徹底している。
+          人当たりの良さも、誠実さも、優しさも、
+          すべてを自分の立場を維持するために利用することができる。
+        </p>
+
+        <p>
+          その裏では、幼馴染である相方PCに対して陰湿かつ周到な行動を重ねている。
+          相方PCが周囲から孤立するよう、些細な仕掛けを積み重ね、
+          クラスメイトの持ち物から物を抜き取って盗難の噂を流すなど、
+          一見すると偶然に見える形で問題を引き起こしていく。
+        </p>
+
+        <p>
+          その一方で、人前ではあえて相方PCを庇うように振る舞う。
+          「自分が庇っているから、この程度で済んでいる」という構図を作り、
+          周囲から自分への疑念を抱かせることなく、
+          相方PCを問題のある人物として扱わせていく。
+          表向きの善意と裏側の悪意を巧妙に使い分け、
+          自分にとって都合の良い状況を作り上げることに長けている。
+        </p>
+
+        <p>
+          碇は非常に強い支配欲と独占欲を持っている。
+          相方PCを誰にも渡したくないという気持ちは、
+          確かに愛情から生まれたものでもある。
+          しかし、それ以上に強いのは「自分のものであってほしい」という所有感である。
+          相方PCが新しい交友関係を築こうとすれば、
+          噂を流したり、相手に小さな悪意を植え付けたりすることで、
+          その関係を巧妙に壊していく。
+        </p>
+
+        <p>
+          周囲には彼の言動を支持する人間もおり、
+          いわゆるイエスマンとして彼のやり方を受け入れている者も少なくない。
+          また、教師や保護者からも模範的な生徒として認識されているため、
+          問題が起きたとしても「個人同士の不和」として処理されやすい。
+          そうした環境もまた、彼が周囲をコントロールすることを容易にしている。
+        </p>
+
+        <p>
+          彼にとって重要なのは、相方PCが最終的に自分のもとへ戻ってくること。
+          そのためなら、手段を選ぶつもりはない。
+          倫理や正しさよりも、「関係を維持すること」を優先する。
+          そして相方PCが離れていったあと、再び自分のところへ戻ってくる瞬間を確認するたびに、
+          彼は自分の行動が間違っていなかったのだと確信していく。
+        </p>
+
+        <p>
+          「戻ってくる」という事実そのものが、
+          彼にとっては自分が相方PCにとって必要な存在であることの証明になっている。
+          だからこそ、彼は何度でも同じことを繰り返す。
+          相方PCを失わないために、そして自分の支配が揺らがないように。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          レイジー
+        </li>
+
+      </ul>
+
+      <div class="sheet-link-area">
+
+        <a
+          href="https://iachara.com/view/11895169"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sheet-link"
+        >
+          いあきゃら ─ Character Sheet
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <footer class="footer">
+      床面積 CHARACTER ARCHIVE
+    </footer>
+
+  </div>
+
+
+  <script>
+
+    function changePortrait(imageName) {
+      document.getElementById("portrait").src = imageName;
+    }
+
+  </script>
+
+</body>
+
+</html>
