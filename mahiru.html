@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>日向 茉昼 ─ CHARACTER ARCHIVE</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #0d120c;
+      color: #e8dfc8;
+      font-family:
+        "Times New Roman",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 0 70px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #a88b4a;
+      border-bottom: 1px solid #a88b4a;
+    }
+
+    .archive-label {
+      color: #99927f;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+    }
+
+    .character-name {
+      margin: 15px 0 8px;
+      color: #d7b866;
+      font-size: 38px;
+      letter-spacing: 0.12em;
+    }
+
+    .character-name-kana {
+      color: #99927f;
+      font-size: 13px;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 25px 0 10px;
+      color: #b9ad91;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .back:hover {
+      color: #d7b866;
+    }
+
+    .portrait-area {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 500px;
+      max-height: 650px;
+      object-fit: contain;
+      background: #090d08;
+    }
+
+    .portrait-buttons {
+      margin-top: 18px;
+    }
+
+    .portrait-button {
+      padding: 9px 18px;
+      margin: 4px;
+      border: 1px solid #77663f;
+      background: #0d120c;
+      color: #b9ad91;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .portrait-button:hover {
+      color: #d7b866;
+      border-color: #d7b866;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: #d7b866;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #a88b4a;
+      margin-top: 10px;
+    }
+
+    .data-box {
+      margin-top: 20px;
+      border: 1px solid #625536;
+      background: #111710;
+    }
+
+    .data-row {
+      display: flex;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .data-row:last-child {
+      border-bottom: none;
+    }
+
+    .data-label {
+      width: 38%;
+      padding: 13px;
+      color: #a88b4a;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      border-right: 1px solid #3f392b;
+    }
+
+    .data-value {
+      width: 62%;
+      padding: 13px;
+      color: #e8dfc8;
+    }
+
+    .profile-box {
+      margin-top: 20px;
+      padding: 22px;
+      border: 1px solid #625536;
+      background: #111710;
+      line-height: 2;
+      font-size: 14px;
+    }
+
+    .profile-box p {
+      margin: 0 0 20px;
+    }
+
+    .profile-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote {
+      margin: 0 0 20px;
+      padding: 15px;
+      border-left: 2px solid #a88b4a;
+      color: #d7b866;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .scenario-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .scenario-list li {
+      margin-bottom: 10px;
+      padding: 13px 15px;
+      border: 1px solid #4f4633;
+      background: #111710;
+      color: #d0c7b2;
+    }
+
+    .sheet-link-area {
+      margin-top: 18px;
+      text-align: right;
+    }
+
+    .sheet-link {
+      color: #777261;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
+    .sheet-link:hover {
+      color: #d7b866;
+    }
+
+    .table-video-list {
+      margin-top: 20px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .table-video-list li {
+      margin-bottom: 4px;
+      padding: 14px 10px;
+      border-bottom: 1px solid #3f392b;
+    }
+
+    .table-video-link {
+      display: block;
+      position: relative;
+      padding-left: 22px;
+      color: #d0c7b2;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .table-video-link::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #a88b4a;
+      font-size: 10px;
+    }
+
+    .table-video-link:hover {
+      color: #d7b866;
+    }
+
+    .table-video-link:hover::before {
+      color: #d7b866;
+    }
+
+    .table-video-name {
+      display: block;
+    }
+
+    .table-video-label {
+      display: block;
+      margin-top: 2px;
+      color: #777261;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #4f4633;
+      text-align: center;
+      color: #777261;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 600px) {
+
+      .character-name {
+        font-size: 30px;
+      }
+
+      .portrait {
+        max-height: 560px;
+      }
+
+      .data-label {
+        width: 40%;
+      }
+
+      .data-value {
+        width: 60%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+
+    <header class="header">
+
+      <div class="archive-label">
+        CHARACTER ARCHIVE/027
+      </div>
+
+      <h1 class="character-name">
+        日向 茉昼
+      </h1>
+
+      <div class="character-name-kana">
+        ひゅうが まひる
+      </div>
+
+    </header>
+
+
+    <a
+      href="index.html"
+      class="back"
+    >
+      ← BACK TO ARCHIVE
+    </a>
+
+
+    <div class="portrait-area">
+
+      <img
+        id="portrait"
+        class="portrait"
+        src="mahiru-normal.png"
+        alt="日向 茉昼"
+      >
+
+      <div class="portrait-buttons">
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('mahiru-normal.png')"
+        >
+          NORMAL
+        </button>
+
+        <button
+          class="portrait-button"
+          onclick="changePortrait('mahiru-maid.png')"
+        >
+          MAID
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        DATA
+      </h2>
+
+      <div class="data-box">
+
+        <div class="data-row">
+
+          <div class="data-label">
+            AGE
+          </div>
+
+          <div class="data-value">
+            20
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            GENDER
+          </div>
+
+          <div class="data-value">
+            男
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            OCCUPATION
+          </div>
+
+          <div class="data-value">
+            大学生
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            BIRTHDAY
+          </div>
+
+          <div class="data-value">
+            6月21日
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            HEIGHT
+          </div>
+
+          <div class="data-value">
+            169cm
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            WEIGHT
+          </div>
+
+          <div class="data-value">
+            55kg
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            FIRST PERSON
+          </div>
+
+          <div class="data-value">
+            俺
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            SECOND PERSON
+          </div>
+
+          <div class="data-value">
+            お前
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            LIKES
+          </div>
+
+          <div class="data-value">
+            焼肉
+          </div>
+
+        </div>
+
+
+        <div class="data-row">
+
+          <div class="data-label">
+            DISLIKES
+          </div>
+
+          <div class="data-value">
+            幽霊
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        PROFILE
+      </h2>
+
+      <div class="profile-box">
+
+        <p>
+          明るく社交的な性格で、場の空気を和ませることが得意。
+          一方で非常に怖がりな一面があり、特に幽霊や心霊現象などの
+          ホラー・オカルト系を大の苦手としている。
+        </p>
+
+        <p>
+          幼なじみである相方PCとは家が近く、二歳年上の相方PCを
+          いつも先を行く「憧れの兄貴分」のように見ている。
+          小学生の頃から一緒に遊んでいたため、実際の年齢差ほど
+          相手を年上として意識することはなく、自然な距離感で接している。
+        </p>
+
+        <p>
+          根っからのネット世代で、小学生の頃に実況動画にハマったことを
+          きっかけに、自分もいつか動画を作る側になりたいと思うようになった。
+          ただし、ホラー・オカルト・心霊系だけは別格で苦手としており、
+          夏の怪談番組を見ただけで泣き出し、トイレに行けなくなるほどの怖がりである。
+        </p>
+
+        <p>
+          大学入学後、相方PCから「YouTubeやってみない？」と誘われ、
+          これまで見ていた動画がゲーム実況に偏っていたこともあり、
+          ゲーム実況チャンネルを始めるものだと思って承諾した。
+          しかし、実際に始まったのは本格的なオカルト取材チャンネルだった。
+        </p>
+
+        <p>
+          当初は毎回のように怖がり、悲鳴を上げていたものの、
+          そのリアクションが視聴者から「面白い」と評判になり、
+          次第に人気を集めるようになる。
+          「茉昼くんの悲鳴が安心する」「この人だけ本気で怖がってるの草」
+          といったコメントが寄せられるほどで、本人としては不本意ながらも
+          チャンネルを完全にやめづらい状況になっている。
+        </p>
+
+        <p>
+          相方PCが大学進学を機に実家を出て一人暮らしを始めた際には、
+          「これでようやくオカルトから離れられる」と思っていた。
+          しかし、二年間離れて暮らしてみると、思っていた以上に寂しさを
+          感じるようになる。
+        </p>
+
+        <p>
+          そこで「その大学に行きたい」という口実を作り、相方PCの家に
+          転がり込むことになる。もともと相方PCは生活力に乏しいタイプでもあり、
+          放っておけないという気持ちも強かった。
+          結局のところ、怖いものから離れるためではなく、
+          大切な幼なじみのそばにいるために、自らその生活を選んでいる。
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        SCENARIO
+      </h2>
+
+      <ul class="scenario-list">
+
+        <li>
+          夜刀神の境界
+        </li>
+
+        <li>
+          MAIDS AND WEAPONS
+        </li>
+
+      </ul>
+
+
+      <div class="sheet-link-area">
+
+        <a
+          href="https://iachara.com/view/12892522"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="sheet-link"
+        >
+          いあきゃら ─ Character Sheet
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2 class="section-title">
+        TABLE VIDEO
+      </h2>
+
+      <ul class="table-video-list">
+
+        <li>
+
+          <a
+            href="https://youtube.com/playlist?list=PLRo2Z-ZfcARM&si=YzGLW2lPgTP8i7Bf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="table-video-link"
+          >
+
+            <span class="table-video-name">
+              夜刀神の境界
+            </span>
+
+            <span class="table-video-label">
+              YouTube
+            </span>
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a
+            href="https://youtube.com/playlist?list=PLCvzft2LN318&si=eFD5K0D8hmIdtK_r"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="table-video-link"
+          >
+
+            <span class="table-video-name">
+              MAIDS AND WEAPONS
+            </span>
+
+            <span class="table-video-label">
+              YouTube
+            </span>
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <footer class="footer">
+      YUKAMENSEKI CHARACTER ARCHIVE
+    </footer>
+
+
+  </div>
+
+
+  <script>
+
+    function changePortrait(imageName) {
+
+      document.getElementById("portrait").src = imageName;
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
