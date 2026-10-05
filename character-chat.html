@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>CHARACTER CHAT | 床面積 CHARACTER ARCHIVE</title>
+
+<link rel="stylesheet" href="menu.css">
+
+<script src="menu.js" defer></script>
+
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  background: #080c08;
+  color: #e8dfc8;
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+
+.container {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0 70px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  text-align: center;
+  padding: 28px 15px;
+  border-top: 1px solid #a88b4a;
+  border-bottom: 1px solid #a88b4a;
+}
+
+
+.archive-label {
+  color: #777261;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+
+.page-title {
+  margin: 12px 0 7px;
+  color: #d7b866;
+  font-size: 28px;
+  letter-spacing: 0.15em;
+}
+
+
+.page-subtitle {
+  color: #99927f;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back {
+  display: inline-block;
+  margin: 24px 0 10px;
+  color: #b9ad91;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+
+.back:hover {
+  color: #d7b866;
+}
+
+
+/* =========================
+   CHARACTER AREA
+========================= */
+
+.character-room {
+  margin-top: 25px;
+  border: 1px solid #625536;
+  background: #111710;
+}
+
+
+/* =========================
+   CHARACTER HEADER
+========================= */
+
+.character-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid #4f4633;
+  text-align: center;
+}
+
+
+.character-file {
+  color: #a88b4a;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+
+
+.character-name {
+  margin: 7px 0 3px;
+  color: #d7b866;
+  font-size: 25px;
+  letter-spacing: 0.1em;
+}
+
+
+.character-job {
+  color: #777261;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================
+   PORTRAIT
+========================= */
+
+.portrait-area {
+  padding: 25px 20px 10px;
+  text-align: center;
+}
+
+
+.character-portrait {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: 500px;
+  margin: 0 auto;
+  object-fit: contain;
+  background: #090d08;
+}
+
+
+/* =========================
+   DIALOGUE
+========================= */
+
+.dialogue-area {
+  padding: 10px 25px 25px;
+}
+
+
+.dialogue-box {
+  min-height: 110px;
+  padding: 20px;
+  border: 1px solid #625536;
+  background: #0b0f0a;
+}
+
+
+.dialogue-name {
+  margin-bottom: 10px;
+  color: #a88b4a;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
+
+.dialogue-text {
+  margin: 0;
+  color: #e8dfc8;
+  font-size: 15px;
+  line-height: 2;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.command-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+
+.command-button {
+  padding: 14px 10px;
+  border: 1px solid #77663f;
+  background: #0d120c;
+  color: #d0c7b2;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+
+.command-button:hover {
+  border-color: #d7b866;
+  color: #d7b866;
+  background: #111710;
+}
+
+
+/* =========================
+   SYSTEM MESSAGE
+========================= */
+
+.system-message {
+  margin-top: 15px;
+  color: #777261;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error-message {
+  margin-top: 60px;
+  padding: 40px 20px;
+  border: 1px solid #625536;
+  background: #111710;
+  text-align: center;
+}
+
+
+.error-title {
+  color: #d7b866;
+  font-size: 20px;
+}
+
+
+.error-text {
+  margin-top: 15px;
+  color: #777261;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid #4f4633;
+  text-align: center;
+  color: #777261;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: 92%;
+    padding-top: 25px;
+  }
+
+
+  .character-name {
+    font-size: 22px;
+  }
+
+
+  .character-portrait {
+    height: 430px;
+  }
+
+
+  .dialogue-area {
+    padding: 10px 15px 20px;
+  }
+
+
+  .dialogue-box {
+    padding: 17px;
+  }
+
+
+  .dialogue-text {
+    font-size: 14px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE
+    </div>
+
+    <h1 class="page-title">
+      CHARACTER CHAT
+    </h1>
+
+    <div class="page-subtitle">
+      INTERACTION SYSTEM
+    </div>
+
+  </header>
+
+
+  <a
+    href="chat.html"
+    class="back"
+  >
+    ← CHARACTER SELECT
+  </a>
+
+
+  <main id="chatArea"></main>
+
+
+  <footer class="footer">
+    YUKAMENSEKI CHARACTER ARCHIVE
+  </footer>
+
+
+</div>
+
+
+<script>
+
+/* =========================
+   CHARACTER DATA
+========================= */
+
+const characters = {
+
+  kaoru: {
+
+    file: "FILE 001",
+
+    name: "月下 香",
+
+    job: "KILLER / 22F",
+
+    image: "kaoru-normal.png",
+
+    lines: [
+
+      "……誰？",
+
+      "ねえ、今日は何して遊ぶ？",
+
+      "私に何か用？",
+
+      "ふふ、そんなに見つめられると恥ずかしいな。",
+
+      "甘いものなら、いつでも歓迎だよ！",
+
+      "ねえねえ、何か面白い話してよ。",
+
+      "「遺書」って、人生最大のラブレターだと思わない？"
+
+    ]
+
+  }
+
+};
+
+
+/* =========================
+   GET CHARACTER
+========================= */
+
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+
+const characterId =
+  params.get("character");
+
+
+const character =
+  characters[characterId];
+
+
+const chatArea =
+  document.getElementById("chatArea");
+
+
+/* =========================
+   ERROR
+========================= */
+
+if (!character) {
+
+  chatArea.innerHTML = `
+
+    <section class="error-message">
+
+      <div class="error-title">
+        CHARACTER NOT FOUND
+      </div>
+
+      <div class="error-text">
+        キャラクター情報を読み込めませんでした。
+      </div>
+
+    </section>
+
+  `;
+
+} else {
+
+
+  /* =========================
+     CREATE ROOM
+  ========================= */
+
+  chatArea.innerHTML = `
+
+    <section class="character-room">
+
+      <header class="character-header">
+
+        <div class="character-file">
+          ${character.file}
+        </div>
+
+        <h2 class="character-name">
+          ${character.name}
+        </h2>
+
+        <div class="character-job">
+          ${character.job}
+        </div>
+
+      </header>
+
+
+      <div class="portrait-area">
+
+        <img
+          id="characterPortrait"
+          class="character-portrait"
+          src="${character.image}"
+          alt="${character.name}"
+        >
+
+      </div>
+
+
+      <div class="dialogue-area">
+
+        <div class="dialogue-box">
+
+          <div class="dialogue-name">
+            ${character.name}
+          </div>
+
+          <p
+            id="dialogueText"
+            class="dialogue-text"
+          >
+            ${character.lines[0]}
+          </p>
+
+        </div>
+
+
+        <div class="command-area">
+
+          <button
+            class="command-button"
+            id="talkButton"
+          >
+            TALK
+          </button>
+
+          <button
+            class="command-button"
+            id="questionButton"
+          >
+            ASK
+          </button>
+
+        </div>
+
+
+        <div
+          id="systemMessage"
+          class="system-message"
+        >
+          TAP TALK TO SPEAK
+        </div>
+
+      </div>
+
+    </section>
+
+  `;
+
+
+  /* =========================
+     TALK SYSTEM
+  ========================= */
+
+  const dialogueText =
+    document.getElementById(
+      "dialogueText"
+    );
+
+
+  const systemMessage =
+    document.getElementById(
+      "systemMessage"
+    );
+
+
+  const talkButton =
+    document.getElementById(
+      "talkButton"
+    );
+
+
+  let talkIndex = 0;
+
+
+  talkButton.addEventListener(
+    "click",
+    function () {
+
+      talkIndex++;
+
+      if (
+        talkIndex >=
+        character.lines.length
+      ) {
+
+        talkIndex = 0;
+
+      }
+
+
+      dialogueText.textContent =
+        character.lines[talkIndex];
+
+
+      systemMessage.textContent =
+        "TALK " +
+        String(talkIndex + 1)
+          .padStart(2, "0");
+
+    }
+  );
+
+
+  /* =========================
+     ASK
+  ========================= */
+
+  const questionButton =
+    document.getElementById(
+      "questionButton"
+    );
+
+
+  questionButton.addEventListener(
+    "click",
+    function () {
+
+      dialogueText.textContent =
+        "……何を聞きたいの？";
+
+      systemMessage.textContent =
+        "QUESTION SYSTEM / COMING SOON";
+
+    }
+  );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
