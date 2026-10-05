@@ -509,7 +509,7 @@ body {
 ========================= */
 
 .birthday-record-list {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .birthday-record-item {
@@ -539,6 +539,16 @@ body {
   font-size: 11px;
   line-height: 1.7;
   letter-spacing: 0.05em;
+}
+
+.birthday-record-description {
+  margin: 20px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #3f392b;
+  color: #777261;
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
 }
 
 .no-birthday {
@@ -667,6 +677,7 @@ body {
 
 
   <section class="info-section">
+<section class="info-section">
 
   <h2 class="section-title">
     BIRTHDAY RECORD
@@ -674,19 +685,19 @@ body {
 
   <div class="birthday-summary">
 
-    <p>
-      床面積 CHARACTER ARCHIVE に登録された
-      探索者の誕生日を記録しています。
-    </p>
-
     <div
       id="birthdayRecordList"
       class="birthday-record-list"
     ></div>
 
+    <p class="birthday-record-description">
+      床面積 CHARACTER ARCHIVE に登録された
+      探索者の誕生日を記録しています。
+    </p>
+
   </div>
 
-  </section>
+</section>
 
 
   <footer class="footer">
