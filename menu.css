@@ -1,0 +1,230 @@
+/* =========================
+   FLOOR AREA CHARACTER ARCHIVE
+   SIDE MENU
+========================= */
+
+.menu-button {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1002;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 10px;
+
+  border: 1px solid #77663f;
+  background: #0d120c;
+
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+
+  width: 22px;
+  height: 1px;
+
+  margin: 5px auto;
+
+  background: #d7b866;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* メニューが開いたとき */
+
+.menu-button.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-button.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* =========================
+   SIDE MENU
+========================= */
+
+.side-menu {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1001;
+
+  width: 300px;
+  max-width: 82vw;
+  height: 100vh;
+
+  padding: 90px 25px 30px;
+
+  background: #0d120c;
+
+  border-right: 1px solid #a88b4a;
+
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.5);
+
+  transform: translateX(-100%);
+
+  transition: transform 0.35s ease;
+
+  overflow-y: auto;
+}
+
+.side-menu.is-open {
+  transform: translateX(0);
+}
+
+
+/* メニュー上部 */
+
+.menu-title {
+  margin-bottom: 35px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #4f4633;
+
+  text-align: center;
+}
+
+.menu-title-main {
+  color: #d7b866;
+
+  font-size: 18px;
+
+  letter-spacing: 0.16em;
+}
+
+.menu-title-sub {
+  margin-top: 7px;
+
+  color: #777261;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================
+   MENU LINKS
+========================= */
+
+.menu-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menu-list li {
+  margin-bottom: 8px;
+}
+
+.menu-link {
+  display: block;
+
+  padding: 14px 12px;
+
+  color: #d0c7b2;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #3f392b;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.menu-link:hover {
+  padding-left: 18px;
+
+  color: #d7b866;
+}
+
+.menu-link-main {
+  display: block;
+
+  font-size: 14px;
+
+  letter-spacing: 0.12em;
+}
+
+.menu-link-sub {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #777261;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+}
+
+.menu-link:hover .menu-link-sub {
+  color: #a88b4a;
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.menu-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.menu-overlay.is-open {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .menu-button {
+    top: 12px;
+    left: 12px;
+
+    width: 42px;
+    height: 42px;
+  }
+
+  .side-menu {
+    width: 290px;
+  }
+
+}
