@@ -1150,6 +1150,7 @@ document
       );
 
       renderCalendar();
+      renderBirthdayRecord();
 
     }
   );
@@ -1166,16 +1167,82 @@ document
       );
 
       renderCalendar();
+      renderBirthdayRecord();
 
     }
   );
 
 
+/* =========================
+   BIRTHDAY RECORD
+========================= */
+
+function renderBirthdayRecord() {
+
+  const recordList =
+    document.getElementById("birthdayRecordList");
+
+  const monthNumber =
+    currentDate.getMonth() + 1;
+
+  const monthBirthdays =
+    birthdays[monthNumber] || [];
+
+
+  if (monthBirthdays.length === 0) {
+
+    recordList.innerHTML = `
+      <p class="no-birthday">
+        この月に登録された誕生日はありません。
+      </p>
+    `;
+
+    return;
+  }
+
+
+  recordList.innerHTML =
+    monthBirthdays.map(
+      function (birthday) {
+
+        return `
+          <div class="birthday-record-item">
+
+            <a
+              href="${birthday.url}"
+              class="birthday-record-name"
+            >
+              ${monthNumber}月${birthday.day}日　${birthday.name}
+            </a>
+
+            ${
+              birthday.reason
+                ? `
+                  <div class="birthday-record-reason">
+                    ${birthday.reason}
+                  </div>
+                `
+                : ""
+            }
+
+          </div>
+        `;
+
+      }
+    ).join("");
+
+}
+
+
+/* =========================
+   INITIAL DISPLAY
+========================= */
+
 renderCalendar();
+renderBirthdayRecord();
 
 
 </script>
-
 
 </body>
 
