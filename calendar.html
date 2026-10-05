@@ -622,22 +622,19 @@ body {
   </section>
 
 
-  <section class="info-section">
+  <section class="section">
+  <h2 class="section-title">
+    BIRTHDAY RECORD
+  </h2>
 
-    <h2 class="section-title">
-      BIRTHDAY RECORD
-    </h2>
+  <div class="profile-box">
+    <p>
+      床面積 CHARACTER ARCHIVE に登録された
+      探索者の誕生日を記録しています。
+    </p>
 
-
-    <div class="birthday-summary">
-
-      <p>
-        床面積 CHARACTER ARCHIVE に登録された
-        探索者の誕生日を記録しています。
-      </p>
-
-    </div>
-
+    <div id="birthdayRecordList"></div>
+  </div>
   </section>
 
 
@@ -663,6 +660,7 @@ const birthdays = {
       day: 31,
       name: "白妙 葉生",
       url: "you.html"
+      reason: "シロタエギク 誕生花"
     }
   ],
 
@@ -671,18 +669,21 @@ const birthdays = {
       day: 2,
       name: "三色 菫",
       url: "sumire.html"
+      reason: "パンジー 誕生花"
     },
 
     {
       day: 20,
       name: "牡鹿 密列",
       url: "mitsure.html"
+      reason: "世界社会正義の日"
     },
 
     {
       day: 26,
       name: "白石 霞実",
       url: "kasumi.html"
+      reason: "包む（ラッピング）の日"
     }
   ],
 
@@ -691,24 +692,28 @@ const birthdays = {
       day: 13,
       name: "柏原 碇",
       url: "ikari.html"
+      reason: "イカリソウ 誕生花"
     },
 
     {
       day: 21,
       name: "春川 咲",
       url: "saku.html"
+      reason: "春分の日"
     },
 
     {
       day: 22,
       name: "冷泉 一葉",
       url: "kazuha.html"
+      reason: "ヒトツバマメ 誕生花"
     },
 
     {
       day: 27,
       name: "花園 美桜",
       url: "mio.html"
+      reason: "さくらの日"
     }
   ],
 
@@ -717,18 +722,21 @@ const birthdays = {
       day: 14,
       name: "逢望 栄飛",
       url: "eihi.html"
+      reason: "オレンジデー"
     },
 
     {
       day: 17,
       name: "伏翼 天鼠",
       url: "tenso.html"
+      reason: "アヤメ 誕生花"
     },
 
     {
       day: 29,
       name: "蔵芝 廿楽",
       url: "tsuzura.html"
+      reason: "家族と暮らす動物の幸せを考える日"
     }
   ],
 
@@ -737,12 +745,14 @@ const birthdays = {
       day: 4,
       name: "章姫 苺果",
       url: "ichika.html"
+      reason: "イチゴ 誕生花"
     },
 
     {
       day: 31,
       name: "神代 藤華",
       url: "touka.html"
+      reason: "フジ 誕生花"
     }
   ],
 
@@ -751,30 +761,35 @@ const birthdays = {
       day: 3,
       name: "四葩 集真",
       url: "azuma.html"
+      reason: "紫陽花 誕生花"
     },
 
     {
       day: 4,
       name: "東郷 空木",
       url: "utsugi.html"
+      reason: "ウツギ 誕生花"
     },
 
     {
       day: 12,
       name: "八尋 凪",
       url: "nagi.html"
+      reason: "日記の日"
     },
 
     {
       day: 16,
       name: "月下 香",
       url: "kaoru.html"
+      reason: "チューベローズ 誕生花"
     },
 
     {
       day: 21,
       name: "日向 茉昼",
       url: "mahiru.html"
+      reason: "夏至の日"
     }
   ],
 
@@ -783,12 +798,14 @@ const birthdays = {
       day: 18,
       name: "入狗 梨明日",
       url: "rias.html"
+      reason: "光化学スモッグの日"
     },
 
     {
       day: 19,
       name: "落月 吏斗",
       url: "rito.html"
+      reason: "トリカブト 誕生花"
     }
   ],
 
@@ -797,24 +814,28 @@ const birthdays = {
       day: 1,
       name: "方波見 晴",
       url: "sei.html"
+      reason: ""
     },
 
     {
       day: 6,
       name: "夜雨 隼人",
       url: "hayato.html"
+      reason: "雨水の日"
     },
 
     {
       day: 16,
       name: "御薬袋 渉羽",
       url: "shou.html"
+      reason: "オミナエシ 誕生花"
     },
 
     {
       day: 19,
       name: "九重 快信",
       url: "kashin.html"
+      reason: ""
     }
   ],
 
@@ -823,34 +844,37 @@ const birthdays = {
       day: 13,
       name: "観月 彰",
       url: "aki.html"
+      reason: "十三夜の日"
     }
   ],
 
   10: [
-    {
-      day: 1,
-      name: "イスト・ツァイトガ",
-      url: "zeitga.html"
-    },
-
-    {
-      day: 5,
-      name: "神無月 狐影",
-      url: "kokage.html"
-    },
-
-    {
-      day: 16,
-      name: "白宮 由良",
-      url: "yura.html"
-    }
-  ],
+  {
+    day: 1,
+    name: "イスト・ツァイトガ",
+    url: "zeitga.html",
+    reason: "国際音楽の日"
+  },
+  {
+    day: 5,
+    name: "神無月 狐影",
+    url: "kokage.html",
+    reason: "天狐の日"
+  },
+  {
+    day: 16,
+    name: "白宮 由良",
+    url: "yura.html",
+    reason: "野良猫の日"
+  }
+],
 
   11: [
     {
       day: 18,
       name: "燈下 珠心",
       url: "susane.html"
+      reason: "くまの日"
     }
   ],
 
@@ -859,18 +883,21 @@ const birthdays = {
       day: 1,
       name: "世那 響",
       url: "hibiki.html"
+      reason: "カランコエ 誕生花"
     },
 
     {
       day: 2,
       name: "フスタ",
       url: "fusta.html"
+      reason: "コノテガシワ 誕生花"
     },
 
     {
       day: 6,
       name: "新井 伊縁",
       url: "iyori.html"
+      reason: "姉の日"
     }
   ]
 
