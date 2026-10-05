@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>CHAT | 床面積 CHARACTER ARCHIVE</title>
+
+<link rel="stylesheet" href="menu.css">
+
+<script src="menu.js" defer></script>
+
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+
+  background: #080c08;
+
+  color: #e8dfc8;
+
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+
+.container {
+
+  width: 94%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 35px 0 70px;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+  text-align: center;
+
+  padding: 30px 15px;
+
+  border-top: 1px solid #a88b4a;
+
+  border-bottom: 1px solid #a88b4a;
+
+}
+
+
+.archive-label {
+
+  color: #777261;
+
+  font-size: 11px;
+
+  letter-spacing: 0.25em;
+
+}
+
+
+.page-title {
+
+  margin: 14px 0 7px;
+
+  color: #d7b866;
+
+  font-size: 38px;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+.page-subtitle {
+
+  color: #99927f;
+
+  font-size: 12px;
+
+  letter-spacing: 0.18em;
+
+}
+
+
+.back {
+
+  display: inline-block;
+
+  margin: 24px 0 20px;
+
+  color: #b9ad91;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+}
+
+
+.back:hover {
+
+  color: #d7b866;
+
+}
+
+
+/* =========================
+   SELECT AREA
+========================= */
+
+.select-header {
+
+  margin-top: 20px;
+
+  text-align: center;
+
+}
+
+
+.select-label {
+
+  color: #777261;
+
+  font-size: 10px;
+
+  letter-spacing: 0.22em;
+
+}
+
+
+.select-title {
+
+  margin: 10px 0 0;
+
+  color: #d7b866;
+
+  font-size: 22px;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+/* =========================
+   CHARACTER GRID
+========================= */
+
+.character-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-top: 35px;
+
+}
+
+
+/* =========================
+   CHARACTER CARD
+========================= */
+
+.character-card {
+
+  position: relative;
+
+  display: block;
+
+  overflow: hidden;
+
+  min-height: 270px;
+
+  border: 1px solid #4f4633;
+
+  background: #111710;
+
+  color: #e8dfc8;
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+.character-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 8, 5, 0.95),
+      rgba(5, 8, 5, 0.15) 60%,
+      rgba(5, 8, 5, 0)
+    );
+
+  pointer-events: none;
+
+}
+
+
+.character-card:hover {
+
+  border-color: #d7b866;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* =========================
+   CHARACTER IMAGE
+========================= */
+
+.character-image {
+
+  display: block;
+
+  width: 100%;
+
+  height: 270px;
+
+  object-fit: cover;
+
+  object-position: center top;
+
+  background: #090d08;
+
+}
+
+
+/* =========================
+   CHARACTER INFORMATION
+========================= */
+
+.character-info {
+
+  position: absolute;
+
+  z-index: 2;
+
+  right: 0;
+
+  bottom: 0;
+
+  left: 0;
+
+  padding: 18px 15px 14px;
+
+}
+
+
+.character-file {
+
+  color: #a88b4a;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.character-name {
+
+  margin: 5px 0 3px;
+
+  color: #d7b866;
+
+  font-size: 18px;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.character-job {
+
+  color: #99927f;
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+/* =========================
+   SELECT INDICATOR
+========================= */
+
+.select-indicator {
+
+  position: absolute;
+
+  z-index: 3;
+
+  top: 10px;
+
+  right: 10px;
+
+  padding: 4px 7px;
+
+  border: 1px solid #77663f;
+
+  background: rgba(8, 12, 8, 0.8);
+
+  color: #a88b4a;
+
+  font-size: 8px;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+  margin-top: 65px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #4f4633;
+
+  text-align: center;
+
+  color: #777261;
+
+  font-size: 10px;
+
+  letter-spacing: 0.1em;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .character-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .container {
+
+    width: 92%;
+
+    padding-top: 25px;
+
+  }
+
+
+  .page-title {
+
+    font-size: 30px;
+
+  }
+
+
+  .character-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+  }
+
+
+  .character-card {
+
+    min-height: 230px;
+
+  }
+
+
+  .character-image {
+
+    height: 230px;
+
+  }
+
+
+  .character-info {
+
+    padding: 13px 10px 11px;
+
+  }
+
+
+  .character-name {
+
+    font-size: 14px;
+
+  }
+
+
+  .character-job {
+
+    font-size: 8px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE
+    </div>
+
+    <h1 class="page-title">
+      CHAT
+    </h1>
+
+    <div class="page-subtitle">
+      CHARACTER CHAT
+    </div>
+
+  </header>
+
+
+  <a
+    href="index.html"
+    class="back"
+  >
+    ← CHARACTER ARCHIVE
+  </a>
+
+
+  <section class="select-header">
+
+    <div class="select-label">
+      CHARACTER SELECT
+    </div>
+
+    <h2 class="select-title">
+      SELECT CHARACTER
+    </h2>
+
+  </section>
+
+
+  <main class="character-grid">
+
+
+    <!-- FILE 001 -->
+
+    <a
+      href="character-chat.html?character=kaoru"
+      class="character-card"
+    >
+
+      <img
+        src="kaoru-normal.png"
+        class="character-image"
+        alt="月下 香"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 001
+        </div>
+
+        <div class="character-name">
+          月下 香
+        </div>
+
+        <div class="character-job">
+          KILLER / 22F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 002 -->
+
+    <a
+      href="character-chat.html?character=mio"
+      class="character-card"
+    >
+
+      <img
+        src="mio-normal.png"
+        class="character-image"
+        alt="花園 美桜"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 002
+        </div>
+
+        <div class="character-name">
+          花園 美桜
+        </div>
+
+        <div class="character-job">
+          UNIVERSITY STUDENT / 19F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 003 -->
+
+    <a
+      href="character-chat.html?character=shou"
+      class="character-card"
+    >
+
+      <img
+        src="shou-normal.png"
+        class="character-image"
+        alt="御薬袋 渉羽"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 003
+        </div>
+
+        <div class="character-name">
+          御薬袋 渉羽
+        </div>
+
+        <div class="character-job">
+          MENTAL THERAPIST / 26M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 004 -->
+
+    <a
+      href="character-chat.html?character=rias"
+      class="character-card"
+    >
+
+      <img
+        src="rias-normal.png"
+        class="character-image"
+        alt="入狗 梨明日"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 004
+        </div>
+
+        <div class="character-name">
+          入狗 梨明日
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 16F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 005 -->
+
+    <a
+      href="character-chat.html?character=saku"
+      class="character-card"
+    >
+
+      <img
+        src="saku-normal.png"
+        class="character-image"
+        alt="春川 咲"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 005
+        </div>
+
+        <div class="character-name">
+          春川 咲
+        </div>
+
+        <div class="character-job">
+          COMPANY EMPLOYEE / 25M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 006 -->
+
+    <a
+      href="character-chat.html?character=susane"
+      class="character-card"
+    >
+
+      <img
+        src="susane-normal.png"
+        class="character-image"
+        alt="燈下 珠心"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 006
+        </div>
+
+        <div class="character-name">
+          燈下 珠心
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 15F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 007 -->
+
+    <a
+      href="character-chat.html?character=utsugi"
+      class="character-card"
+    >
+
+      <img
+        src="utsugi-normal.png"
+        class="character-image"
+        alt="東郷 空木"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 007
+        </div>
+
+        <div class="character-name">
+          東郷 空木
+        </div>
+
+        <div class="character-job">
+          FREETER / 28M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 008 -->
+
+    <a
+      href="character-chat.html?character=iyori"
+      class="character-card"
+    >
+
+      <img
+        src="iyori-normal.png"
+        class="character-image"
+        alt="新井 伊縁"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 008
+        </div>
+
+        <div class="character-name">
+          新井 伊縁
+        </div>
+
+        <div class="character-job">
+          JUNIOR HIGH SCHOOL STUDENT / 14M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 009 -->
+
+    <a
+      href="character-chat.html?character=mitsure"
+      class="character-card"
+    >
+
+      <img
+        src="mitsure-normal.png"
+        class="character-image"
+        alt="牡鹿 密列"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 009
+        </div>
+
+        <div class="character-name">
+          牡鹿 密列
+        </div>
+
+        <div class="character-job">
+          POLICE OFFICER / 32M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 010 -->
+
+    <a
+      href="character-chat.html?character=eihi"
+      class="character-card"
+    >
+
+      <img
+        src="eihi-smile.png"
+        class="character-image"
+        alt="逢望 栄飛"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 010
+        </div>
+
+        <div class="character-name">
+          逢望 栄飛
+        </div>
+
+        <div class="character-job">
+          JUNIOR HIGH SCHOOL STUDENT / 15M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 011 -->
+
+    <a
+      href="character-chat.html?character=fusta"
+      class="character-card"
+    >
+
+      <img
+        src="fusta-normal.png"
+        class="character-image"
+        alt="フスタ"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 011
+        </div>
+
+        <div class="character-name">
+          フスタ
+        </div>
+
+        <div class="character-job">
+          FREETER / 17F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 012 -->
+
+    <a
+      href="character-chat.html?character=kazuha"
+      class="character-card"
+    >
+
+      <img
+        src="kazuha-normal.png"
+        class="character-image"
+        alt="冷泉 一葉"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 012
+        </div>
+
+        <div class="character-name">
+          冷泉 一葉
+        </div>
+
+        <div class="character-job">
+          UNIVERSITY STUDENT / 20M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 013 -->
+
+    <a
+      href="character-chat.html?character=rito"
+      class="character-card"
+    >
+
+      <img
+        src="rito-normal.png"
+        class="character-image"
+        alt="落月 吏斗"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 013
+        </div>
+
+        <div class="character-name">
+          落月 吏斗
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 17M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 014 -->
+
+    <a
+      href="character-chat.html?character=kokage"
+      class="character-card"
+    >
+
+      <img
+        src="kokage-normal.png"
+        class="character-image"
+        alt="神無月 狐影"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 014
+        </div>
+
+        <div class="character-name">
+          神無月 狐影
+        </div>
+
+        <div class="character-job">
+          KILLER / 22M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 015 -->
+
+    <a
+      href="character-chat.html?character=you"
+      class="character-card"
+    >
+
+      <img
+        src="you-normal.png"
+        class="character-image"
+        alt="白妙 葉生"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 015
+        </div>
+
+        <div class="character-name">
+          白妙 葉生
+        </div>
+
+        <div class="character-job">
+          TEACHER / 28M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 016 -->
+
+    <a
+      href="character-chat.html?character=ichika"
+      class="character-card"
+    >
+
+      <img
+        src="ichika-normal.png"
+        class="character-image"
+        alt="章姫 苺果"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 016
+        </div>
+
+        <div class="character-name">
+          章姫 苺果
+        </div>
+
+        <div class="character-job">
+          KINDERGARTEN CHILD / 3F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 017 -->
+
+    <a
+      href="character-chat.html?character=tenso"
+      class="character-card"
+    >
+
+      <img
+        src="tenso-normal.png"
+        class="character-image"
+        alt="伏翼 天鼠"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 017
+        </div>
+
+        <div class="character-name">
+          伏翼 天鼠
+        </div>
+
+        <div class="character-job">
+          UNIVERSITY STUDENT / 21M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 018 -->
+
+    <a
+      href="character-chat.html?character=sumire"
+      class="character-card"
+    >
+
+      <img
+        src="sumire-normal.png"
+        class="character-image"
+        alt="三色 菫"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 018
+        </div>
+
+        <div class="character-name">
+          三色 菫
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 17M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 019 -->
+
+    <a
+      href="character-chat.html?character=tsuzura"
+      class="character-card"
+    >
+
+      <img
+        src="tsuzura-normal.png"
+        class="character-image"
+        alt="蔵芝 廿楽"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 019
+        </div>
+
+        <div class="character-name">
+          蔵芝 廿楽
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 18M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 020 -->
+
+    <a
+      href="character-chat.html?character=hayato"
+      class="character-card"
+    >
+
+      <img
+        src="hayato-normal.png"
+        class="character-image"
+        alt="夜雨 隼人"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 020
+        </div>
+
+        <div class="character-name">
+          夜雨 隼人
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 16M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 021 -->
+
+    <a
+      href="character-chat.html?character=sei"
+      class="character-card"
+    >
+
+      <img
+        src="sei-normal.png"
+        class="character-image"
+        alt="方波見 晴"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 021
+        </div>
+
+        <div class="character-name">
+          方波見 晴
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 16M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 022 -->
+
+    <a
+      href="character-chat.html?character=zeitga"
+      class="character-card"
+    >
+
+      <img
+        src="zeitga-normal.png"
+        class="character-image"
+        alt="イスト・ツァイトガ"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 022
+        </div>
+
+        <div class="character-name">
+          イスト・ツァイトガ
+        </div>
+
+        <div class="character-job">
+          COMPOSER / 24M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 023 -->
+
+    <a
+      href="character-chat.html?character=ikari"
+      class="character-card"
+    >
+
+      <img
+        src="ikari-normal.png"
+        class="character-image"
+        alt="柏原 碇"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 023
+        </div>
+
+        <div class="character-name">
+          柏原 碇
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 16M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 024 -->
+
+    <a
+      href="character-chat.html?character=yura"
+      class="character-card"
+    >
+
+      <img
+        src="yura-normal.png"
+        class="character-image"
+        alt="白宮 由良"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 024
+        </div>
+
+        <div class="character-name">
+          白宮 由良
+        </div>
+
+        <div class="character-job">
+          MUSICIAN / 24M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 025 -->
+
+    <a
+      href="character-chat.html?character=touka"
+      class="character-card"
+    >
+
+      <img
+        src="touka-worried.png"
+        class="character-image"
+        alt="神代 藤華"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 025
+        </div>
+
+        <div class="character-name">
+          神代 藤華
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 16F
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 026 -->
+
+    <a
+      href="character-chat.html?character=azuma"
+      class="character-card"
+    >
+
+      <img
+        src="azuma-normal.png"
+        class="character-image"
+        alt="四葩 集真"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 026
+        </div>
+
+        <div class="character-name">
+          四葩 集真
+        </div>
+
+        <div class="character-job">
+          POLICE OFFICER / 38M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 027 -->
+
+    <a
+      href="character-chat.html?character=mahiru"
+      class="character-card"
+    >
+
+      <img
+        src="mahiru-normal.png"
+        class="character-image"
+        alt="日向 茉昼"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 027
+        </div>
+
+        <div class="character-name">
+          日向 茉昼
+        </div>
+
+        <div class="character-job">
+          UNIVERSITY STUDENT / 20M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 028 -->
+
+    <a
+      href="character-chat.html?character=aki"
+      class="character-card"
+    >
+
+      <img
+        src="aki-normal.png"
+        class="character-image"
+        alt="観月 彰"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 028
+        </div>
+
+        <div class="character-name">
+          観月 彰
+        </div>
+
+        <div class="character-job">
+          UNIVERSITY STUDENT / 22M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 029 -->
+
+    <a
+      href="character-chat.html?character=kashin"
+      class="character-card"
+    >
+
+      <img
+        src="kashin-normal.png"
+        class="character-image"
+        alt="九重 快信"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 029
+        </div>
+
+        <div class="character-name">
+          九重 快信
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 17M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 030 -->
+
+    <a
+      href="character-chat.html?character=kasumi"
+      class="character-card"
+    >
+
+      <img
+        src="kasumi-normal.png"
+        class="character-image"
+        alt="白石 霞実"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 030
+        </div>
+
+        <div class="character-name">
+          白石 霞実
+        </div>
+
+        <div class="character-job">
+          NOVELIST / 29M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 031 -->
+
+    <a
+      href="character-chat.html?character=hibiki"
+      class="character-card"
+    >
+
+      <img
+        src="hibiki-normal.png"
+        class="character-image"
+        alt="世那 響"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 031
+        </div>
+
+        <div class="character-name">
+          世那 響
+        </div>
+
+        <div class="character-job">
+          HIGH SCHOOL STUDENT / 16M
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- FILE 032 -->
+
+    <a
+      href="character-chat.html?character=nagi"
+      class="character-card"
+    >
+
+      <img
+        src="nagi-normal.png"
+        class="character-image"
+        alt="八尋 凪"
+      >
+
+      <div class="select-indicator">
+        SELECT
+      </div>
+
+      <div class="character-info">
+
+        <div class="character-file">
+          FILE 032
+        </div>
+
+        <div class="character-name">
+          八尋 凪
+        </div>
+
+        <div class="character-job">
+          SCHOOL NURSE / 26M
+        </div>
+
+      </div>
+
+    </a>
+
+
+  </main>
+
+
+  <footer class="footer">
+    YUKAMENSEKI CHARACTER ARCHIVE
+  </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
