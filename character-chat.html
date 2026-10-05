@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CHARACTER CHAT</title>
 
 <link rel="stylesheet" href="menu.css">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -30,7 +32,10 @@ body {
   padding: 30px 0 70px;
 }
 
-/* HEADER */
+
+/* =========================================
+   HEADER
+========================================= */
 
 .header {
   text-align: center;
@@ -58,7 +63,10 @@ body {
   letter-spacing: .12em;
 }
 
-/* PORTRAIT */
+
+/* =========================================
+   PORTRAIT
+========================================= */
 
 .character-area {
   margin-top: 30px;
@@ -76,7 +84,64 @@ body {
   background: #090d08;
 }
 
-/* DIALOGUE */
+
+/* =========================================
+   RELATIONSHIP
+========================================= */
+
+.relationship-area {
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+}
+
+.relationship-title {
+  color: #a88b4a;
+  font-size: 11px;
+  letter-spacing: .2em;
+  margin-bottom: 10px;
+}
+
+.relationship-rank {
+  color: #d7b866;
+  font-size: 20px;
+  letter-spacing: .12em;
+  margin-bottom: 12px;
+}
+
+.relationship-number {
+  color: #99927f;
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 7px;
+}
+
+.relationship-bar {
+  width: 100%;
+  height: 8px;
+  border: 1px solid #625536;
+  background: #090d08;
+}
+
+.relationship-progress {
+  width: 0%;
+  height: 100%;
+  background: #a88b4a;
+  transition: width .4s ease;
+}
+
+.relationship-status {
+  margin-top: 10px;
+  color: #777261;
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+
+/* =========================================
+   DIALOGUE
+========================================= */
 
 .dialogue-area {
   margin-top: 25px;
@@ -110,7 +175,10 @@ body {
   font-size: 15px;
 }
 
-/* BUTTONS */
+
+/* =========================================
+   BUTTONS
+========================================= */
 
 .button-area {
   margin-top: 20px;
@@ -137,7 +205,10 @@ body {
   background: #151c13;
 }
 
-/* SYSTEM */
+
+/* =========================================
+   SYSTEM
+========================================= */
 
 .system-message {
   margin-top: 25px;
@@ -150,7 +221,10 @@ body {
   line-height: 1.8;
 }
 
-/* BACK */
+
+/* =========================================
+   BACK
+========================================= */
 
 .back {
   display: inline-block;
@@ -163,6 +237,11 @@ body {
 .back:hover {
   color: #d7b866;
 }
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -186,59 +265,151 @@ body {
     padding: 12px 5px;
     font-size: 11px;
   }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+  <!-- HEADER -->
+
   <div class="header">
-    <div class="archive-label" id="fileNumber">CHARACTER ARCHIVE / FILE 001</div>
-    <div class="character-name" id="characterName">月下 香</div>
-    <div class="character-job" id="characterJob">KILLER / 22F</div>
+
+    <div class="archive-label" id="fileNumber">
+      CHARACTER ARCHIVE / FILE 001
+    </div>
+
+    <div class="character-name" id="characterName">
+      月下 香
+    </div>
+
+    <div class="character-job" id="characterJob">
+      KILLER / 22F
+    </div>
+
   </div>
 
-  <a href="chat.html" class="back">← CHARACTER SELECT</a>
+
+  <!-- BACK -->
+
+  <a href="chat.html" class="back">
+    ← CHARACTER SELECT
+  </a>
+
+
+  <!-- PORTRAIT -->
 
   <div class="character-area">
+
     <img
       id="characterImage"
       class="character-portrait"
       src="kaoru-normal.png"
       alt="月下 香"
     >
+
   </div>
+
+
+  <!-- RELATIONSHIP -->
+
+  <div class="relationship-area">
+
+    <div class="relationship-title">
+      RELATIONSHIP
+    </div>
+
+    <div
+      class="relationship-rank"
+      id="relationshipRank"
+    >
+      UNKNOWN
+    </div>
+
+    <div
+      class="relationship-number"
+      id="relationshipNumber"
+    >
+      0 / 100
+    </div>
+
+    <div class="relationship-bar">
+
+      <div
+        class="relationship-progress"
+        id="relationshipProgress"
+      ></div>
+
+    </div>
+
+    <div
+      class="relationship-status"
+      id="relationshipStatus"
+    >
+      FIRST CONTACT
+    </div>
+
+  </div>
+
+
+  <!-- DIALOGUE -->
 
   <div class="dialogue-area">
 
     <div class="dialogue-box">
-      <p class="dialogue-text" id="dialogueText">
+
+      <p
+        class="dialogue-text"
+        id="dialogueText"
+      >
         ……誰？
       </p>
+
     </div>
 
+
     <div class="button-area">
-      <button class="chat-button" id="talkButton">
+
+      <button
+        class="chat-button"
+        id="talkButton"
+      >
         TALK
       </button>
 
-      <button class="chat-button" id="askButton">
+      <button
+        class="chat-button"
+        id="askButton"
+      >
         ASK
       </button>
+
     </div>
 
   </div>
 
-  <div class="system-message" id="systemMessage">
+
+  <!-- SYSTEM -->
+
+  <div
+    class="system-message"
+    id="systemMessage"
+  >
     CHARACTER CHAT SYSTEM / ONLINE
   </div>
+
 
 </div>
 
 
 <script>
+
 
 /* =========================================
    CHARACTER DATA
@@ -246,7 +417,7 @@ body {
 
 const characters = {
 
-  kaoru: {
+kaoru: {
     file: "FILE 001",
     name: "月下 香",
     job: "KILLER / 22F",
@@ -761,9 +932,11 @@ const characters = {
 
 };
 
+  
+
 
 /* =========================================
-   CHARACTER SELECT
+   URLからキャラクターを取得
 ========================================= */
 
 const params = new URLSearchParams(location.search);
@@ -771,15 +944,46 @@ const characterId = params.get("character");
 
 const character = characters[characterId];
 
-const fileNumber = document.getElementById("fileNumber");
-const characterName = document.getElementById("characterName");
-const characterJob = document.getElementById("characterJob");
-const characterImage = document.getElementById("characterImage");
-const dialogueText = document.getElementById("dialogueText");
-const systemMessage = document.getElementById("systemMessage");
 
-const talkButton = document.getElementById("talkButton");
-const askButton = document.getElementById("askButton");
+/* =========================================
+   HTML要素
+========================================= */
+
+const fileNumber =
+  document.getElementById("fileNumber");
+
+const characterName =
+  document.getElementById("characterName");
+
+const characterJob =
+  document.getElementById("characterJob");
+
+const characterImage =
+  document.getElementById("characterImage");
+
+const dialogueText =
+  document.getElementById("dialogueText");
+
+const systemMessage =
+  document.getElementById("systemMessage");
+
+const talkButton =
+  document.getElementById("talkButton");
+
+const askButton =
+  document.getElementById("askButton");
+
+const relationshipRank =
+  document.getElementById("relationshipRank");
+
+const relationshipNumber =
+  document.getElementById("relationshipNumber");
+
+const relationshipProgress =
+  document.getElementById("relationshipProgress");
+
+const relationshipStatus =
+  document.getElementById("relationshipStatus");
 
 
 /* =========================================
@@ -788,10 +992,17 @@ const askButton = document.getElementById("askButton");
 
 if (!character) {
 
-  fileNumber.textContent = "CHARACTER ARCHIVE / ERROR";
-  characterName.textContent = "CHARACTER NOT FOUND";
-  characterJob.textContent = "";
-  characterImage.style.display = "none";
+  fileNumber.textContent =
+    "CHARACTER ARCHIVE / ERROR";
+
+  characterName.textContent =
+    "CHARACTER NOT FOUND";
+
+  characterJob.textContent =
+    "";
+
+  characterImage.style.display =
+    "none";
 
   dialogueText.textContent =
     "指定されたキャラクターが見つかりません。";
@@ -799,20 +1010,334 @@ if (!character) {
   systemMessage.textContent =
     "CHARACTER CHAT SYSTEM / ERROR";
 
-  talkButton.style.display = "none";
-  askButton.style.display = "none";
+  talkButton.style.display =
+    "none";
+
+  askButton.style.display =
+    "none";
 
 }
 
 
 /* =========================================
-   LOAD CHARACTER
+   親密度システム
+========================================= */
+
+const STORAGE_KEY =
+  "characterArchiveRelationship";
+
+
+function getRelationshipData() {
+
+  const saved =
+    localStorage.getItem(STORAGE_KEY);
+
+  if (saved) {
+
+    try {
+
+      return JSON.parse(saved);
+
+    } catch (error) {
+
+      return {};
+
+    }
+
+  }
+
+  return {};
+
+}
+
+
+function saveRelationshipData(data) {
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(data)
+  );
+
+}
+
+
+/* =========================================
+   今日の日付
+========================================= */
+
+function getToday() {
+
+  const now =
+    new Date();
+
+  const year =
+    now.getFullYear();
+
+  const month =
+    String(now.getMonth() + 1)
+      .padStart(2, "0");
+
+  const day =
+    String(now.getDate())
+      .padStart(2, "0");
+
+  return year + "-" + month + "-" + day;
+
+}
+
+
+/* =========================================
+   親密度ランク
+========================================= */
+
+function getRank(value) {
+
+  if (value >= 100) {
+    return "SPECIAL";
+  }
+
+  if (value >= 90) {
+    return "TRUSTED";
+  }
+
+  if (value >= 75) {
+    return "CLOSE";
+  }
+
+  if (value >= 50) {
+    return "FRIEND";
+  }
+
+  if (value >= 25) {
+    return "FAMILIAR";
+  }
+
+  if (value >= 10) {
+    return "ACQUAINTANCE";
+  }
+
+  return "UNKNOWN";
+
+}
+
+
+/* =========================================
+   親密度表示
+========================================= */
+
+function updateRelationshipDisplay() {
+
+  if (!character) {
+    return;
+  }
+
+  const data =
+    getRelationshipData();
+
+  const current =
+    data[characterId] || {
+      intimacy: 0,
+      visits: 0,
+      talks: 0,
+      asks: 0,
+      lastVisit: ""
+    };
+
+  const intimacy =
+    Math.min(
+      100,
+      Math.max(
+        0,
+        current.intimacy || 0
+      )
+    );
+
+  relationshipRank.textContent =
+    getRank(intimacy);
+
+  relationshipNumber.textContent =
+    intimacy + " / 100";
+
+  relationshipProgress.style.width =
+    intimacy + "%";
+
+  if (intimacy >= 100) {
+
+    relationshipStatus.textContent =
+      "RELATIONSHIP MAXIMUM";
+
+  } else if (intimacy >= 90) {
+
+    relationshipStatus.textContent =
+      "VERY CLOSE";
+
+  } else if (intimacy >= 75) {
+
+    relationshipStatus.textContent =
+      "TRUST IS GROWING";
+
+  } else if (intimacy >= 50) {
+
+    relationshipStatus.textContent =
+      "GETTING CLOSER";
+
+  } else if (intimacy >= 25) {
+
+    relationshipStatus.textContent =
+      "BECOMING FAMILIAR";
+
+  } else if (intimacy >= 10) {
+
+    relationshipStatus.textContent =
+      "ACQUAINTANCE";
+
+  } else {
+
+    relationshipStatus.textContent =
+      "FIRST CONTACT";
+
+  }
+
+}
+
+
+/* =========================================
+   親密度を加算
+========================================= */
+
+function addIntimacy(amount) {
+
+  if (!character) {
+    return;
+  }
+
+  const data =
+    getRelationshipData();
+
+  if (!data[characterId]) {
+
+    data[characterId] = {
+
+      intimacy: 0,
+
+      visits: 0,
+
+      talks: 0,
+
+      asks: 0,
+
+      lastVisit: ""
+
+    };
+
+  }
+
+  data[characterId].intimacy =
+    Math.min(
+      100,
+      data[characterId].intimacy + amount
+    );
+
+  saveRelationshipData(data);
+
+  updateRelationshipDisplay();
+
+}
+
+
+/* =========================================
+   訪問記録
+========================================= */
+
+function recordVisit() {
+
+  if (!character) {
+    return;
+  }
+
+  const data =
+    getRelationshipData();
+
+  const today =
+    getToday();
+
+  if (!data[characterId]) {
+
+    data[characterId] = {
+
+      intimacy: 0,
+
+      visits: 0,
+
+      talks: 0,
+
+      asks: 0,
+
+      lastVisit: ""
+
+    };
+
+  }
+
+
+  const characterData =
+    data[characterId];
+
+
+  /* 初めての訪問 */
+
+  if (characterData.visits === 0) {
+
+    characterData.visits++;
+
+    characterData.lastVisit =
+      today;
+
+    characterData.intimacy =
+      Math.min(
+        100,
+        characterData.intimacy + 3
+      );
+
+  }
+
+
+  /* 日付が変わった場合 */
+
+  else if (
+    characterData.lastVisit !== today
+  ) {
+
+    characterData.visits++;
+
+    characterData.lastVisit =
+      today;
+
+    characterData.intimacy =
+      Math.min(
+        100,
+        characterData.intimacy + 2
+      );
+
+  }
+
+
+  saveRelationshipData(data);
+
+  updateRelationshipDisplay();
+
+}
+
+
+/* =========================================
+   キャラクター表示
 ========================================= */
 
 if (character) {
 
   fileNumber.textContent =
-    "CHARACTER ARCHIVE / " + character.file;
+    "CHARACTER ARCHIVE / " +
+    character.file;
 
   characterName.textContent =
     character.name;
@@ -826,44 +1351,95 @@ if (character) {
   characterImage.alt =
     character.name;
 
+
   let lineIndex = 0;
+
 
   dialogueText.textContent =
     character.lines[lineIndex];
 
 
-  /* TALK */
+  /* 訪問記録 */
 
-  talkButton.addEventListener("click", function() {
+  recordVisit();
 
-    lineIndex++;
 
-    if (lineIndex >= character.lines.length) {
-      lineIndex = 0;
+  /* =========================================
+     TALK
+  ========================================= */
+
+  talkButton.addEventListener(
+    "click",
+    function() {
+
+      lineIndex++;
+
+      if (
+        lineIndex >=
+        character.lines.length
+      ) {
+
+        lineIndex = 0;
+
+      }
+
+
+      dialogueText.textContent =
+        character.lines[lineIndex];
+
+
+      /* TALK回数を記録 */
+
+      const data =
+        getRelationshipData();
+
+      if (!data[characterId]) {
+        return;
+      }
+
+      data[characterId].talks++;
+
+      data[characterId].intimacy =
+        Math.min(
+          100,
+          data[characterId].intimacy + 1
+        );
+
+      saveRelationshipData(data);
+
+      updateRelationshipDisplay();
+
+
+      systemMessage.textContent =
+        "CHARACTER CHAT SYSTEM / TALK";
+
     }
-
-    dialogueText.textContent =
-      character.lines[lineIndex];
-
-    systemMessage.textContent =
-      "CHARACTER CHAT SYSTEM / TALK";
-
-  });
+  );
 
 
-  /* ASK */
+  /* =========================================
+     ASK
+  ========================================= */
 
-  askButton.addEventListener("click", function() {
+  askButton.addEventListener(
+    "click",
+    function() {
 
-    dialogueText.textContent =
-      "……何を聞きたいの？";
+      dialogueText.textContent =
+        "……何を聞きたいの？";
 
-    systemMessage.textContent =
-      "QUESTION SYSTEM / COMING SOON";
+      systemMessage.textContent =
+        "QUESTION SYSTEM / COMING SOON";
 
-  });
+    }
+  );
 
 }
+
+
+/* =========================================
+   メニュー
+========================================= */
 
 </script>
 
