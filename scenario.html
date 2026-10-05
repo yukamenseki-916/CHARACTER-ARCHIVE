@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>SCENARIO | 床面積 CHARACTER ARCHIVE</title>
+
+<link rel="stylesheet" href="menu.css">
+
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+
+  background: #0d120c;
+
+  color: #e8dfc8;
+
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+
+.container {
+
+  width: 92%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 40px 0 70px;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+  text-align: center;
+
+  padding: 35px 15px 30px;
+
+  border-top: 1px solid #a88b4a;
+
+  border-bottom: 1px solid #a88b4a;
+
+}
+
+
+.archive-label {
+
+  color: #99927f;
+
+  font-size: 12px;
+
+  letter-spacing: 0.25em;
+
+}
+
+
+.page-title {
+
+  margin: 15px 0 8px;
+
+  color: #d7b866;
+
+  font-size: 38px;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.page-subtitle {
+
+  color: #99927f;
+
+  font-size: 13px;
+
+  letter-spacing: 0.2em;
+
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back {
+
+  display: inline-block;
+
+  margin: 25px 0 10px;
+
+  color: #b9ad91;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+}
+
+
+.back:hover {
+
+  color: #d7b866;
+
+}
+
+
+/* =========================
+   SCENARIO
+========================= */
+
+.scenario-section {
+
+  margin-top: 35px;
+
+}
+
+
+.section-title {
+
+  margin: 0;
+
+  color: #d7b866;
+
+  font-size: 22px;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.section-title::after {
+
+  content: "";
+
+  display: block;
+
+  width: 60px;
+
+  height: 1px;
+
+  background: #a88b4a;
+
+  margin-top: 10px;
+
+}
+
+
+.scenario-list {
+
+  margin-top: 25px;
+
+}
+
+
+/* =========================
+   SCENARIO ITEM
+========================= */
+
+.scenario-item {
+
+  margin-bottom: 30px;
+
+  padding: 22px;
+
+  border: 1px solid #625536;
+
+  background: #111710;
+
+}
+
+
+.scenario-name {
+
+  margin: 0;
+
+  color: #d7b866;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.scenario-name::after {
+
+  content: "";
+
+  display: block;
+
+  width: 40px;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background: #77663f;
+
+}
+
+
+/* =========================
+   CHARACTER LIST
+========================= */
+
+.character-list {
+
+  margin: 18px 0 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+.character-list li {
+
+  margin-bottom: 7px;
+
+}
+
+
+.character-link {
+
+  display: block;
+
+  position: relative;
+
+  padding: 10px 10px 10px 24px;
+
+  color: #d0c7b2;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #3f392b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+}
+
+
+.character-link::before {
+
+  content: "◆";
+
+  position: absolute;
+
+  left: 4px;
+
+  top: 11px;
+
+  color: #a88b4a;
+
+  font-size: 7px;
+
+}
+
+
+.character-link:hover {
+
+  color: #d7b866;
+
+}
+
+
+.character-link:hover::before {
+
+  color: #d7b866;
+
+}
+
+
+/* =========================
+   TABLE VIDEO
+========================= */
+
+.table-video-list {
+
+  margin-top: 18px;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+
+.table-video-list li {
+
+  margin-bottom: 4px;
+
+  padding: 12px 10px;
+
+  border-bottom: 1px solid #3f392b;
+
+}
+
+
+.table-video-link {
+
+  display: block;
+
+  position: relative;
+
+  padding-left: 22px;
+
+  color: #d0c7b2;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+}
+
+
+.table-video-link::before {
+
+  content: "▶";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 2px;
+
+  color: #a88b4a;
+
+  font-size: 9px;
+
+}
+
+
+.table-video-link:hover {
+
+  color: #d7b866;
+
+}
+
+
+.table-video-label {
+
+  display: block;
+
+  margin-top: 2px;
+
+  color: #777261;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.archive-note {
+
+  margin-top: 45px;
+
+  padding: 20px;
+
+  border: 1px solid #625536;
+
+  background: #111710;
+
+}
+
+
+.archive-note p {
+
+  margin: 0;
+
+  color: #777261;
+
+  font-size: 11px;
+
+  line-height: 1.9;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+  margin-top: 60px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #4f4633;
+
+  text-align: center;
+
+  color: #777261;
+
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .container {
+
+    width: 92%;
+
+    padding-top: 25px;
+
+  }
+
+
+  .page-title {
+
+    font-size: 30px;
+
+  }
+
+
+  .scenario-item {
+
+    padding: 18px;
+
+  }
+
+
+  .scenario-name {
+
+    font-size: 16px;
+
+  }
+
+
+  .character-link {
+
+    font-size: 13px;
+
+  }
+
+}
+
+</style>
+
+<script src="menu.js" defer></script>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE
+    </div>
+
+    <h1 class="page-title">
+      SCENARIO
+    </h1>
+
+    <div class="page-subtitle">
+      SCENARIO ARCHIVE
+    </div>
+
+  </header>
+
+
+  <a
+    href="index.html"
+    class="back"
+  >
+    ← CHARACTER ARCHIVE
+  </a>
+
+
+  <section class="scenario-section">
+
+    <h2 class="section-title">
+      SCENARIO RECORD
+    </h2>
+
+
+    <div class="scenario-list">
+
+
+      <!-- =========================
+           01
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          ドロップアウトディスパイア
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kaoru.html"
+              class="character-link"
+            >
+              月下 香
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           02
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          ロールシャッハシンドローム
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kaoru.html"
+              class="character-link"
+            >
+              月下 香
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           03
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          やさしい世界と呼吸法
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="mio.html"
+              class="character-link"
+            >
+              花園 美桜
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           04
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          シキラレ⬛︎⬛︎
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="rias.html"
+              class="character-link"
+            >
+              入狗 梨明日
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           05
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          初恋性ストックホルム症候群
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="saku.html"
+              class="character-link"
+            >
+              春川 咲
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="shou.html"
+              class="character-link"
+            >
+              御薬袋 渉羽
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           06
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          魔法少女希望譚
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="susane.html"
+              class="character-link"
+            >
+              燈下 珠心
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           07
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          お兄さんとわたし
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="utsugi.html"
+              class="character-link"
+            >
+              東郷 空木
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="ichika.html"
+              class="character-link"
+            >
+              章姫 苺果
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           08
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          Li(ttl)e, Cry
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="iyori.html"
+              class="character-link"
+            >
+              新井 伊縁
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           09
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          一抹の雲
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="iyori.html"
+              class="character-link"
+            >
+              新井 伊縁
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           10
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          プルガトリウムの夜
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="mitsure.html"
+              class="character-link"
+            >
+              牡鹿 密列
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           11
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          AI KILLED YOU
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="eihi.html"
+              class="character-link"
+            >
+              逢望 栄飛
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           12
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          All blue syndrome
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="fusta.html"
+              class="character-link"
+            >
+              フスタ
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           13
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          辜月のN
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kazuha.html"
+              class="character-link"
+            >
+              冷泉 一葉
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           14
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          終夜
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kazuha.html"
+              class="character-link"
+            >
+              冷泉 一葉
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           15
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          Project : Sm;ley
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="rito.html"
+              class="character-link"
+            >
+              落月 吏斗
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           16
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          コードネーム：ドッペルゲンガー
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kokage.html"
+              class="character-link"
+            >
+              神無月 狐影
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           17
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          優しさの証明
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="you.html"
+              class="character-link"
+            >
+              白妙 葉生
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           18
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          透明白昼シクウィーラ
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="you.html"
+              class="character-link"
+            >
+              白妙 葉生
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           19
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          狂気山脈
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="tenso.html"
+              class="character-link"
+            >
+              伏翼 天鼠
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           20
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          レイジー
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="sumire.html"
+              class="character-link"
+            >
+              三色 菫
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="tsuzura.html"
+              class="character-link"
+            >
+              蔵芝 廿楽
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="hayato.html"
+              class="character-link"
+            >
+              夜雨 隼人
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="ikari.html"
+              class="character-link"
+            >
+              柏原 碇
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           21
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          刹夏
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="sei.html"
+              class="character-link"
+            >
+              方波見 晴
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           22
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          怪人に捧ぐ鎮魂歌
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="zeitga.html"
+              class="character-link"
+            >
+              イスト・ツァイトガ
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           23
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          誰がロックを殺すのか
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="yura.html"
+              class="character-link"
+            >
+              白宮 由良
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLPZK6Cd1f_uM&si=X_-eS3ifaqMYgPee"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              誰がロックを殺すのか
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           24
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          「」よはく
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="yura.html"
+              class="character-link"
+            >
+              白宮 由良
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtu.be/6--qnEUMThI?si=oXDbN11F6TXl_2Pk"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              「」よはく
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           25
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          NOISY NOTE
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="yura.html"
+              class="character-link"
+            >
+              白宮 由良
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtu.be/TmcC_HVz9Js?si=6zRMZKw8ZrUVCuum"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              NOISY NOTE
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           26
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          Holiday's Midnight
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="yura.html"
+              class="character-link"
+            >
+              白宮 由良
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtu.be/-oXwfWPRibc?si=LpWVdgBTAw4bpSAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              Holiday's Midnight
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           27
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          ロックンロール・スカイダイブ
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="yura.html"
+              class="character-link"
+            >
+              白宮 由良
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtu.be/j_7Q530jLTc?si=0YEqcDvpetB2CeOA"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              ロックンロール・スカイダイブ
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           28
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          犬が喚けば禍ツ刻
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="touka.html"
+              class="character-link"
+            >
+              神代 藤華
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLGalczgYCBGk&si=bQzDO6f2e1q1TFsv"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              犬が喚けば禍ツ刻
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           29
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          VOID
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="azuma.html"
+              class="character-link"
+            >
+              四葩 集真
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLdsx3RB90c64&si=BDYEUf8XC1QQfzJK"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              VOID
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           30
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          夜刀神の境界
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="mahiru.html"
+              class="character-link"
+            >
+              日向 茉昼
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLRo2Z-ZfcARM&si=YzGLW2lPgTP8i7Bf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              夜刀神の境界
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           31
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          MAIDS AND WEAPONS
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="mahiru.html"
+              class="character-link"
+            >
+              日向 茉昼
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLCvzft2LN318&si=eFD5K0D8hmIdtK_r"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              MAIDS AND WEAPONS
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           32
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          僕たちの関係に名前をつけよう
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="aki.html"
+              class="character-link"
+            >
+              観月 彰
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtu.be/QrKDzNGva5s?si=FekvRl_tDJY0DHHi"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              僕たちの関係に名前をつけよう
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           33
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          女神は君に微笑まない
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kashin.html"
+              class="character-link"
+            >
+              九重 快信
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLciVkrtccyEmtrznT4b172OMwxP9_JvDv&si=X9Z1wFvScgDFhF70"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              女神は君に微笑まない
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           34
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          透明となった君へ
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="kasumi.html"
+              class="character-link"
+            >
+              白石 霞実
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           35
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          Adult Lily
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="hibiki.html"
+              class="character-link"
+            >
+              世那 響
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLYr444skgAnc&si=jontA7KfimnOBgwW"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              Adult Lily
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <!-- =========================
+           36
+      ========================= -->
+
+      <article class="scenario-item">
+
+        <h3 class="scenario-name">
+          ソープスクール
+        </h3>
+
+        <ul class="character-list">
+
+          <li>
+            <a
+              href="nagi.html"
+              class="character-link"
+            >
+              八尋 凪
+            </a>
+          </li>
+
+        </ul>
+
+
+        <ul class="table-video-list">
+
+          <li>
+            <a
+              href="https://youtube.com/playlist?list=PLMa_0VvS5dlE&si=uPYxL-4afucPZ3BC"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="table-video-link"
+            >
+              ソープスクール
+              <span class="table-video-label">
+                YouTube
+              </span>
+            </a>
+          </li>
+
+        </ul>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <section class="archive-note">
+
+    <p>
+      床面積 CHARACTER ARCHIVE に登録された
+      シナリオと探索者の参加記録を掲載しています。
+      シナリオの内容・HO・結末等のネタバレは掲載していません。
+    </p>
+
+  </section>
+
+
+  <footer class="footer">
+    YUKAMENSEKI CHARACTER ARCHIVE
+  </footer>
+
+
+</div>
+
+
+</body>
+
+</html>
