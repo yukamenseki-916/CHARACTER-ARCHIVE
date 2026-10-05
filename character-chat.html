@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<title>CHARACTER CHAT | 床面積 CHARACTER ARCHIVE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHARACTER CHAT</title>
 
 <link rel="stylesheet" href="menu.css">
 
-<script src="menu.js" defer></script>
-
-
 <style>
-
 * {
   box-sizing: border-box;
 }
 
-
 body {
   margin: 0;
-  background: #080c08;
+  background: #0d120c;
   color: #e8dfc8;
   font-family:
     "Times New Roman",
@@ -35,594 +23,851 @@ body {
     serif;
 }
 
-
 .container {
   width: 92%;
-  max-width: 900px;
+  max-width: 760px;
   margin: 0 auto;
   padding: 30px 0 70px;
 }
 
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .header {
   text-align: center;
-  padding: 28px 15px;
+  padding: 30px 15px;
   border-top: 1px solid #a88b4a;
   border-bottom: 1px solid #a88b4a;
 }
 
-
 .archive-label {
+  color: #99927f;
+  font-size: 12px;
+  letter-spacing: .25em;
+}
+
+.character-name {
+  margin: 15px 0 8px;
+  color: #d7b866;
+  font-size: 36px;
+  letter-spacing: .12em;
+}
+
+.character-job {
+  color: #99927f;
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+
+/* PORTRAIT */
+
+.character-area {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #625536;
+  background: #111710;
+  text-align: center;
+}
+
+.character-portrait {
+  width: 100%;
+  max-width: 430px;
+  max-height: 560px;
+  object-fit: contain;
+  background: #090d08;
+}
+
+/* DIALOGUE */
+
+.dialogue-area {
+  margin-top: 25px;
+}
+
+.dialogue-box {
+  min-height: 110px;
+  padding: 22px;
+  border: 1px solid #625536;
+  background: #111710;
+  color: #e8dfc8;
+  line-height: 2;
+  text-align: left;
+  position: relative;
+}
+
+.dialogue-box::before {
+  content: "MESSAGE";
+  position: absolute;
+  top: -9px;
+  left: 15px;
+  padding: 0 8px;
+  background: #0d120c;
+  color: #a88b4a;
+  font-size: 9px;
+  letter-spacing: .15em;
+}
+
+.dialogue-text {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* BUTTONS */
+
+.button-area {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.chat-button {
+  flex: 1;
+  max-width: 180px;
+  padding: 13px 10px;
+  border: 1px solid #77663f;
+  background: #0d120c;
+  color: #d7b866;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: .12em;
+  cursor: pointer;
+}
+
+.chat-button:hover {
+  border-color: #d7b866;
+  background: #151c13;
+}
+
+/* SYSTEM */
+
+.system-message {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #3f392b;
   color: #777261;
   font-size: 10px;
-  letter-spacing: 0.25em;
+  letter-spacing: .08em;
+  text-align: center;
+  line-height: 1.8;
 }
 
-
-.page-title {
-  margin: 12px 0 7px;
-  color: #d7b866;
-  font-size: 28px;
-  letter-spacing: 0.15em;
-}
-
-
-.page-subtitle {
-  color: #99927f;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-}
-
-
-/* =========================
-   BACK
-========================= */
+/* BACK */
 
 .back {
   display: inline-block;
-  margin: 24px 0 10px;
+  margin: 25px 0 10px;
   color: #b9ad91;
   text-decoration: none;
   font-size: 13px;
 }
 
-
 .back:hover {
   color: #d7b866;
 }
 
-
-/* =========================
-   CHARACTER AREA
-========================= */
-
-.character-room {
-  margin-top: 25px;
-  border: 1px solid #625536;
-  background: #111710;
-}
-
-
-/* =========================
-   CHARACTER HEADER
-========================= */
-
-.character-header {
-  padding: 18px 20px;
-  border-bottom: 1px solid #4f4633;
-  text-align: center;
-}
-
-
-.character-file {
-  color: #a88b4a;
-  font-size: 9px;
-  letter-spacing: 0.18em;
-}
-
-
-.character-name {
-  margin: 7px 0 3px;
-  color: #d7b866;
-  font-size: 25px;
-  letter-spacing: 0.1em;
-}
-
-
-.character-job {
-  color: #777261;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-}
-
-
-/* =========================
-   PORTRAIT
-========================= */
-
-.portrait-area {
-  padding: 25px 20px 10px;
-  text-align: center;
-}
-
-
-.character-portrait {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  height: 500px;
-  margin: 0 auto;
-  object-fit: contain;
-  background: #090d08;
-}
-
-
-/* =========================
-   DIALOGUE
-========================= */
-
-.dialogue-area {
-  padding: 10px 25px 25px;
-}
-
-
-.dialogue-box {
-  min-height: 110px;
-  padding: 20px;
-  border: 1px solid #625536;
-  background: #0b0f0a;
-}
-
-
-.dialogue-name {
-  margin-bottom: 10px;
-  color: #a88b4a;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-}
-
-
-.dialogue-text {
-  margin: 0;
-  color: #e8dfc8;
-  font-size: 15px;
-  line-height: 2;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-.command-area {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 15px;
-}
-
-
-.command-button {
-  padding: 14px 10px;
-  border: 1px solid #77663f;
-  background: #0d120c;
-  color: #d0c7b2;
-  font-family: inherit;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  cursor: pointer;
-}
-
-
-.command-button:hover {
-  border-color: #d7b866;
-  color: #d7b866;
-  background: #111710;
-}
-
-
-/* =========================
-   SYSTEM MESSAGE
-========================= */
-
-.system-message {
-  margin-top: 15px;
-  color: #777261;
-  text-align: center;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-}
-
-
-/* =========================
-   ERROR
-========================= */
-
-.error-message {
-  margin-top: 60px;
-  padding: 40px 20px;
-  border: 1px solid #625536;
-  background: #111710;
-  text-align: center;
-}
-
-
-.error-title {
-  color: #d7b866;
-  font-size: 20px;
-}
-
-
-.error-text {
-  margin-top: 15px;
-  color: #777261;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid #4f4633;
-  text-align: center;
-  color: #777261;
-  font-size: 10px;
-  letter-spacing: 0.1em;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 600px) {
 
-  .container {
-    width: 92%;
-    padding-top: 25px;
-  }
-
-
   .character-name {
-    font-size: 22px;
+    font-size: 30px;
   }
 
+  .character-area {
+    padding: 15px;
+  }
 
   .character-portrait {
-    height: 430px;
+    max-height: 500px;
   }
 
-
-  .dialogue-area {
-    padding: 10px 15px 20px;
+  .button-area {
+    gap: 8px;
   }
 
-
-  .dialogue-box {
-    padding: 17px;
+  .chat-button {
+    padding: 12px 5px;
+    font-size: 11px;
   }
-
-
-  .dialogue-text {
-    font-size: 14px;
-  }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+  <div class="header">
+    <div class="archive-label" id="fileNumber">CHARACTER ARCHIVE / FILE 001</div>
+    <div class="character-name" id="characterName">月下 香</div>
+    <div class="character-job" id="characterJob">KILLER / 22F</div>
+  </div>
 
-  <header class="header">
+  <a href="chat.html" class="back">← CHARACTER SELECT</a>
 
-    <div class="archive-label">
-      CHARACTER ARCHIVE
+  <div class="character-area">
+    <img
+      id="characterImage"
+      class="character-portrait"
+      src="kaoru-normal.png"
+      alt="月下 香"
+    >
+  </div>
+
+  <div class="dialogue-area">
+
+    <div class="dialogue-box">
+      <p class="dialogue-text" id="dialogueText">
+        ……誰？
+      </p>
     </div>
 
-    <h1 class="page-title">
-      CHARACTER CHAT
-    </h1>
+    <div class="button-area">
+      <button class="chat-button" id="talkButton">
+        TALK
+      </button>
 
-    <div class="page-subtitle">
-      INTERACTION SYSTEM
+      <button class="chat-button" id="askButton">
+        ASK
+      </button>
     </div>
 
-  </header>
+  </div>
 
-
-  <a
-    href="chat.html"
-    class="back"
-  >
-    ← CHARACTER SELECT
-  </a>
-
-
-  <main id="chatArea"></main>
-
-
-  <footer class="footer">
-    YUKAMENSEKI CHARACTER ARCHIVE
-  </footer>
-
+  <div class="system-message" id="systemMessage">
+    CHARACTER CHAT SYSTEM / ONLINE
+  </div>
 
 </div>
 
 
 <script>
 
-/* =========================
+/* =========================================
    CHARACTER DATA
-========================= */
+========================================= */
 
 const characters = {
 
   kaoru: {
-
     file: "FILE 001",
-
     name: "月下 香",
-
     job: "KILLER / 22F",
-
     image: "kaoru-normal.png",
 
     lines: [
-
       "ねぇ！あなただぁれ？",
-
       "ねぇねぇ私と遊ぼ！なにして遊ぶ？",
-
       "どーしたの？",
-
       "たくさん見られてる！！一回転しちゃお！",
-
       "お菓子、何個買ってもいい？",
-
       "面白いお話して〜！！絵本でもいいよ！！",
-
       "「遺書」って、たーくさん生きる中で一番ののラブレターだよね！！"
-
     ]
+  },
 
+  mio: {
+    file: "FILE 002",
+    name: "花園 美桜",
+    job: "UNIVERSITY STUDENT / 19F",
+    image: "mio-normal.png",
+
+    lines: [
+      "こんにちは…。",
+      "今日は、何するの？",
+      "美桜に聞きたいこと、ある？",
+      "赤いゼラニウムって、すごく綺麗だよね。",
+      "あなたとお話するの、好きだよ。",
+      "……ねえ、もう少しだけ一緒にいてもいい？"
+    ]
+  },
+
+  shou: {
+    file: "FILE 003",
+    name: "御薬袋 渉羽",
+    job: "MENTAL THERAPIST / 26M",
+    image: "shou-normal.png",
+
+    lines: [
+      "こんにちは。今日はどうしたの？",
+      "僕に話せることなら、何でも聞くよ。",
+      "無理に話さなくても大丈夫だからね。",
+      "……君は、ちゃんと眠れてる？",
+      "無理せず、ゆっくり、出来るようになれば良いから、ね？",
+      "大切な人のことなら、いくらでも話せちゃうなぁ、なんて。"
+    ]
+  },
+
+  rias: {
+    file: "FILE 004",
+    name: "入狗 梨明日",
+    job: "HIGH SCHOOL STUDENT / 16F",
+    image: "rias-normal.png",
+
+    lines: [
+      "こんにちは、いい実験日和だね。",
+      "何か実験する？",
+      "怪我するようなことは、できれば避けたいかな。",
+      "……失敗したら、またやり直せばいいよ。",
+      "あなたは、実験って好き？",
+      "ちょっとだけ、面白いことを考えてるんだけど……。"
+    ]
+  },
+
+  saku: {
+    file: "FILE 005",
+    name: "春川 咲",
+    job: "COMPANY EMPLOYEE / 25M",
+    image: "saku-normal.png",
+
+    lines: [
+      "……何だよ。",
+      "別に、暇じゃねーけど。",
+      "俺に何か用？",
+      "さくちゃんって呼ぶな！",
+      "別に可愛いものが好きなわけじゃねーから。",
+      "……何見てるんだよ…。そんなに見るな。"
+    ]
+  },
+
+  susane: {
+    file: "FILE 006",
+    name: "燈下 珠心",
+    job: "HIGH SCHOOL STUDENT / 15F",
+    image: "susane-normal.png",
+
+    lines: [
+      "こんにちは！",
+      "今日はどうしたの？",
+      "友達って、やっぱりいいよね。",
+      "お料理って難しいよね…。",
+      "一緒に遊ぶ？",
+      "ふふ、楽しいね！"
+    ]
+  },
+
+  utsugi: {
+    file: "FILE 007",
+    name: "東郷 空木",
+    job: "FREETER / 28M",
+    image: "utsugi-normal.png",
+
+    lines: [
+      "こんにちは〜。",
+      "僕に何か用ですか？",
+      "かわいいものって、いいですよね。",
+      "暴力に良いところはありませんから。",
+      "今日は、ここでゆっくりしていきませんか？",
+      "君は今日は何をしていたんですか？"
+    ]
+  },
+
+  iyori: {
+    file: "FILE 008",
+    name: "新井 伊縁",
+    job: "JUNIOR HIGH SCHOOL STUDENT / 14M",
+    image: "iyori-normal.png",
+
+    lines: [
+      "…こんにちは。",
+      "ふん、僕は君と馴れ合うつもりは無いからっ。",
+      "……この後姉さんと会うんだから、君に構ってる時間なんてないんだよ！",
+      "僕の姉さんは世界一なんだからっ。",
+      "…ふーん…。姉さんのことよく分かってるじゃん…。",
+      "……まあ、ちょっとくらいなら話してあげてもいいけど…。"
+    ]
+  },
+
+  mitsure: {
+    file: "FILE 009",
+    name: "牡鹿 密列",
+    job: "POLICE OFFICER / 32M",
+    image: "mitsure-normal.png",
+
+    lines: [
+      "どーも〜。牡鹿さんやで〜。",
+      "俺に用か？",
+      "あ〜あ〜！聞きたないっ！…仕事の話なら後にしてくれへん？",
+      "お、ほな一緒に酒でも飲みに行くか？",
+      "雨の日は、あんま好きやないんよね。",
+      "なんや困ったことあったら言いや？"
+    ]
+  },
+
+  eihi: {
+    file: "FILE 010",
+    name: "逢望 栄飛",
+    job: "JUNIOR HIGH SCHOOL STUDENT / 15M",
+    image: "eihi-smile.png",
+
+    lines: [
+      "こんにちは！",
+      "兄さん、どこかな……。",
+      "僕に何か用？",
+      "僕はいい子だからねっ。",
+      "…愛されるって、難しいね。",
+      "…もう少しだけ、一緒にいてもいい？"
+    ]
+  },
+
+  fusta: {
+    file: "FILE 011",
+    name: "フスタ",
+    job: "FREETER / 17F",
+    image: "fusta-normal.png",
+
+    lines: [
+      "こんにちは、どうぞゆっくりして言って。",
+      "私は元気よ。安心して？",
+      "大丈夫、大丈夫。",
+      "友達って、やっぱり大切よね。",
+      "私、私の思うままに生きてみようと思うの。",
+      "…今日も、ちゃんと前を向いていこうかな。"
+    ]
+  },
+
+  kazuha: {
+    file: "FILE 012",
+    name: "冷泉 一葉",
+    job: "UNIVERSITY STUDENT / 20M",
+    image: "kazuha-normal.png",
+
+    lines: [
+      "…どうも。",
+      "…君は、今日は何を話す？",
+      "正解のある会話って、好きじゃないんだよね。",
+      "君と話すのは、まぁ嫌いではないかな。",
+      "…でも俺は、彼に救われたから。",
+      "俺は彼と出会えてよかったと思ってるよ。"
+    ]
+  },
+
+  rito: {
+    file: "FILE 013",
+    name: "落月 吏斗",
+    job: "HIGH SCHOOL STUDENT / 17M",
+    image: "rito-normal.png",
+
+    lines: [
+      "よっ。",
+      "何？　俺に用？",
+      "なんだよ暇で声かけてきただけ？",
+      "つまんねーの、なんか用できたら言えよな。",
+      "…俺は、お前を信じるから、…それで良いだろ…。",
+      "何か面白いことねーの？"
+    ]
+  },
+
+  kokage: {
+    file: "FILE 014",
+    name: "神無月 狐影",
+    job: "KILLER / 22M",
+    image: "kokage-normal.png",
+
+    lines: [
+      "そこのお姉さーん、かわいーね♡",
+      "俺に何か用〜？",
+      "そんなに警戒しなくてもいいじゃーん。",
+      "顔のいい女って、最高だよねぇ。",
+      "男？えーだるーほんとに興味ない。",
+      "あはっ、良い顔してんじゃん。もっと近くで顔見せろよ。"
+    ]
+  },
+
+  you: {
+    file: "FILE 015",
+    name: "白妙 葉生",
+    job: "TEACHER / 28M",
+    image: "you-normal.png",
+
+    lines: [
+      "おう、どうした？",
+      "俺に何か用？",
+      "授業ならいつでもしたるよ。",
+      "本を読むのは好きだな。なんかオススメしよか？",
+      "消毒の匂いは……どうも苦手やね〜…。",
+      "困ったことがあるなら、先生に話してな。"
+    ]
+  },
+
+  ichika: {
+    file: "FILE 016",
+    name: "章姫 苺果",
+    job: "KINDERGARTEN CHILD / 3F",
+    image: "ichika-normal.png",
+
+    lines: [
+      "こんにち、は……！",
+      "いちかと、あそぶ…？",
+      "いちご、たべたい…！",
+      "おにーさん、どこー…？",
+      "いっしょに、あそぼ…！",
+      "あなた、いちかのこと、すき？"
+    ]
+  },
+
+  tenso: {
+    file: "FILE 017",
+    name: "伏翼 天鼠",
+    job: "UNIVERSITY STUDENT / 21M",
+    image: "tenso-normal.png",
+
+    lines: [
+      "…あぁ、どもです。",
+      "自分ですか？どうしました？",
+      "…努力努力って、皆その言葉好きですよね。",
+      "頑張れば報われるなんて、報われた人が言い出しただけでしょ。",
+      "自分は「頑張る」なんて向いてないので。",
+      "…俺と話したいなんて、変わってますね。"
+    ]
+  },
+
+  sumire: {
+    file: "FILE 018",
+    name: "三色 菫",
+    job: "HIGH SCHOOL STUDENT / 17M",
+    image: "sumire-normal.png",
+
+    lines: [
+      "……何。",
+      "俺に用？",
+      "別に、お前と話したいことなんてない。",
+      "……あー、今あいつ居ないしな…。",
+      "…じゃあ、あいつが来るまでな。",
+      "変なやつ。"
+    ]
+  },
+
+  tsuzura: {
+    file: "FILE 019",
+    name: "蔵芝 廿楽",
+    job: "HIGH SCHOOL STUDENT / 18M",
+    image: "tsuzura-normal.png",
+
+    lines: [
+      "よっ！待ってたぞー！",
+      "俺のことは、にーちゃんって呼べよな！",
+      "今日は何する？なんでも良いぞ！",
+      "俺たち家族だろ！",
+      "姉ちゃんみたいにはなんねーから！！",
+      "俺がちゃんと面倒見てやるよ！"
+    ]
+  },
+
+  hayato: {
+    file: "FILE 020",
+    name: "夜雨 隼人",
+    job: "HIGH SCHOOL STUDENT / 16M",
+    image: "hayato-normal.png",
+
+    lines: [
+      "……何だよ。",
+      "話しかけてくんな。",
+      "…喧嘩なら買うけど。",
+      "化け物つーのはホントに居る。",
+      "俺が人間かどうかなんて、どうでもいい。",
+      "……お前も人間ならさっさと去れ。"
+    ]
+  },
+
+  sei: {
+    file: "FILE 021",
+    name: "方波見 晴",
+    job: "HIGH SCHOOL STUDENT / 16M",
+    image: "sei-normal.png",
+
+    lines: [
+      "…ども。",
+      "絵、描いてただけ、だけど。",
+      "…言葉にできないことも、絵なら残せるし…。",
+      "なんでこういう時に限ってあいつが居ないんだよ…！",
+      "……あー…僕と話しても楽しいことないと思うけど。",
+      "…変な人。まぁあんたが良いなら良いんだけどさ…。"
+    ]
+  },
+
+  zeitga: {
+    file: "FILE 022",
+    name: "イスト・ツァイトガ",
+    job: "COMPOSER / 24M",
+    image: "zeitga-normal.png",
+
+    lines: [
+      "僕に何か用かな？",
+      "静寂も、騒音も、僕の音の前では跪く。",
+      "君は僕の音楽を聴く耳を持っているかな？",
+      "僕の音楽は、この世の音楽の正解だ。",
+      "他人の音楽を否定するつもりはない。",
+      "ただ、僕の音楽が一番だ。"
+    ]
+  },
+
+  ikari: {
+    file: "FILE 023",
+    name: "柏原 碇",
+    job: "HIGH SCHOOL STUDENT / 16M",
+    image: "ikari-normal.png",
+
+    lines: [
+      "おかえり。",
+      "何か困ったことでもあった？",
+      "僕でよければ、力になるよ。",
+      "そんな酷いことが…。僕が何とかしよう。任せてくれる？",
+      "……はは、バカは単純で助かる。",
+      "大丈夫。ぜーんぶ俺に任せてればなんとなるよ。"
+    ]
+  },
+
+  yura: {
+    file: "FILE 024",
+    name: "白宮 由良",
+    job: "MUSICIAN / 24M",
+    image: "yura-normal.png",
+
+    lines: [
+      "お、来た？やっほー。",
+      "何か聴きたい歌あるー？",
+      "音楽は自由でいいんだよ。",
+      "今日しか聴けない音って、あると思わない？",
+      "予定通りじゃなくても、面白ければいいじゃん。",
+      "じゃあ、何か一曲鳴らそうか。"
+    ]
+  },
+
+  touka: {
+    file: "FILE 025",
+    name: "神代 藤華",
+    job: "HIGH SCHOOL STUDENT / 16F",
+    image: "touka-worried.png",
+
+    lines: [
+      "こんにちは、お待ちしていました。",
+      "今日はどうされましたか？",
+      "知らないことを聞くのはとても好きなんです。",
+      "貴方の話を沢山聞かせてください。",
+      "もっと沢山のことをお兄様にも教えてさしあげるのです。",
+      "お兄様は、元気にしているでしょうか…。"
+    ]
+  },
+
+  azuma: {
+    file: "FILE 026",
+    name: "四葩 集真",
+    job: "POLICE OFFICER / 38M",
+    image: "azuma-normal.png",
+
+    lines: [
+      "…何だよ。",
+      "俺に用か？",
+      "これだから人間は嫌いなんだよ…。",
+      "わざわざ俺に話しかけるなんざ、お前も変わってるな。",
+      "……お前、今日の調子はどうだ？",
+      "別に心配してるわけじゃねえよ。"
+    ]
+  },
+
+  mahiru: {
+    file: "FILE 027",
+    name: "日向 茉昼",
+    job: "UNIVERSITY STUDENT / 20M",
+    image: "mahiru-normal.png",
+
+    lines: [
+      "よお！元気してたー？",
+      "普通に学校だるくて萎える〜…。",
+      "終わったら飯食い行こーぜ！",
+      "幽霊とかマジで無理だからな！",
+      "いや、別に、ビビってねーけど！！？",
+      "……いや、ほんとに怖いの無理なんだって…！！？"
+    ]
+  },
+
+  aki: {
+    file: "FILE 028",
+    name: "観月 彰",
+    job: "UNIVERSITY STUDENT / 22M",
+    image: "aki-normal.png",
+
+    lines: [
+      "こんにちは。ごめんね、待たせた？",
+      "君は今日も元気そうで安心した。",
+      "せっかくだし、俺ともお話していってよ。",
+      "……俺は、そのままの関係じゃ嫌だったのかもね。",
+      "良い先輩で終わりたくないな、なんて。",
+      "君と話せる時間は、好きだよ。"
+    ]
+  },
+
+  kashin: {
+    file: "FILE 029",
+    name: "九重 快信",
+    job: "HIGH SCHOOL STUDENT / 17M",
+    image: "kashin-normal.png",
+
+    lines: [
+      "おっ、来た来た！ちょーど君のこと考えとってん！",
+      "来てくれるの楽しみにしとたから嬉しいわ〜！",
+      "今日はちょっと調子ええから、ホームラン打ってまうかも！",
+      "今からええの飛ばしたるからよー見ときや！",
+      "あ、宿題やっとらんかも…ちょお一緒にやってくれへん…！？",
+      "俺たちがここにおるって、知らしめたいんや！"
+    ]
+  },
+
+  kasumi: {
+    file: "FILE 030",
+    name: "白石 霞実",
+    job: "NOVELIST / 29F",
+    image: "kasumi-normal.png",
+
+    lines: [
+      "こんにちは、本を読むには良い天気ですね。",
+      "何か物語について、読み聞かせましょうか？",
+      "本を読むのはお好きですか？",
+      "名前には魂が宿っていますから、大切にしてくださいね。",
+      "この物語を生きたのは、確かに私だったのです。",
+      "これからの物語も、きっと私が綴るのでしょう。"
+    ]
+  },
+
+  hibiki: {
+    file: "FILE 031",
+    name: "世那 響",
+    job: "HIGH SCHOOL STUDENT / 16M",
+    image: "hibiki-normal.png",
+
+    lines: [
+      "こんにちは、先輩。",
+      "何かございましたか？",
+      "お怪我はありませんか、先輩？",
+      "僕にできることがあれば、なんでも言ってください。",
+      "……大丈夫です。僕がいますから。",
+      "どうぞ、無理はなさらないでください。"
+    ]
+  },
+
+  nagi: {
+    file: "FILE 032",
+    name: "八尋 凪",
+    job: "SCHOOL NURSE / 26M",
+    image: "nagi-normal.png",
+
+    lines: [
+      "こんにちは、どうされましたか？",
+      "何か僕にお手伝いできることはありますか？",
+      "具合はどうですか？",
+      "無理をしてはいけませんよ。",
+      "……大丈夫です。ゆっくりしてくださいね。",
+      "困ったことがあれば、いつでも話してくださいね。"
+    ]
   }
 
 };
 
 
-/* =========================
-   GET CHARACTER
-========================= */
+/* =========================================
+   CHARACTER SELECT
+========================================= */
 
-const params =
-  new URLSearchParams(
-    window.location.search
-  );
+const params = new URLSearchParams(location.search);
+const characterId = params.get("character");
 
+const character = characters[characterId];
 
-const characterId =
-  params.get("character");
+const fileNumber = document.getElementById("fileNumber");
+const characterName = document.getElementById("characterName");
+const characterJob = document.getElementById("characterJob");
+const characterImage = document.getElementById("characterImage");
+const dialogueText = document.getElementById("dialogueText");
+const systemMessage = document.getElementById("systemMessage");
 
-
-const character =
-  characters[characterId];
-
-
-const chatArea =
-  document.getElementById("chatArea");
+const talkButton = document.getElementById("talkButton");
+const askButton = document.getElementById("askButton");
 
 
-/* =========================
-   ERROR
-========================= */
+/* =========================================
+   CHARACTER NOT FOUND
+========================================= */
 
 if (!character) {
 
-  chatArea.innerHTML = `
+  fileNumber.textContent = "CHARACTER ARCHIVE / ERROR";
+  characterName.textContent = "CHARACTER NOT FOUND";
+  characterJob.textContent = "";
+  characterImage.style.display = "none";
 
-    <section class="error-message">
+  dialogueText.textContent =
+    "指定されたキャラクターが見つかりません。";
 
-      <div class="error-title">
-        CHARACTER NOT FOUND
-      </div>
+  systemMessage.textContent =
+    "CHARACTER CHAT SYSTEM / ERROR";
 
-      <div class="error-text">
-        キャラクター情報を読み込めませんでした。
-      </div>
+  talkButton.style.display = "none";
+  askButton.style.display = "none";
 
-    </section>
-
-  `;
-
-} else {
+}
 
 
-  /* =========================
-     CREATE ROOM
-  ========================= */
+/* =========================================
+   LOAD CHARACTER
+========================================= */
 
-  chatArea.innerHTML = `
+if (character) {
 
-    <section class="character-room">
+  fileNumber.textContent =
+    "CHARACTER ARCHIVE / " + character.file;
 
-      <header class="character-header">
+  characterName.textContent =
+    character.name;
 
-        <div class="character-file">
-          ${character.file}
-        </div>
+  characterJob.textContent =
+    character.job;
 
-        <h2 class="character-name">
-          ${character.name}
-        </h2>
+  characterImage.src =
+    character.image;
 
-        <div class="character-job">
-          ${character.job}
-        </div>
+  characterImage.alt =
+    character.name;
 
-      </header>
+  let lineIndex = 0;
 
-
-      <div class="portrait-area">
-
-        <img
-          id="characterPortrait"
-          class="character-portrait"
-          src="${character.image}"
-          alt="${character.name}"
-        >
-
-      </div>
+  dialogueText.textContent =
+    character.lines[lineIndex];
 
 
-      <div class="dialogue-area">
+  /* TALK */
 
-        <div class="dialogue-box">
+  talkButton.addEventListener("click", function() {
 
-          <div class="dialogue-name">
-            ${character.name}
-          </div>
+    lineIndex++;
 
-          <p
-            id="dialogueText"
-            class="dialogue-text"
-          >
-            ${character.lines[0]}
-          </p>
-
-        </div>
-
-
-        <div class="command-area">
-
-          <button
-            class="command-button"
-            id="talkButton"
-          >
-            TALK
-          </button>
-
-          <button
-            class="command-button"
-            id="questionButton"
-          >
-            ASK
-          </button>
-
-        </div>
-
-
-        <div
-          id="systemMessage"
-          class="system-message"
-        >
-          TAP TALK TO SPEAK
-        </div>
-
-      </div>
-
-    </section>
-
-  `;
-
-
-  /* =========================
-     TALK SYSTEM
-  ========================= */
-
-  const dialogueText =
-    document.getElementById(
-      "dialogueText"
-    );
-
-
-  const systemMessage =
-    document.getElementById(
-      "systemMessage"
-    );
-
-
-  const talkButton =
-    document.getElementById(
-      "talkButton"
-    );
-
-
-  let talkIndex = 0;
-
-
-  talkButton.addEventListener(
-    "click",
-    function () {
-
-      talkIndex++;
-
-      if (
-        talkIndex >=
-        character.lines.length
-      ) {
-
-        talkIndex = 0;
-
-      }
-
-
-      dialogueText.textContent =
-        character.lines[talkIndex];
-
-
-      systemMessage.textContent =
-        "TALK " +
-        String(talkIndex + 1)
-          .padStart(2, "0");
-
+    if (lineIndex >= character.lines.length) {
+      lineIndex = 0;
     }
-  );
+
+    dialogueText.textContent =
+      character.lines[lineIndex];
+
+    systemMessage.textContent =
+      "CHARACTER CHAT SYSTEM / TALK";
+
+  });
 
 
-  /* =========================
-     ASK
-  ========================= */
+  /* ASK */
 
-  const questionButton =
-    document.getElementById(
-      "questionButton"
-    );
+  askButton.addEventListener("click", function() {
 
+    dialogueText.textContent =
+      "……何を聞きたいの？";
 
-  questionButton.addEventListener(
-    "click",
-    function () {
+    systemMessage.textContent =
+      "QUESTION SYSTEM / COMING SOON";
 
-      dialogueText.textContent =
-        "何を聞きたいの？";
-
-      systemMessage.textContent =
-        "QUESTION SYSTEM / COMING SOON";
-
-    }
-  );
+  });
 
 }
 
 </script>
 
+<script src="menu.js"></script>
 
 </body>
-
 </html>
