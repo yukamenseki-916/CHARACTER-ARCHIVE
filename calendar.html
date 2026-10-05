@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>BIRTHDAY | 床面積 CHARACTER ARCHIVE</title>
+
+<link rel="stylesheet" href="menu.css">
+
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+
+  background: #0d120c;
+
+  color: #e8dfc8;
+
+  font-family:
+    "Times New Roman",
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+}
+
+
+.container {
+
+  width: 92%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 40px 0 70px;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+  text-align: center;
+
+  padding: 35px 15px 30px;
+
+  border-top: 1px solid #a88b4a;
+
+  border-bottom: 1px solid #a88b4a;
+
+}
+
+
+.archive-label {
+
+  color: #99927f;
+
+  font-size: 12px;
+
+  letter-spacing: 0.25em;
+
+}
+
+
+.page-title {
+
+  margin: 15px 0 8px;
+
+  color: #d7b866;
+
+  font-size: 38px;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.page-subtitle {
+
+  color: #99927f;
+
+  font-size: 13px;
+
+  letter-spacing: 0.2em;
+
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back {
+
+  display: inline-block;
+
+  margin: 25px 0 10px;
+
+  color: #b9ad91;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+}
+
+
+.back:hover {
+
+  color: #d7b866;
+
+}
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar-section {
+
+  margin-top: 35px;
+
+}
+
+
+.calendar-navigation {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+}
+
+
+.month-title {
+
+  margin: 0;
+
+  color: #d7b866;
+
+  font-size: 24px;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.month-button {
+
+  width: 42px;
+
+  height: 42px;
+
+  border: 1px solid #77663f;
+
+  background: #111710;
+
+  color: #b9ad91;
+
+  font-family: inherit;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+}
+
+
+.month-button:hover {
+
+  color: #d7b866;
+
+  border-color: #d7b866;
+
+}
+
+
+/* =========================
+   CALENDAR GRID
+========================= */
+
+.calendar {
+
+  border: 1px solid #625536;
+
+  background: #111710;
+
+}
+
+
+.weekdays {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+  border-bottom: 1px solid #625536;
+
+}
+
+
+.weekday {
+
+  padding: 12px 5px;
+
+  text-align: center;
+
+  color: #a88b4a;
+
+  font-size: 11px;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.days {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+
+}
+
+
+.day {
+
+  min-height: 115px;
+
+  padding: 9px;
+
+  border-right: 1px solid #3f392b;
+
+  border-bottom: 1px solid #3f392b;
+
+}
+
+
+.day:nth-child(7n) {
+
+  border-right: none;
+
+}
+
+
+.day-number {
+
+  color: #99927f;
+
+  font-size: 12px;
+
+}
+
+
+.empty-day {
+
+  background: #0d120c;
+
+}
+
+
+.today {
+
+  box-shadow:
+    inset 0 0 0 1px #a88b4a;
+
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday-list {
+
+  margin-top: 7px;
+
+}
+
+
+.birthday-link {
+
+  display: block;
+
+  margin-top: 6px;
+
+  padding: 5px 6px;
+
+  border-left: 2px solid #a88b4a;
+
+  background: #151b13;
+
+  color: #d7b866;
+
+  text-decoration: none;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+}
+
+
+.birthday-link:hover {
+
+  color: #fff0b8;
+
+  background: #1a2117;
+
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.info-section {
+
+  margin-top: 45px;
+
+}
+
+
+.section-title {
+
+  margin: 0;
+
+  color: #d7b866;
+
+  font-size: 22px;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.section-title::after {
+
+  content: "";
+
+  display: block;
+
+  width: 60px;
+
+  height: 1px;
+
+  background: #a88b4a;
+
+  margin-top: 10px;
+
+}
+
+
+.birthday-summary {
+
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border: 1px solid #625536;
+
+  background: #111710;
+
+}
+
+
+.birthday-summary p {
+
+  margin: 0;
+
+  color: #b9ad91;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+  margin-top: 60px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #4f4633;
+
+  text-align: center;
+
+  color: #777261;
+
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .container {
+
+    width: 92%;
+
+    padding-top: 25px;
+
+  }
+
+
+  .page-title {
+
+    font-size: 30px;
+
+  }
+
+
+  .calendar-navigation {
+
+    margin-bottom: 15px;
+
+  }
+
+
+  .month-title {
+
+    font-size: 20px;
+
+  }
+
+
+  .month-button {
+
+    width: 38px;
+
+    height: 38px;
+
+  }
+
+
+  .day {
+
+    min-height: 80px;
+
+    padding: 5px;
+
+  }
+
+
+  .weekday {
+
+    padding: 9px 2px;
+
+    font-size: 9px;
+
+  }
+
+
+  .day-number {
+
+    font-size: 10px;
+
+  }
+
+
+  .birthday-link {
+
+    margin-top: 4px;
+
+    padding: 4px;
+
+    font-size: 9px;
+
+  }
+
+}
+
+</style>
+
+<script src="menu.js" defer></script>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+  <header class="header">
+
+    <div class="archive-label">
+      CHARACTER ARCHIVE
+    </div>
+
+    <h1 class="page-title">
+      BIRTHDAY
+    </h1>
+
+    <div class="page-subtitle">
+      BIRTHDAY CALENDAR
+    </div>
+
+  </header>
+
+
+  <a
+    href="index.html"
+    class="back"
+  >
+    ← CHARACTER ARCHIVE
+  </a>
+
+
+  <section class="calendar-section">
+
+
+    <div class="calendar-navigation">
+
+      <button
+        class="month-button"
+        id="prevMonth"
+        aria-label="前の月"
+      >
+        ‹
+      </button>
+
+
+      <h2
+        class="month-title"
+        id="monthTitle"
+      >
+      </h2>
+
+
+      <button
+        class="month-button"
+        id="nextMonth"
+        aria-label="次の月"
+      >
+        ›
+      </button>
+
+    </div>
+
+
+    <div class="calendar">
+
+
+      <div class="weekdays">
+
+        <div class="weekday">
+          SUN
+        </div>
+
+        <div class="weekday">
+          MON
+        </div>
+
+        <div class="weekday">
+          TUE
+        </div>
+
+        <div class="weekday">
+          WED
+        </div>
+
+        <div class="weekday">
+          THU
+        </div>
+
+        <div class="weekday">
+          FRI
+        </div>
+
+        <div class="weekday">
+          SAT
+        </div>
+
+      </div>
+
+
+      <div
+        class="days"
+        id="calendarDays"
+      >
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <section class="info-section">
+
+    <h2 class="section-title">
+      BIRTHDAY RECORD
+    </h2>
+
+
+    <div class="birthday-summary">
+
+      <p>
+        床面積 CHARACTER ARCHIVE に登録された
+        探索者の誕生日を記録しています。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+    YUKAMENSEKI CHARACTER ARCHIVE
+  </footer>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================
+   CHARACTER DATA
+========================= */
+
+const birthdays = {
+
+  1: [
+    {
+      day: 31,
+      name: "白妙 葉生",
+      url: "you.html"
+    }
+  ],
+
+  2: [
+    {
+      day: 2,
+      name: "三色 菫",
+      url: "sumire.html"
+    },
+
+    {
+      day: 20,
+      name: "牡鹿 密列",
+      url: "mitsure.html"
+    },
+
+    {
+      day: 26,
+      name: "白石 霞実",
+      url: "kasumi.html"
+    }
+  ],
+
+  3: [
+    {
+      day: 13,
+      name: "柏原 碇",
+      url: "ikari.html"
+    },
+
+    {
+      day: 21,
+      name: "春川 咲",
+      url: "saku.html"
+    },
+
+    {
+      day: 22,
+      name: "冷泉 一葉",
+      url: "kazuha.html"
+    },
+
+    {
+      day: 27,
+      name: "花園 美桜",
+      url: "mio.html"
+    }
+  ],
+
+  4: [
+    {
+      day: 14,
+      name: "逢望 栄飛",
+      url: "eihi.html"
+    },
+
+    {
+      day: 17,
+      name: "伏翼 天鼠",
+      url: "tenso.html"
+    },
+
+    {
+      day: 29,
+      name: "蔵芝 廿楽",
+      url: "tsuzura.html"
+    }
+  ],
+
+  5: [
+    {
+      day: 4,
+      name: "章姫 苺果",
+      url: "ichika.html"
+    },
+
+    {
+      day: 31,
+      name: "神代 藤華",
+      url: "touka.html"
+    }
+  ],
+
+  6: [
+    {
+      day: 3,
+      name: "四葩 集真",
+      url: "azuma.html"
+    },
+
+    {
+      day: 4,
+      name: "東郷 空木",
+      url: "utsugi.html"
+    },
+
+    {
+      day: 12,
+      name: "八尋 凪",
+      url: "nagi.html"
+    },
+
+    {
+      day: 16,
+      name: "月下 香",
+      url: "kaoru.html"
+    },
+
+    {
+      day: 21,
+      name: "日向 茉昼",
+      url: "mahiru.html"
+    }
+  ],
+
+  7: [
+    {
+      day: 18,
+      name: "入狗 梨明日",
+      url: "rias.html"
+    },
+
+    {
+      day: 19,
+      name: "落月 吏斗",
+      url: "rito.html"
+    }
+  ],
+
+  8: [
+    {
+      day: 1,
+      name: "方波見 晴",
+      url: "sei.html"
+    },
+
+    {
+      day: 6,
+      name: "夜雨 隼人",
+      url: "hayato.html"
+    },
+
+    {
+      day: 16,
+      name: "御薬袋 渉羽",
+      url: "shou.html"
+    },
+
+    {
+      day: 19,
+      name: "九重 快信",
+      url: "kashin.html"
+    }
+  ],
+
+  9: [
+    {
+      day: 13,
+      name: "観月 彰",
+      url: "aki.html"
+    }
+  ],
+
+  10: [
+    {
+      day: 1,
+      name: "イスト・ツァイトガ",
+      url: "zeitga.html"
+    },
+
+    {
+      day: 5,
+      name: "神無月 狐影",
+      url: "kokage.html"
+    },
+
+    {
+      day: 16,
+      name: "白宮 由良",
+      url: "yura.html"
+    }
+  ],
+
+  11: [
+    {
+      day: 18,
+      name: "燈下 珠心",
+      url: "susane.html"
+    }
+  ],
+
+  12: [
+    {
+      day: 1,
+      name: "世那 響",
+      url: "hibiki.html"
+    },
+
+    {
+      day: 2,
+      name: "フスタ",
+      url: "fusta.html"
+    },
+
+    {
+      day: 6,
+      name: "新井 伊縁",
+      url: "iyori.html"
+    }
+  ]
+
+};
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+let currentDate = new Date();
+
+
+const monthTitle =
+  document.getElementById("monthTitle");
+
+const calendarDays =
+  document.getElementById("calendarDays");
+
+
+function renderCalendar() {
+
+
+  const year =
+    currentDate.getFullYear();
+
+  const month =
+    currentDate.getMonth();
+
+
+  const monthNumber =
+    month + 1;
+
+
+  monthTitle.textContent =
+    year + " / " +
+    String(monthNumber).padStart(2, "0");
+
+
+  calendarDays.innerHTML = "";
+
+
+  const firstDay =
+    new Date(
+      year,
+      month,
+      1
+    ).getDay();
+
+
+  const lastDate =
+    new Date(
+      year,
+      month + 1,
+      0
+    ).getDate();
+
+
+  const today =
+    new Date();
+
+
+  /* 空白 */
+
+  for (
+    let i = 0;
+    i < firstDay;
+    i++
+  ) {
+
+    const empty =
+      document.createElement("div");
+
+    empty.className =
+      "day empty-day";
+
+    calendarDays.appendChild(empty);
+
+  }
+
+
+  /* 日付 */
+
+  for (
+    let date = 1;
+    date <= lastDate;
+    date++
+  ) {
+
+
+    const day =
+      document.createElement("div");
+
+    day.className =
+      "day";
+
+
+    /* 今日 */
+
+    if (
+      year === today.getFullYear() &&
+      month === today.getMonth() &&
+      date === today.getDate()
+    ) {
+
+      day.classList.add("today");
+
+    }
+
+
+    const number =
+      document.createElement("div");
+
+    number.className =
+      "day-number";
+
+    number.textContent =
+      date;
+
+
+    day.appendChild(number);
+
+
+    /* 誕生日 */
+
+    const monthBirthdays =
+      birthdays[monthNumber] || [];
+
+
+    const todayBirthdays =
+      monthBirthdays.filter(
+        function (birthday) {
+
+          return birthday.day === date;
+
+        }
+      );
+
+
+    if (
+      todayBirthdays.length > 0
+    ) {
+
+
+      const list =
+        document.createElement("div");
+
+      list.className =
+        "birthday-list";
+
+
+      todayBirthdays.forEach(
+        function (birthday) {
+
+
+          const link =
+            document.createElement("a");
+
+          link.className =
+            "birthday-link";
+
+          link.href =
+            birthday.url;
+
+          link.textContent =
+            birthday.name;
+
+
+          list.appendChild(link);
+
+        }
+      );
+
+
+      day.appendChild(list);
+
+    }
+
+
+    calendarDays.appendChild(day);
+
+  }
+
+}
+
+
+/* =========================
+   MONTH BUTTONS
+========================= */
+
+document
+  .getElementById("prevMonth")
+  .addEventListener(
+    "click",
+    function () {
+
+      currentDate.setMonth(
+        currentDate.getMonth() - 1
+      );
+
+      renderCalendar();
+
+    }
+  );
+
+
+document
+  .getElementById("nextMonth")
+  .addEventListener(
+    "click",
+    function () {
+
+      currentDate.setMonth(
+        currentDate.getMonth() + 1
+      );
+
+      renderCalendar();
+
+    }
+  );
+
+
+renderCalendar();
+
+
+</script>
+
+
+</body>
+
+</html>
