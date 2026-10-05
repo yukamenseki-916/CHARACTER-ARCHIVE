@@ -6,10 +6,7 @@
 
 <title>CHARACTER CHAT</title>
 
-<link rel="stylesheet" href="menu.css">
-
 <style>
-
 * {
   box-sizing: border-box;
 }
@@ -18,11 +15,7 @@ body {
   margin: 0;
   background: #0d120c;
   color: #e8dfc8;
-  font-family:
-    "Times New Roman",
-    "Yu Mincho",
-    "Hiragino Mincho ProN",
-    serif;
+  font-family: "Times New Roman","Yu Mincho","Hiragino Mincho ProN",serif;
 }
 
 .container {
@@ -31,11 +24,6 @@ body {
   margin: 0 auto;
   padding: 30px 0 70px;
 }
-
-
-/* =========================================
-   HEADER
-========================================= */
 
 .header {
   text-align: center;
@@ -63,11 +51,6 @@ body {
   letter-spacing: .12em;
 }
 
-
-/* =========================================
-   PORTRAIT
-========================================= */
-
 .character-area {
   margin-top: 30px;
   padding: 20px;
@@ -84,64 +67,56 @@ body {
   background: #090d08;
 }
 
-
-/* =========================================
-   RELATIONSHIP
-========================================= */
+/* 親密度 */
 
 .relationship-area {
-  margin-top: 25px;
-  padding: 20px;
-  border: 1px solid #625536;
+  margin-top: 20px;
+  padding: 15px 18px;
+  border: 1px solid #4f4633;
   background: #111710;
+}
+
+.relationship-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .relationship-title {
   color: #a88b4a;
-  font-size: 11px;
-  letter-spacing: .2em;
-  margin-bottom: 10px;
+  font-size: 10px;
+  letter-spacing: .15em;
 }
 
 .relationship-rank {
   color: #d7b866;
-  font-size: 20px;
+  font-size: 11px;
   letter-spacing: .12em;
-  margin-bottom: 12px;
 }
 
 .relationship-number {
-  color: #99927f;
-  font-size: 12px;
-  text-align: right;
-  margin-bottom: 7px;
+  margin-top: 7px;
+  color: #e8dfc8;
+  font-size: 13px;
 }
 
 .relationship-bar {
   width: 100%;
-  height: 8px;
-  border: 1px solid #625536;
-  background: #090d08;
+  height: 4px;
+  margin-top: 10px;
+  background: #2a2d24;
+  overflow: hidden;
 }
 
-.relationship-progress {
+.relationship-fill {
   width: 0%;
   height: 100%;
   background: #a88b4a;
   transition: width .4s ease;
 }
 
-.relationship-status {
-  margin-top: 10px;
-  color: #777261;
-  font-size: 10px;
-  letter-spacing: .08em;
-}
-
-
-/* =========================================
-   DIALOGUE
-========================================= */
+/* 会話 */
 
 .dialogue-area {
   margin-top: 25px;
@@ -175,10 +150,7 @@ body {
   font-size: 15px;
 }
 
-
-/* =========================================
-   BUTTONS
-========================================= */
+/* ボタン */
 
 .button-area {
   margin-top: 20px;
@@ -205,10 +177,65 @@ body {
   background: #151c13;
 }
 
+/* 質問 */
 
-/* =========================================
-   SYSTEM
-========================================= */
+.question-area {
+  display: none;
+  margin-top: 20px;
+}
+
+.question-title {
+  margin-bottom: 15px;
+  color: #a88b4a;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-align: center;
+}
+
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.question-button {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #4f4633;
+  background: #111710;
+  color: #d0c7b2;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: left;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.question-button:hover {
+  color: #d7b866;
+  border-color: #a88b4a;
+  background: #151c13;
+}
+
+.question-back {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #3f392b;
+  background: transparent;
+  color: #777261;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.question-back:hover {
+  color: #d7b866;
+  border-color: #77663f;
+}
+
+/* システム */
 
 .system-message {
   margin-top: 25px;
@@ -220,11 +247,6 @@ body {
   text-align: center;
   line-height: 1.8;
 }
-
-
-/* =========================================
-   BACK
-========================================= */
 
 .back {
   display: inline-block;
@@ -238,12 +260,7 @@ body {
   color: #d7b866;
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
+@media(max-width:600px) {
 
   .character-name {
     font-size: 30px;
@@ -267,98 +284,76 @@ body {
   }
 
 }
-
 </style>
-</head>
 
+<link rel="stylesheet" href="menu.css">
+
+</head>
 
 <body>
 
 <div class="container">
 
-
-  <!-- HEADER -->
-
-  <div class="header">
+  <header class="header">
 
     <div class="archive-label" id="fileNumber">
-      CHARACTER ARCHIVE / FILE 001
+      CHARACTER ARCHIVE / FILE
     </div>
 
     <div class="character-name" id="characterName">
-      月下 香
+      CHARACTER
     </div>
 
     <div class="character-job" id="characterJob">
-      KILLER / 22F
+      CHARACTER
     </div>
 
-  </div>
+  </header>
 
-
-  <!-- BACK -->
-
-  <a href="chat.html" class="back">
-    ← CHARACTER SELECT
-  </a>
-
-
-  <!-- PORTRAIT -->
 
   <div class="character-area">
 
     <img
       id="characterImage"
       class="character-portrait"
-      src="kaoru-normal.png"
-      alt="月下 香"
+      src=""
+      alt=""
     >
 
   </div>
 
 
-  <!-- RELATIONSHIP -->
+  <!-- 親密度 -->
 
   <div class="relationship-area">
 
-    <div class="relationship-title">
-      RELATIONSHIP
+    <div class="relationship-top">
+
+      <div class="relationship-title">
+        RELATIONSHIP
+      </div>
+
+      <div class="relationship-rank" id="relationshipRank">
+        UNKNOWN
+      </div>
+
     </div>
 
-    <div
-      class="relationship-rank"
-      id="relationshipRank"
-    >
-      UNKNOWN
-    </div>
-
-    <div
-      class="relationship-number"
-      id="relationshipNumber"
-    >
-      0 / 100
+    <div class="relationship-number">
+      <span id="intimacyNumber">0</span> / 100
     </div>
 
     <div class="relationship-bar">
-
       <div
-        class="relationship-progress"
-        id="relationshipProgress"
-      ></div>
-
-    </div>
-
-    <div
-      class="relationship-status"
-      id="relationshipStatus"
-    >
-      FIRST CONTACT
+        class="relationship-fill"
+        id="relationshipFill">
+      </div>
     </div>
 
   </div>
 
 
-  <!-- DIALOGUE -->
+  <!-- 会話 -->
 
   <div class="dialogue-area">
 
@@ -366,58 +361,86 @@ body {
 
       <p
         class="dialogue-text"
-        id="dialogueText"
-      >
-        ……誰？
+        id="dialogueText">
       </p>
 
     </div>
 
+  </div>
 
-    <div class="button-area">
 
-      <button
-        class="chat-button"
-        id="talkButton"
-      >
-        TALK
-      </button>
+  <!-- 通常ボタン -->
 
-      <button
-        class="chat-button"
-        id="askButton"
-      >
-        ASK
-      </button>
+  <div
+    class="button-area"
+    id="mainButtons">
 
-    </div>
+    <button
+      class="chat-button"
+      id="talkButton">
+      TALK
+    </button>
+
+    <button
+      class="chat-button"
+      id="askButton">
+      ASK
+    </button>
 
   </div>
 
 
-  <!-- SYSTEM -->
+  <!-- 質問 -->
+
+  <div
+    class="question-area"
+    id="questionArea">
+
+    <div class="question-title">
+      SELECT QUESTION
+    </div>
+
+    <div
+      class="question-list"
+      id="questionList">
+    </div>
+
+    <button
+      class="question-back"
+      id="questionBack">
+      ← BACK
+    </button>
+
+  </div>
+
 
   <div
     class="system-message"
-    id="systemMessage"
-  >
-    CHARACTER CHAT SYSTEM / ONLINE
+    id="systemMessage">
+    CHARACTER CHAT / SYSTEM READY
   </div>
 
+
+  <a
+    href="chat.html"
+    class="back">
+    ← CHARACTER SELECT
+  </a>
 
 </div>
 
 
+<script src="menu.js"></script>
+
 <script>
 
-
-/* =========================================
+/* =========================================================
    CHARACTER DATA
-========================================= */
+   ========================================================= */
 
 const characters = {
 
-kaoru: {
+  kaoru: {
     file: "FILE 001",
     name: "月下 香",
     job: "KILLER / 22F",
@@ -431,8 +454,30 @@ kaoru: {
       "お菓子、何個買ってもいい？",
       "面白いお話して〜！！絵本でもいいよ！！",
       "「遺書」って、たーくさん生きる中で一番ののラブレターだよね！！"
+    ],
+
+    askMessage: "ねぇ、なに聞きたいの？",
+
+    questions: [
+      {
+        question: "好きなものは？",
+        answer: "甘いもの？　もちろん好きだよ！だって、甘いものって幸せな味がするでしょ？"
+      },
+      {
+        question: "「遺書」についてどう思う？",
+        answer: "遺書って、その人が最後に誰かへ残す言葉なんだよ？　そんなの、人生最大のラブレターだと思わない？"
+      },
+      {
+        question: "殺し屋ってどんな仕事？",
+        answer: "殺すこと？　……うーん。そういう質問をするってことは、私のことが気になってるのかな？"
+      },
+      {
+        question: "私のことをどう思ってる？",
+        answer: "ふふ、面白いこと聞くね。じゃあ、もっと私とお話してから考えてよ！"
+      }
     ]
   },
+
 
   mio: {
     file: "FILE 002",
@@ -447,8 +492,30 @@ kaoru: {
       "赤いゼラニウムって、すごく綺麗だよね。",
       "あなたとお話するの、好きだよ。",
       "……ねえ、もう少しだけ一緒にいてもいい？"
+    ],
+
+    askMessage: "美桜に聞きたいこと？　何でもいいよ！",
+
+    questions: [
+      {
+        question: "好きな花は？",
+        answer: "赤いゼラニウムが好き。綺麗だし……見ていると、なんだか大切なものを思い出すんだ。"
+      },
+      {
+        question: "好きなものは？",
+        answer: "甘いものとか、綺麗なものとか……あなたとこうやってお話する時間も、好きだよ。"
+      },
+      {
+        question: "苦手なものは？",
+        answer: "虫はちょっと苦手かな……。見つけると、びっくりしちゃう。"
+      },
+      {
+        question: "一緒に何をしたい？",
+        answer: "うーん……お花を見たり、お話したり。あなたがしたいことも、聞いてみたいな。"
+      }
     ]
   },
+
 
   shou: {
     file: "FILE 003",
@@ -463,8 +530,30 @@ kaoru: {
       "……君は、ちゃんと眠れてる？",
       "無理せず、ゆっくり、出来るようになれば良いから、ね？",
       "大切な人のことなら、いくらでも話せちゃうなぁ、なんて。"
+    ],
+
+    askMessage: "僕に質問ですか？　どうぞ。答えられることなら。",
+
+    questions: [
+      {
+        question: "仕事は大変？",
+        answer: "大変なこともあるけれど、人の話を聞くことは好きなんだ。誰かの力になれるなら嬉しいよ。"
+      },
+      {
+        question: "大切な人について聞きたい",
+        answer: "大切な人のことなら、いくらでも話せちゃうなぁ。……それくらい、大事に思ってるってことだね。"
+      },
+      {
+        question: "運動は嫌い？",
+        answer: "うん……あまり得意じゃないかな。できるだけ避けたいところではあるね。"
+      },
+      {
+        question: "悩みを相談してもいい？",
+        answer: "もちろん。話してくれるだけでもいいからね。無理に答えを出そうとしなくて大丈夫だよ。"
+      }
     ]
   },
+
 
   rias: {
     file: "FILE 004",
@@ -479,8 +568,30 @@ kaoru: {
       "……失敗したら、またやり直せばいいよ。",
       "あなたは、実験って好き？",
       "ちょっとだけ、面白いことを考えてるんだけど……。"
+    ],
+
+    askMessage: "質問？　うん、いいよ。",
+
+    questions: [
+      {
+        question: "実験は好き？",
+        answer: "好きだよ。知らないことを知るのって面白いから。結果がどうなるのか、試してみたくなるんだ。"
+      },
+      {
+        question: "怪我するのは怖い？",
+        answer: "できれば避けたいかな。でも、失敗すること自体はそんなに嫌いじゃないよ。"
+      },
+      {
+        question: "好きな研究は？",
+        answer: "まだ決めてないかな。面白そうなことなら、何でも試してみたいと思ってるよ。"
+      },
+      {
+        question: "一緒に実験する？",
+        answer: "もちろん。あなたが危ないことをしないなら、楽しそうだね。"
+      }
     ]
   },
+
 
   saku: {
     file: "FILE 005",
@@ -495,8 +606,30 @@ kaoru: {
       "さくちゃんって呼ぶな！",
       "別に可愛いものが好きなわけじゃねーから。",
       "……何見てるんだよ…。そんなに見るな。"
+    ],
+
+    askMessage: "質問？　……まあ、答えられることなら。",
+
+    questions: [
+      {
+        question: "好きな食べ物は？",
+        answer: "……普通のもんだよ。特別言うほどのもんじゃねーし。"
+      },
+      {
+        question: "可愛いものが好き？",
+        answer: "好きじゃねーって言ってんだろ。……そんなにしつこく聞くな。"
+      },
+      {
+        question: "どんな性格？",
+        answer: "自分で言うことじゃねーだろ。……まあ、面倒くさい性格なのは認めるけど。"
+      },
+      {
+        question: "照れてる？",
+        answer: "は！？　照れてねーよ！　……だからそんな見るなって。"
+      }
     ]
   },
+
 
   susane: {
     file: "FILE 006",
@@ -511,8 +644,30 @@ kaoru: {
       "お料理って難しいよね…。",
       "一緒に遊ぶ？",
       "ふふ、楽しいね！"
+    ],
+
+    askMessage: "何を聞きたいの？",
+
+    questions: [
+      {
+        question: "友達って大切？",
+        answer: "うん！　やっぱり友達って大切だよ。楽しいときも、困ったときも一緒にいられるから。"
+      },
+      {
+        question: "妹についてどう思う？",
+        answer: "……その話は、ちょっとだけ複雑かな。"
+      },
+      {
+        question: "魔法少女になりたい？",
+        answer: "魔法少女って、やっぱり憧れるよね！　困ってる人を助けられたら素敵だと思う！"
+      },
+      {
+        question: "一緒に遊ぶ？",
+        answer: "うん！　何して遊ぶ？　せっかくだから楽しいことしようよ！"
+      }
     ]
   },
+
 
   utsugi: {
     file: "FILE 007",
@@ -527,8 +682,30 @@ kaoru: {
       "暴力に良いところはありませんから。",
       "今日は、ここでゆっくりしていきませんか？",
       "君は今日は何をしていたんですか？"
+    ],
+
+    askMessage: "僕に質問？　いいよ、何でも聞いて。",
+
+    questions: [
+      {
+        question: "かわいいものが好き？",
+        answer: "はい。かわいいものって見ているだけで癒されますからね。"
+      },
+      {
+        question: "暴力が嫌いなのはなぜ？",
+        answer: "暴力で誰かを傷つけても、良いことなんてありませんから。できるなら穏やかに過ごしたいですね。"
+      },
+      {
+        question: "普段は何をしている？",
+        answer: "その日によって色々ですね。特に決まったことをしているわけではありませんよ。"
+      },
+      {
+        question: "一緒に出かける？",
+        answer: "いいですね。君が行きたいところがあるなら、付き合いますよ。"
+      }
     ]
   },
+
 
   iyori: {
     file: "FILE 008",
@@ -543,8 +720,30 @@ kaoru: {
       "僕の姉さんは世界一なんだからっ。",
       "…ふーん…。姉さんのことよく分かってるじゃん…。",
       "……まあ、ちょっとくらいなら話してあげてもいいけど…。"
+    ],
+
+    askMessage: "……何を聞きたいの？",
+
+    questions: [
+      {
+        question: "お姉さんのことが好き？",
+        answer: "当たり前でしょ！　僕の姉さんは世界一なんだから。"
+      },
+      {
+        question: "お姉さんのどこが好き？",
+        answer: "優しいところとか、可愛いところとか……って、なんで君に教えなきゃいけないんだよ！"
+      },
+      {
+        question: "嫌いなものは？",
+        answer: "姉さんを傷つけるもの。……それだけは絶対に許さないから。"
+      },
+      {
+        question: "寂しくない？",
+        answer: "別に寂しくなんかないし。……姉さんがいるから。"
+      }
     ]
   },
+
 
   mitsure: {
     file: "FILE 009",
@@ -559,8 +758,30 @@ kaoru: {
       "お、ほな一緒に酒でも飲みに行くか？",
       "雨の日は、あんま好きやないんよね。",
       "なんや困ったことあったら言いや？"
+    ],
+
+    askMessage: "なんや、聞きたいことでもあるんか？",
+
+    questions: [
+      {
+        question: "警察官になった理由は？",
+        answer: "まあ、色々やな。……仕事の話はあんま好きやないけど、困ってる奴を放っとくほど冷たくもないで。"
+      },
+      {
+        question: "お酒は好き？",
+        answer: "おう、好きやで。今度一緒に飲みに行くか？"
+      },
+      {
+        question: "雨の日が嫌い？",
+        answer: "なんや、あんま好きやないんよ。理由？　……そこまで聞くんか？"
+      },
+      {
+        question: "疲れてない？",
+        answer: "心配してくれてんのか？　まあ、ぼちぼちやな。"
+      }
     ]
   },
+
 
   eihi: {
     file: "FILE 010",
@@ -575,8 +796,30 @@ kaoru: {
       "僕はいい子だからねっ。",
       "…愛されるって、難しいね。",
       "…もう少しだけ、一緒にいてもいい？"
+    ],
+
+    askMessage: "僕に聞きたいこと？",
+
+    questions: [
+      {
+        question: "お兄さんのことが好き？",
+        answer: "うん。兄さんは僕にとって、とても大切な人だよ。"
+      },
+      {
+        question: "愛されるってどういうこと？",
+        answer: "僕もまだよく分からないんだ。……だから、ちゃんと知りたいと思ってる。"
+      },
+      {
+        question: "優しい人ってどんな人？",
+        answer: "僕のことをちゃんと見てくれる人……かな。"
+      },
+      {
+        question: "寂しくない？",
+        answer: "……少しだけ。でも、こうして一緒にいてくれるなら、大丈夫かも。"
+      }
     ]
   },
+
 
   fusta: {
     file: "FILE 011",
@@ -591,8 +834,30 @@ kaoru: {
       "友達って、やっぱり大切よね。",
       "私、私の思うままに生きてみようと思うの。",
       "…今日も、ちゃんと前を向いていこうかな。"
+    ],
+
+    askMessage: "何でも聞いていいよ。私はちゃんと答えるから！",
+
+    questions: [
+      {
+        question: "どうしていつも「大丈夫」って言うの？",
+        answer: "だって、そう言っていれば本当に大丈夫になれる気がするから。でも……無理しすぎないことも大切よね。"
+      },
+      {
+        question: "友達って大切？",
+        answer: "もちろん！　友達がいてくれるから、私は前を向いていけるんだと思う。"
+      },
+      {
+        question: "今、幸せ？",
+        answer: "うん。今の私、ちゃんと自分の毎日を楽しめてると思う。"
+      },
+      {
+        question: "これから何をしたい？",
+        answer: "私の思うままに、真っ直ぐ生きてみたい。それから、友達とたくさん笑いたいな。"
+      }
     ]
   },
+
 
   kazuha: {
     file: "FILE 012",
@@ -607,8 +872,30 @@ kaoru: {
       "君と話すのは、まぁ嫌いではないかな。",
       "…でも俺は、彼に救われたから。",
       "俺は彼と出会えてよかったと思ってるよ。"
+    ],
+
+    askMessage: "質問かい？　……さて、何が聞きたいのかな。",
+
+    questions: [
+      {
+        question: "「正解」って必要？",
+        answer: "必要なものもあるんだろうけど、人との会話にまで正解を求める必要はないと思うよ。"
+      },
+      {
+        question: "相方PCについてどう思う？",
+        answer: "……彼に救われた。だから、出会えてよかったと思ってるよ。"
+      },
+      {
+        question: "人付き合いは得意？",
+        answer: "得意ではないかな。どう返すのが正解なのか、考えてしまうからね。"
+      },
+      {
+        question: "大切な人はいる？",
+        answer: "いるよ。……君が思っているより、僕にとっては大切な人かもしれないね。"
+      }
     ]
   },
+
 
   rito: {
     file: "FILE 013",
@@ -623,8 +910,30 @@ kaoru: {
       "つまんねーの、なんか用できたら言えよな。",
       "…俺は、お前を信じるから、…それで良いだろ…。",
       "何か面白いことねーの？"
+    ],
+
+    askMessage: "ん？　何聞きたいの？",
+
+    questions: [
+      {
+        question: "音楽は好き？",
+        answer: "まあ好きだな。暇なときに聴いたりするし。"
+      },
+      {
+        question: "人が嫌いなの？",
+        answer: "嫌いっていうか……面倒くせーんだよ。"
+      },
+      {
+        question: "本当に明るい性格？",
+        answer: "さあな。そう見えてんなら、それでいいんじゃねーの？"
+      },
+      {
+        question: "一緒に音楽を聴く？",
+        answer: "いいぜ。お前が聴きたいんなら、付き合ってやるよ。"
+      }
     ]
   },
+
 
   kokage: {
     file: "FILE 014",
@@ -639,8 +948,30 @@ kaoru: {
       "顔のいい女って、最高だよねぇ。",
       "男？えーだるーほんとに興味ない。",
       "あはっ、良い顔してんじゃん。もっと近くで顔見せろよ。"
+    ],
+
+    askMessage: "俺に質問？　何でも聞いてよ、お姉さん♡",
+
+    questions: [
+      {
+        question: "どうして女が好きなの？",
+        answer: "だって可愛いじゃん？　顔のいい女の子なんて、いくら見てても飽きないよ。"
+      },
+      {
+        question: "顔の傷について聞きたい",
+        answer: "……ああ、これ？　気になる？　でも、お姉さんにはあんまり見せたくないんだよねぇ。"
+      },
+      {
+        question: "どうして男を殺すの？",
+        answer: "さあ？　俺が気に入らないからじゃない？　……そんな顔すんなよ。"
+      },
+      {
+        question: "私って可愛い？",
+        answer: "あはっ、もちろん。そんなこと聞いてくるところも、結構かわいーよ♡"
+      }
     ]
   },
+
 
   you: {
     file: "FILE 015",
@@ -655,8 +986,30 @@ kaoru: {
       "本を読むのは好きだな。なんかオススメしよか？",
       "消毒の匂いは……どうも苦手やね〜…。",
       "困ったことがあるなら、先生に話してな。"
+    ],
+
+    askMessage: "質問か？　先生に何でも聞いてみろ。",
+
+    questions: [
+      {
+        question: "どうして先生になったの？",
+        answer: "誰かを守れるような人間になりたかったんやと思う。……まあ、今となっては先生やけどな。"
+      },
+      {
+        question: "好きな本は？",
+        answer: "色々読むで。君が好きな本があるなら、それを教えてくれてもええよ。"
+      },
+      {
+        question: "先生って大変？",
+        answer: "大変なこともあるけど、頼ってもらえるんは嬉しいからな。"
+      },
+      {
+        question: "悩みを相談してもいい？",
+        answer: "もちろんや。先生に話せることなら、何でも話してみ。"
+      }
     ]
   },
+
 
   ichika: {
     file: "FILE 016",
@@ -671,8 +1024,30 @@ kaoru: {
       "おにーさん、どこー…？",
       "いっしょに、あそぼ…！",
       "あなた、いちかのこと、すき？"
+    ],
+
+    askMessage: "いちかに質問？　なーに？",
+
+    questions: [
+      {
+        question: "いちご好き？",
+        answer: "うん！　いちご、だーいすき！　いっぱい食べたい！"
+      },
+      {
+        question: "おにーさんのこと好き？",
+        answer: "すきー！　おにーさん、いちかとあそんでくれるの！"
+      },
+      {
+        question: "何して遊ぶ？",
+        answer: "いっしょにあそぶ！　いっぱいあそぶの！"
+      },
+      {
+        question: "いちかのこと好き？",
+        answer: "ほんと！？　えへへ……いちかも、あなたのことすき！"
+      }
     ]
   },
+
 
   tenso: {
     file: "FILE 017",
@@ -687,8 +1062,30 @@ kaoru: {
       "頑張れば報われるなんて、報われた人が言い出しただけでしょ。",
       "自分は「頑張る」なんて向いてないので。",
       "…俺と話したいなんて、変わってますね。"
+    ],
+
+    askMessage: "……何か聞きたいわけ？",
+
+    questions: [
+      {
+        question: "努力が嫌いなの？",
+        answer: "嫌いですよ。努力したところで報われないことなんて、いくらでもあるでしょう。"
+      },
+      {
+        question: "頑張るのが嫌いなのはなぜ？",
+        answer: "頑張った人間が必ず報われるなら、まだ納得できるんですけどね。"
+      },
+      {
+        question: "本当に何も諦めてない？",
+        answer: "……さあ。自分でもよく分かりません。"
+      },
+      {
+        question: "才能についてどう思う？",
+        answer: "才能がある人間はいいですよね。努力する前から、持っているものが違うんですから。"
+      }
     ]
   },
+
 
   sumire: {
     file: "FILE 018",
@@ -703,8 +1100,30 @@ kaoru: {
       "……あー、今あいつ居ないしな…。",
       "…じゃあ、あいつが来るまでな。",
       "変なやつ。"
+    ],
+
+    askMessage: "……何だよ。質問？",
+
+    questions: [
+      {
+        question: "母親についてどう思う？",
+        answer: "……普通だよ。心配性で、ちょっとうるさいけど。"
+      },
+      {
+        question: "友達はいる？",
+        answer: "……いる。昔からのやつが一人だけ。"
+      },
+      {
+        question: "寂しくない？",
+        answer: "……別に。……そんなこと聞くなよ。"
+      },
+      {
+        question: "相方PCについてどう思う？",
+        answer: "……あいつは、まあ。俺が嫌なところ見られてもいいと思えるくらいには、大事。"
+      }
     ]
   },
+
 
   tsuzura: {
     file: "FILE 019",
@@ -719,8 +1138,30 @@ kaoru: {
       "俺たち家族だろ！",
       "姉ちゃんみたいにはなんねーから！！",
       "俺がちゃんと面倒見てやるよ！"
+    ],
+
+    askMessage: "おっ、質問か？　何でも聞けよ！",
+
+    questions: [
+      {
+        question: "家族って好き？",
+        answer: "もちろん！　家族って大事だろ？　俺たち家族なんだからな！"
+      },
+      {
+        question: "どうして「にーちゃん」って呼ばせたいの？",
+        answer: "俺のほうが誕生日早いんだから、俺がにーちゃんでいいだろ！"
+      },
+      {
+        question: "相方PCのことは？",
+        answer: "大事なやつだぞ！　だから俺がちゃんと面倒見てやるんだよ！"
+      },
+      {
+        question: "将来何になりたい？",
+        answer: "まだ決めてねー！　でも、家族のことはちゃんと守れるやつになりたいな！"
+      }
     ]
   },
+
 
   hayato: {
     file: "FILE 020",
@@ -735,8 +1176,30 @@ kaoru: {
       "化け物つーのはホントに居る。",
       "俺が人間かどうかなんて、どうでもいい。",
       "……お前も人間ならさっさと去れ。"
+    ],
+
+    askMessage: "……何が聞きたい。",
+
+    questions: [
+      {
+        question: "どうして化け物が嫌いなの？",
+        answer: "分からないものが嫌いなんだよ。化け物ってのは、人間じゃないからな。"
+      },
+      {
+        question: "自分は化け物だと思う？",
+        answer: "……そう思ってたほうが、色々納得できるだろ。"
+      },
+      {
+        question: "人間になりたい？",
+        answer: "……そんなこと考えたことねえよ。"
+      },
+      {
+        question: "人間って何だと思う？",
+        answer: "さあな。少なくとも、俺にはよく分からねえ。"
+      }
     ]
   },
+
 
   sei: {
     file: "FILE 021",
@@ -751,8 +1214,30 @@ kaoru: {
       "なんでこういう時に限ってあいつが居ないんだよ…！",
       "……あー…僕と話しても楽しいことないと思うけど。",
       "…変な人。まぁあんたが良いなら良いんだけどさ…。"
+    ],
+
+    askMessage: "僕に聞きたいこと？　……うん、いいよ。",
+
+    questions: [
+      {
+        question: "どうして絵を描くの？",
+        answer: "言葉にできないことも、絵なら残せるから。描いてると、少しだけ整理できるんだ。"
+      },
+      {
+        question: "夏が嫌いなの？",
+        answer: "……夏は、会える季節でもあるけど、別れる季節でもあるから。"
+      },
+      {
+        question: "好きな季節は？",
+        answer: "……秋とか。暑くないし。"
+      },
+      {
+        question: "大切な人はいる？",
+        answer: "……いるよ。だから、ちゃんと残しておきたいんだと思う。"
+      }
     ]
   },
+
 
   zeitga: {
     file: "FILE 022",
@@ -767,8 +1252,30 @@ kaoru: {
       "僕の音楽は、この世の音楽の正解だ。",
       "他人の音楽を否定するつもりはない。",
       "ただ、僕の音楽が一番だ。"
+    ],
+
+    askMessage: "僕に質問？　いいとも。君の耳が何を求めているのか、聞かせてもらおう。",
+
+    questions: [
+      {
+        question: "どうしてそんなに自信があるの？",
+        answer: "自分の音楽を、自分自身が信じているからだよ。それ以上に必要なものがあるかな？"
+      },
+      {
+        question: "他人の音楽は嫌い？",
+        answer: "否定するつもりはないよ。ただ、僕の音楽が一番だと思っているだけさ。"
+      },
+      {
+        question: "音楽で一番大切なものは？",
+        answer: "その人間にしか生み出せない音だろうね。僕には僕の音がある。"
+      },
+      {
+        question: "音楽って何？",
+        answer: "音そのものだよ。静寂も騒音も、すべて音楽になり得る。"
+      }
     ]
   },
+
 
   ikari: {
     file: "FILE 023",
@@ -783,8 +1290,30 @@ kaoru: {
       "そんな酷いことが…。僕が何とかしよう。任せてくれる？",
       "……はは、バカは単純で助かる。",
       "大丈夫。ぜーんぶ俺に任せてればなんとなるよ。"
+    ],
+
+    askMessage: "何か質問があるのかな？",
+
+    questions: [
+      {
+        question: "どうして生徒会長をしているの？",
+        answer: "誰かの役に立てるなら、それは嬉しいことだからね。"
+      },
+      {
+        question: "本当に優しいの？",
+        answer: "もちろん。困っている人を助けるのは当然のことだと思っているよ。"
+      },
+      {
+        question: "思い通りにならないことは嫌い？",
+        answer: "……そうだね。できるなら、すべて自分の手の中に置いておきたいかな。"
+      },
+      {
+        question: "相方PCのことをどう思っている？",
+        answer: "大切な人だよ。だからこそ、僕がちゃんと守ってあげないとね。"
+      }
     ]
   },
+
 
   yura: {
     file: "FILE 024",
@@ -799,8 +1328,30 @@ kaoru: {
       "今日しか聴けない音って、あると思わない？",
       "予定通りじゃなくても、面白ければいいじゃん。",
       "じゃあ、何か一曲鳴らそうか。"
+    ],
+
+    askMessage: "お、質問？　いいよ。何でも聞いてみな。",
+
+    questions: [
+      {
+        question: "音楽が好き？",
+        answer: "もちろん！　音楽って自由だからさ。"
+      },
+      {
+        question: "作曲するときに大切なことは？",
+        answer: "その瞬間にしか出せない音を捕まえることかな。予定通りじゃなくても、面白ければいいんだよ。"
+      },
+      {
+        question: "𝐄𝐝𝐦𝐨𝐧𝐝についてどう思う？",
+        answer: "あいつらと鳴らす音は、やっぱ特別だよ。ひとりじゃ出せない音ってあるからね。"
+      },
+      {
+        question: "猫が好き？",
+        answer: "好き好き。自由気ままで、こっちの思い通りにならないところも含めてね。"
+      }
     ]
   },
+
 
   touka: {
     file: "FILE 025",
@@ -815,8 +1366,30 @@ kaoru: {
       "貴方の話を沢山聞かせてください。",
       "もっと沢山のことをお兄様にも教えてさしあげるのです。",
       "お兄様は、元気にしているでしょうか…。"
+    ],
+
+    askMessage: "私に何か聞きたいことがございますか？",
+
+    questions: [
+      {
+        question: "好きなものは？",
+        answer: "甘いものが好きです。美味しいものをいただくと、とても幸せな気持ちになります。"
+      },
+      {
+        question: "お兄様のことが好き？",
+        answer: "はい。お兄様は私にとって、とても大切な方です。"
+      },
+      {
+        question: "機械は苦手？",
+        answer: "少し苦手なんです……。でも、ちゃんと使えるようになりたいので勉強しています。"
+      },
+      {
+        question: "何か知りたいことはある？",
+        answer: "はい！　世の中にはまだまだ知らないことがたくさんありますから、色々教えていただきたいです。"
+      }
     ]
   },
+
 
   azuma: {
     file: "FILE 026",
@@ -831,8 +1404,30 @@ kaoru: {
       "わざわざ俺に話しかけるなんざ、お前も変わってるな。",
       "……お前、今日の調子はどうだ？",
       "別に心配してるわけじゃねえよ。"
+    ],
+
+    askMessage: "……何だ。聞きたいことでもあるのか。",
+
+    questions: [
+      {
+        question: "どうして人間が嫌いなの？",
+        answer: "……色々あったんだよ。わざわざ話したくはねえ。"
+      },
+      {
+        question: "煙草は好き？",
+        answer: "まあな。これくらいしか落ち着くものもねえし。"
+      },
+      {
+        question: "家族について聞きたい",
+        answer: "……そういう話は、あんまりしたくねえんだよ。"
+      },
+      {
+        question: "相方PCのことをどう思っている？",
+        answer: "……あいつは、放っとけねえだけだ。別にそれ以上の意味はねえよ。"
+      }
     ]
   },
+
 
   mahiru: {
     file: "FILE 027",
@@ -847,8 +1442,30 @@ kaoru: {
       "幽霊とかマジで無理だからな！",
       "いや、別に、ビビってねーけど！！？",
       "……いや、ほんとに怖いの無理なんだって…！！？"
+    ],
+
+    askMessage: "お、質問？　何でも聞いてくれ！",
+
+    questions: [
+      {
+        question: "好きな食べ物は？",
+        answer: "焼肉！　やっぱ肉だろ！　終わったら食いに行こうぜ！"
+      },
+      {
+        question: "幽霊って怖い？",
+        answer: "いや、別に怖くねーし！　……いや、怖いけど！！　マジで無理！！"
+      },
+      {
+        question: "動画投稿って楽しい？",
+        answer: "楽しい楽しい！　でもホラーとかオカルト系は絶対やめてくれよな！"
+      },
+      {
+        question: "相方PCのことは？",
+        answer: "昔からの友達だし、大事なやつだよ。……まあ、生活能力はちょっと心配だけどな！"
+      }
     ]
   },
+
 
   aki: {
     file: "FILE 028",
@@ -863,8 +1480,30 @@ kaoru: {
       "……俺は、そのままの関係じゃ嫌だったのかもね。",
       "良い先輩で終わりたくないな、なんて。",
       "君と話せる時間は、好きだよ。"
+    ],
+
+    askMessage: "何か聞きたいことがあるのかな？",
+
+    questions: [
+      {
+        question: "好きな飲み物は？",
+        answer: "珈琲かな。落ち着くし、考え事をするときにも丁度いいんだ。"
+      },
+      {
+        question: "弟についてどう思う？",
+        answer: "大切な弟だよ。……だからこそ、自由にしてあげたいと思ってる。"
+      },
+      {
+        question: "相方PCのことをどう思ってる？",
+        answer: "……そのままの関係じゃ嫌だったのかもね。良い先輩で終わりたくなかったんだと思う。"
+      },
+      {
+        question: "「共犯」ってどういう意味？",
+        answer: "お互いに隠して、お互いに助け合う。そういう関係……かな。"
+      }
     ]
   },
+
 
   kashin: {
     file: "FILE 029",
@@ -879,8 +1518,30 @@ kaoru: {
       "今からええの飛ばしたるからよー見ときや！",
       "あ、宿題やっとらんかも…ちょお一緒にやってくれへん…！？",
       "俺たちがここにおるって、知らしめたいんや！"
+    ],
+
+    askMessage: "ん？　何か聞きたいんか？",
+
+    questions: [
+      {
+        question: "野球のどこが好き？",
+        answer: "全部好きやけど、やっぱ打席に立った瞬間が一番やな！　俺がおるって知らしめたいんや！"
+      },
+      {
+        question: "どうして頑張れるの？",
+        answer: "好きなもんやからやろな。それに、応援してくれる奴がおるから頑張れるんや。"
+      },
+      {
+        question: "自分に自信はある？",
+        answer: "……まあ、ないわけやないけど。でも俺はもっと上手くなりたいんや！"
+      },
+      {
+        question: "どんな選手になりたい？",
+        answer: "一番好きな野球で、俺たちがここにおるって知らしめられる選手になりたい！"
+      }
     ]
   },
+
 
   kasumi: {
     file: "FILE 030",
@@ -895,8 +1556,30 @@ kaoru: {
       "名前には魂が宿っていますから、大切にしてくださいね。",
       "この物語を生きたのは、確かに私だったのです。",
       "これからの物語も、きっと私が綴るのでしょう。"
+    ],
+
+    askMessage: "……何をお聞きになりたいのでしょう？",
+
+    questions: [
+      {
+        question: "小説を書くのは好き？",
+        answer: "はい。誰かの物語を綴ることは、とても好きですよ。"
+      },
+      {
+        question: "名前についてどう思う？",
+        answer: "名前には魂が宿っていますから。だからこそ、大切にしてほしいのです。"
+      },
+      {
+        question: "霞実について聞きたい",
+        answer: "……そうですね。私にとって、とても大切な名前です。"
+      },
+      {
+        question: "自分自身の物語について",
+        answer: "この物語を生きたのは、確かに私だったのです。そして、これからも私が綴るのでしょう。"
+      }
     ]
   },
+
 
   hibiki: {
     file: "FILE 031",
@@ -911,8 +1594,30 @@ kaoru: {
       "僕にできることがあれば、なんでも言ってください。",
       "……大丈夫です。僕がいますから。",
       "どうぞ、無理はなさらないでください。"
+    ],
+
+    askMessage: "はい。何かご質問でしょうか、先輩？",
+
+    questions: [
+      {
+        question: "どうしてそんなに丁寧なの？",
+        answer: "失礼のないようにしたいと思っているからです。それに、先輩にはきちんと接したいですから。"
+      },
+      {
+        question: "怪我をしたらどうする？",
+        answer: "まずは状態を確認します。必要であれば、すぐに誰かを呼びます。"
+      },
+      {
+        question: "やりたいことはある？",
+        answer: "……そうですね。僕自身のことも、もう少しちゃんと考えてみたいとは思っています。"
+      },
+      {
+        question: "先輩のことをどう思ってる？",
+        answer: "信頼できる先輩だと思っています。……先輩が来てくださると、少し安心します。"
+      }
     ]
   },
+
 
   nagi: {
     file: "FILE 032",
@@ -927,27 +1632,42 @@ kaoru: {
       "無理をしてはいけませんよ。",
       "……大丈夫です。ゆっくりしてくださいね。",
       "困ったことがあれば、いつでも話してくださいね。"
+    ],
+
+    askMessage: "何か僕に聞きたいことがありますか？",
+
+    questions: [
+      {
+        question: "仕事は大変？",
+        answer: "大変なこともありますが、誰かの力になれる仕事ですから。僕は好きですよ。"
+      },
+      {
+        question: "どうしていつも笑っているの？",
+        answer: "安心してもらえるかなと思って。笑っているほうが、話しかけやすいでしょう？"
+      },
+      {
+        question: "怒ることはある？",
+        answer: "もちろんありますよ。ただ、怒っても仕方がないことも多いですからね。"
+      },
+      {
+        question: "善悪についてどう思う？",
+        answer: "難しい質問ですね。何が正しいかは、立場によって変わることもありますから。"
+      }
     ]
   }
 
 };
 
-  
 
-
-/* =========================================
-   URLからキャラクターを取得
-========================================= */
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
 
 const params = new URLSearchParams(location.search);
+
 const characterId = params.get("character");
 
 const character = characters[characterId];
-
-
-/* =========================================
-   HTML要素
-========================================= */
 
 const fileNumber =
   document.getElementById("fileNumber");
@@ -964,31 +1684,40 @@ const characterImage =
 const dialogueText =
   document.getElementById("dialogueText");
 
-const systemMessage =
-  document.getElementById("systemMessage");
-
 const talkButton =
   document.getElementById("talkButton");
 
 const askButton =
   document.getElementById("askButton");
 
+const systemMessage =
+  document.getElementById("systemMessage");
+
+const relationshipNumber =
+  document.getElementById("intimacyNumber");
+
 const relationshipRank =
   document.getElementById("relationshipRank");
 
-const relationshipNumber =
-  document.getElementById("relationshipNumber");
+const relationshipFill =
+  document.getElementById("relationshipFill");
 
-const relationshipProgress =
-  document.getElementById("relationshipProgress");
+const mainButtons =
+  document.getElementById("mainButtons");
 
-const relationshipStatus =
-  document.getElementById("relationshipStatus");
+const questionArea =
+  document.getElementById("questionArea");
+
+const questionList =
+  document.getElementById("questionList");
+
+const questionBack =
+  document.getElementById("questionBack");
 
 
-/* =========================================
-   CHARACTER NOT FOUND
-========================================= */
+/* =========================================================
+   CHARACTER CHECK
+   ========================================================= */
 
 if (!character) {
 
@@ -1001,343 +1730,16 @@ if (!character) {
   characterJob.textContent =
     "";
 
-  characterImage.style.display =
-    "none";
-
   dialogueText.textContent =
     "指定されたキャラクターが見つかりません。";
 
-  systemMessage.textContent =
-    "CHARACTER CHAT SYSTEM / ERROR";
+  talkButton.style.display = "none";
+  askButton.style.display = "none";
 
-  talkButton.style.display =
-    "none";
-
-  askButton.style.display =
-    "none";
-
-}
-
-
-/* =========================================
-   親密度システム
-========================================= */
-
-const STORAGE_KEY =
-  "characterArchiveRelationship";
-
-
-function getRelationshipData() {
-
-  const saved =
-    localStorage.getItem(STORAGE_KEY);
-
-  if (saved) {
-
-    try {
-
-      return JSON.parse(saved);
-
-    } catch (error) {
-
-      return {};
-
-    }
-
-  }
-
-  return {};
-
-}
-
-
-function saveRelationshipData(data) {
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(data)
-  );
-
-}
-
-
-/* =========================================
-   今日の日付
-========================================= */
-
-function getToday() {
-
-  const now =
-    new Date();
-
-  const year =
-    now.getFullYear();
-
-  const month =
-    String(now.getMonth() + 1)
-      .padStart(2, "0");
-
-  const day =
-    String(now.getDate())
-      .padStart(2, "0");
-
-  return year + "-" + month + "-" + day;
-
-}
-
-
-/* =========================================
-   親密度ランク
-========================================= */
-
-function getRank(value) {
-
-  if (value >= 100) {
-    return "SPECIAL";
-  }
-
-  if (value >= 90) {
-    return "TRUSTED";
-  }
-
-  if (value >= 75) {
-    return "CLOSE";
-  }
-
-  if (value >= 50) {
-    return "FRIEND";
-  }
-
-  if (value >= 25) {
-    return "FAMILIAR";
-  }
-
-  if (value >= 10) {
-    return "ACQUAINTANCE";
-  }
-
-  return "UNKNOWN";
-
-}
-
-
-/* =========================================
-   親密度表示
-========================================= */
-
-function updateRelationshipDisplay() {
-
-  if (!character) {
-    return;
-  }
-
-  const data =
-    getRelationshipData();
-
-  const current =
-    data[characterId] || {
-      intimacy: 0,
-      visits: 0,
-      talks: 0,
-      asks: 0,
-      lastVisit: ""
-    };
-
-  const intimacy =
-    Math.min(
-      100,
-      Math.max(
-        0,
-        current.intimacy || 0
-      )
-    );
-
-  relationshipRank.textContent =
-    getRank(intimacy);
-
-  relationshipNumber.textContent =
-    intimacy + " / 100";
-
-  relationshipProgress.style.width =
-    intimacy + "%";
-
-  if (intimacy >= 100) {
-
-    relationshipStatus.textContent =
-      "RELATIONSHIP MAXIMUM";
-
-  } else if (intimacy >= 90) {
-
-    relationshipStatus.textContent =
-      "VERY CLOSE";
-
-  } else if (intimacy >= 75) {
-
-    relationshipStatus.textContent =
-      "TRUST IS GROWING";
-
-  } else if (intimacy >= 50) {
-
-    relationshipStatus.textContent =
-      "GETTING CLOSER";
-
-  } else if (intimacy >= 25) {
-
-    relationshipStatus.textContent =
-      "BECOMING FAMILIAR";
-
-  } else if (intimacy >= 10) {
-
-    relationshipStatus.textContent =
-      "ACQUAINTANCE";
-
-  } else {
-
-    relationshipStatus.textContent =
-      "FIRST CONTACT";
-
-  }
-
-}
-
-
-/* =========================================
-   親密度を加算
-========================================= */
-
-function addIntimacy(amount) {
-
-  if (!character) {
-    return;
-  }
-
-  const data =
-    getRelationshipData();
-
-  if (!data[characterId]) {
-
-    data[characterId] = {
-
-      intimacy: 0,
-
-      visits: 0,
-
-      talks: 0,
-
-      asks: 0,
-
-      lastVisit: ""
-
-    };
-
-  }
-
-  data[characterId].intimacy =
-    Math.min(
-      100,
-      data[characterId].intimacy + amount
-    );
-
-  saveRelationshipData(data);
-
-  updateRelationshipDisplay();
-
-}
-
-
-/* =========================================
-   訪問記録
-========================================= */
-
-function recordVisit() {
-
-  if (!character) {
-    return;
-  }
-
-  const data =
-    getRelationshipData();
-
-  const today =
-    getToday();
-
-  if (!data[characterId]) {
-
-    data[characterId] = {
-
-      intimacy: 0,
-
-      visits: 0,
-
-      talks: 0,
-
-      asks: 0,
-
-      lastVisit: ""
-
-    };
-
-  }
-
-
-  const characterData =
-    data[characterId];
-
-
-  /* 初めての訪問 */
-
-  if (characterData.visits === 0) {
-
-    characterData.visits++;
-
-    characterData.lastVisit =
-      today;
-
-    characterData.intimacy =
-      Math.min(
-        100,
-        characterData.intimacy + 3
-      );
-
-  }
-
-
-  /* 日付が変わった場合 */
-
-  else if (
-    characterData.lastVisit !== today
-  ) {
-
-    characterData.visits++;
-
-    characterData.lastVisit =
-      today;
-
-    characterData.intimacy =
-      Math.min(
-        100,
-        characterData.intimacy + 2
-      );
-
-  }
-
-
-  saveRelationshipData(data);
-
-  updateRelationshipDisplay();
-
-}
-
-
-/* =========================================
-   キャラクター表示
-========================================= */
-
-if (character) {
+} else {
 
   fileNumber.textContent =
-    "CHARACTER ARCHIVE / " +
-    character.file;
+    "CHARACTER ARCHIVE / " + character.file;
 
   characterName.textContent =
     character.name;
@@ -1351,85 +1753,438 @@ if (character) {
   characterImage.alt =
     character.name;
 
+}
 
-  let lineIndex = 0;
+
+/* =========================================================
+   LOCAL STORAGE
+   ========================================================= */
+
+const STORAGE_KEY =
+  "characterChatDataV1";
+
+
+function loadAllData() {
+
+  try {
+
+    return JSON.parse(
+      localStorage.getItem(STORAGE_KEY)
+    ) || {};
+
+  } catch (error) {
+
+    return {};
+
+  }
+
+}
+
+
+function saveAllData(data) {
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(data)
+  );
+
+}
+
+
+function createDefaultData() {
+
+  return {
+
+    intimacy: 0,
+
+    visits: 0,
+
+    talks: 0,
+
+    asks: 0,
+
+    lastVisitDate: null,
+
+    lastTalkDate: null,
+
+    lastAskDate: null,
+
+    dailyTalks: 0,
+
+    dailyAsks: 0,
+
+    discoveredSecrets: []
+
+  };
+
+}
+
+
+function getCharacterData() {
+
+  const allData =
+    loadAllData();
+
+  if (!allData[characterId]) {
+
+    allData[characterId] =
+      createDefaultData();
+
+    saveAllData(allData);
+
+  }
+
+  return allData[characterId];
+
+}
+
+
+function saveCharacterData(data) {
+
+  const allData =
+    loadAllData();
+
+  allData[characterId] =
+    data;
+
+  saveAllData(allData);
+
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+function getDateString(date = new Date()) {
+
+  const year =
+    date.getFullYear();
+
+  const month =
+    String(date.getMonth() + 1)
+      .padStart(2, "0");
+
+  const day =
+    String(date.getDate())
+      .padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+
+}
+
+
+function getYesterdayString() {
+
+  const yesterday =
+    new Date();
+
+  yesterday.setDate(
+    yesterday.getDate() - 1
+  );
+
+  return getDateString(yesterday);
+
+}
+
+
+function dateDifference(date1, date2) {
+
+  const d1 =
+    new Date(date1 + "T00:00:00");
+
+  const d2 =
+    new Date(date2 + "T00:00:00");
+
+  return Math.round(
+    (d2 - d1) /
+    (1000 * 60 * 60 * 24)
+  );
+
+}
+
+
+/* =========================================================
+   INTIMACY
+   ========================================================= */
+
+function clampIntimacy(value) {
+
+  return Math.max(
+    0,
+    Math.min(100, value)
+  );
+
+}
+
+
+function getRank(value) {
+
+  if (value >= 100)
+    return "SPECIAL";
+
+  if (value >= 90)
+    return "TRUSTED";
+
+  if (value >= 75)
+    return "CLOSE";
+
+  if (value >= 50)
+    return "FRIEND";
+
+  if (value >= 25)
+    return "FAMILIAR";
+
+  if (value >= 10)
+    return "ACQUAINTANCE";
+
+  return "UNKNOWN";
+
+}
+
+
+function updateRelationshipUI() {
+
+  if (!character) return;
+
+  const data =
+    getCharacterData();
+
+  relationshipNumber.textContent =
+    data.intimacy;
+
+  relationshipRank.textContent =
+    getRank(data.intimacy);
+
+  relationshipFill.style.width =
+    data.intimacy + "%";
+
+}
+
+
+/* =========================================================
+   VISIT
+   ========================================================= */
+
+function registerVisit() {
+
+  if (!character) return;
+
+  const data =
+    getCharacterData();
+
+  const today =
+    getDateString();
+
+  if (!data.lastVisitDate) {
+
+    data.visits += 1;
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 2
+      );
+
+    data.lastVisitDate =
+      today;
+
+    saveCharacterData(data);
+
+    systemMessage.textContent =
+      "FIRST VISIT / RELATIONSHIP +2";
+
+    updateRelationshipUI();
+
+    return;
+
+  }
+
+
+  if (data.lastVisitDate === today) {
+
+    updateRelationshipUI();
+
+    return;
+
+  }
+
+
+  const difference =
+    dateDifference(
+      data.lastVisitDate,
+      today
+    );
+
+  data.visits += 1;
+
+  if (difference === 1) {
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 3
+      );
+
+    systemMessage.textContent =
+      "WELCOME BACK / RELATIONSHIP +3";
+
+  } else {
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 1
+      );
+
+    systemMessage.textContent =
+      "VISIT RECORDED / RELATIONSHIP +1";
+
+  }
+
+  data.lastVisitDate =
+    today;
+
+  data.dailyTalks =
+    0;
+
+  data.dailyAsks =
+    0;
+
+  saveCharacterData(data);
+
+  updateRelationshipUI();
+
+}
+
+
+/* =========================================================
+   TALK
+   ========================================================= */
+
+let talkIndex = 0;
+
+
+function talk() {
+
+  if (!character) return;
+
+  const data =
+    getCharacterData();
+
+  const today =
+    getDateString();
+
+
+  if (data.lastTalkDate !== today) {
+
+    data.dailyTalks = 0;
+
+    data.lastTalkDate =
+      today;
+
+  }
+
+
+  if (data.dailyTalks < 5) {
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 1
+      );
+
+    data.dailyTalks += 1;
+
+  }
+
+
+  data.talks += 1;
+
+
+  const line =
+    character.lines[
+      talkIndex %
+      character.lines.length
+    ];
+
+  talkIndex += 1;
 
 
   dialogueText.textContent =
-    character.lines[lineIndex];
+    line;
 
 
-  /* 訪問記録 */
-
-  recordVisit();
-
-
-  /* =========================================
-     TALK
-  ========================================= */
-
-  talkButton.addEventListener(
-    "click",
-    function() {
-
-      lineIndex++;
-
-      if (
-        lineIndex >=
-        character.lines.length
-      ) {
-
-        lineIndex = 0;
-
-      }
+  systemMessage.textContent =
+    "TALK / " +
+    character.file +
+    " / RELATIONSHIP " +
+    data.intimacy;
 
 
-      dialogueText.textContent =
-        character.lines[lineIndex];
+  saveCharacterData(data);
+
+  updateRelationshipUI();
+
+}
 
 
-      /* TALK回数を記録 */
+/* =========================================================
+   ASK OPEN
+   ========================================================= */
 
-      const data =
-        getRelationshipData();
+function openQuestions() {
 
-      if (!data[characterId]) {
-        return;
-      }
+  if (!character) return;
 
-      data[characterId].talks++;
+  mainButtons.style.display =
+    "none";
 
-      data[characterId].intimacy =
-        Math.min(
-          100,
-          data[characterId].intimacy + 1
-        );
+  questionArea.style.display =
+    "block";
 
-      saveRelationshipData(data);
+  dialogueText.textContent =
+    character.askMessage;
 
-      updateRelationshipDisplay();
+  systemMessage.textContent =
+    "QUESTION SYSTEM / SELECT A QUESTION";
 
+  renderQuestions();
 
-      systemMessage.textContent =
-        "CHARACTER CHAT SYSTEM / TALK";
-
-    }
-  );
+}
 
 
-  /* =========================================
-     ASK
-  ========================================= */
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
 
-  askButton.addEventListener(
-    "click",
-    function() {
+function renderQuestions() {
 
-      dialogueText.textContent =
-        "……何を聞きたいの？";
+  questionList.innerHTML = "";
 
-      systemMessage.textContent =
-        "QUESTION SYSTEM / COMING SOON";
+  character.questions.forEach(
+    (item, index) => {
+
+      const button =
+        document.createElement("button");
+
+      button.className =
+        "question-button";
+
+      button.textContent =
+        item.question;
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          answerQuestion(
+            item,
+            index
+          );
+
+        }
+      );
+
+      questionList.appendChild(
+        button
+      );
 
     }
   );
@@ -1437,13 +2192,133 @@ if (character) {
 }
 
 
-/* =========================================
-   メニュー
-========================================= */
+/* =========================================================
+   ANSWER QUESTION
+   ========================================================= */
+
+function answerQuestion(item, index) {
+
+  const data =
+    getCharacterData();
+
+  const today =
+    getDateString();
+
+
+  if (data.lastAskDate !== today) {
+
+    data.dailyAsks = 0;
+
+    data.lastAskDate =
+      today;
+
+  }
+
+
+  if (data.dailyAsks < 5) {
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 1
+      );
+
+    data.dailyAsks += 1;
+
+  }
+
+
+  data.asks += 1;
+
+
+  dialogueText.textContent =
+    item.answer;
+
+
+  systemMessage.textContent =
+    "ANSWER " +
+    String(index + 1).padStart(2, "0") +
+    " / RELATIONSHIP " +
+    data.intimacy;
+
+
+  saveCharacterData(data);
+
+  updateRelationshipUI();
+
+
+  /*
+   * 質問を選んだあとも、
+   * 別の質問を選べるようにする。
+   */
+
+  questionArea.style.display =
+    "block";
+
+  mainButtons.style.display =
+    "none";
+
+}
+
+
+/* =========================================================
+   QUESTION BACK
+   ========================================================= */
+
+function closeQuestions() {
+
+  questionArea.style.display =
+    "none";
+
+  mainButtons.style.display =
+    "flex";
+
+  dialogueText.textContent =
+    character.askMessage;
+
+  systemMessage.textContent =
+    "QUESTION SYSTEM / READY";
+
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+talkButton.addEventListener(
+  "click",
+  talk
+);
+
+
+askButton.addEventListener(
+  "click",
+  openQuestions
+);
+
+
+questionBack.addEventListener(
+  "click",
+  closeQuestions
+);
+
+
+/* =========================================================
+   INITIALIZE
+   ========================================================= */
+
+if (character) {
+
+  registerVisit();
+
+  dialogueText.textContent =
+    character.lines[0];
+
+  updateRelationshipUI();
+
+}
 
 </script>
-
-<script src="menu.js"></script>
 
 </body>
 </html>
