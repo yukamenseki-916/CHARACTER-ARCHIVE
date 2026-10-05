@@ -300,85 +300,209 @@ body {
 
 
 /* =========================
+   SEARCH & SORT
+========================= */
+
+.scenario-tools {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.scenario-search {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #77663f;
+  background: #0b0f0a;
+  color: #eee5d0;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.scenario-search::placeholder {
+  color: #777261;
+}
+
+.scenario-search:focus {
+  outline: none;
+  border-color: #d7b866;
+}
+
+.scenario-sort {
+  width: 150px;
+  padding: 13px 10px;
+  border: 1px solid #77663f;
+  background: #0b0f0a;
+  color: #eee5d0;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.scenario-sort:focus {
+  outline: none;
+  border-color: #d7b866;
+}
+
+
+/* =========================
+   SCENARIO
+========================= */
+
+.scenario-item {
+  margin-bottom: 30px;
+  padding: 22px;
+  border: 1px solid #625536;
+  background: #111710;
+}
+
+.scenario-name {
+  margin: 0;
+  color: #d7b866;
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+.scenario-name::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  margin-top: 10px;
+  background: #77663f;
+}
+
+
+/* =========================
+   CHARACTER LIST
+========================= */
+
+.character-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.character-list li {
+  margin: 0;
+}
+
+.character-link {
+  display: block;
+  position: relative;
+  padding: 10px 10px 10px 24px;
+  color: #d0c7b2;
+  text-decoration: none;
+  border-bottom: 1px solid #3f392b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.character-link::before {
+  content: "◆";
+  position: absolute;
+  left: 4px;
+  top: 11px;
+  color: #a88b4a;
+  font-size: 7px;
+}
+
+.character-link:hover {
+  color: #d7b866;
+}
+
+.character-link:hover::before {
+  color: #d7b866;
+}
+
+
+/* =========================
    TABLE VIDEO
 ========================= */
 
 .table-video-list {
-
-  margin-top: 18px;
-
+  margin: 10px 0 0;
   padding: 0;
-
   list-style: none;
-
 }
-
 
 .table-video-list li {
-
-  margin-bottom: 4px;
-
-  padding: 12px 10px;
-
-  border-bottom: 1px solid #3f392b;
-
+  margin: 0;
+  padding: 0;
 }
-
 
 .table-video-link {
-
   display: block;
-
   position: relative;
-
-  padding-left: 22px;
-
+  padding: 8px 10px 5px 22px;
   color: #d0c7b2;
-
   text-decoration: none;
-
-  font-size: 13px;
-
+  font-size: 12px;
   line-height: 1.7;
-
 }
-
 
 .table-video-link::before {
-
   content: "▶";
-
   position: absolute;
-
   left: 0;
-
-  top: 2px;
-
+  top: 10px;
   color: #a88b4a;
-
   font-size: 9px;
-
 }
-
 
 .table-video-link:hover {
-
   color: #d7b866;
+}
 
+.table-video-label {
+  display: block;
+  margin-top: 1px;
+  color: #777261;
+  font-size: 9px;
+  letter-spacing: 0.12em;
 }
 
 
-.table-video-label {
+/* =========================
+   NO RESULT
+========================= */
 
-  display: block;
-
-  margin-top: 2px;
-
+.no-scenario {
+  padding: 25px 10px;
   color: #777261;
+  text-align: center;
+  font-size: 13px;
+}
 
-  font-size: 9px;
 
-  letter-spacing: 0.12em;
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .scenario-tools {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .scenario-sort {
+    width: 100%;
+  }
+
+  .scenario-item {
+    padding: 18px;
+  }
+
+  .scenario-name {
+    font-size: 16px;
+  }
+
+  .character-link {
+    font-size: 13px;
+  }
 
 }
 
@@ -523,6 +647,34 @@ body {
     <h2 class="section-title">
       SCENARIO RECORD
     </h2>
+
+    <div class="scenario-tools">
+
+  <input
+    type="text"
+    id="scenarioSearch"
+    class="scenario-search"
+    placeholder="シナリオ名を検索"
+  >
+
+  <select
+    id="scenarioSort"
+    class="scenario-sort"
+  >
+    <option value="default">
+      登録順
+    </option>
+
+    <option value="asc">
+      あいうえお順
+    </option>
+
+    <option value="desc">
+      あいうえお逆順
+    </option>
+  </select>
+
+</div>
 
 
     <div class="scenario-list">
@@ -1779,6 +1931,177 @@ body {
 
 </div>
 
+  <script>
+
+/* =========================
+   SCENARIO SEARCH & SORT
+========================= */
+
+const scenarioSearch =
+  document.getElementById("scenarioSearch");
+
+const scenarioSort =
+  document.getElementById("scenarioSort");
+
+const scenarioList =
+  document.querySelector(".scenario-list");
+
+const scenarioItems =
+  Array.from(
+    document.querySelectorAll(".scenario-item")
+  );
+
+
+function updateScenarioList() {
+
+  const keyword =
+    scenarioSearch.value
+      .trim()
+      .toLowerCase();
+
+  const sortType =
+    scenarioSort.value;
+
+
+  /* =========================
+     SORT
+  ========================= */
+
+  let items =
+    [...scenarioItems];
+
+
+  if (sortType === "asc") {
+
+    items.sort(
+      function (a, b) {
+
+        const nameA =
+          a.querySelector(".scenario-name")
+            .textContent
+            .trim();
+
+        const nameB =
+          b.querySelector(".scenario-name")
+            .textContent
+            .trim();
+
+        return nameA.localeCompare(
+          nameB,
+          "ja"
+        );
+
+      }
+    );
+
+  }
+
+
+  if (sortType === "desc") {
+
+    items.sort(
+      function (a, b) {
+
+        const nameA =
+          a.querySelector(".scenario-name")
+            .textContent
+            .trim();
+
+        const nameB =
+          b.querySelector(".scenario-name")
+            .textContent
+            .trim();
+
+        return nameB.localeCompare(
+          nameA,
+          "ja"
+        );
+
+      }
+    );
+
+  }
+
+
+  /* =========================
+     DISPLAY
+  ========================= */
+
+  scenarioList.innerHTML = "";
+
+  let visibleCount = 0;
+
+
+  items.forEach(
+    function (item) {
+
+      const scenarioName =
+        item.querySelector(".scenario-name")
+          .textContent
+          .trim()
+          .toLowerCase();
+
+
+      const matches =
+        scenarioName.includes(keyword);
+
+
+      if (matches) {
+
+        item.style.display = "";
+        scenarioList.appendChild(item);
+
+        visibleCount++;
+
+      }
+
+    }
+  );
+
+
+  /* =========================
+     NO RESULT
+  ========================= */
+
+  const oldMessage =
+    document.querySelector(".no-scenario");
+
+  if (oldMessage) {
+    oldMessage.remove();
+  }
+
+
+  if (visibleCount === 0) {
+
+    const message =
+      document.createElement("div");
+
+    message.className =
+      "no-scenario";
+
+    message.textContent =
+      "該当するシナリオがありません。";
+
+    scenarioList.appendChild(message);
+
+  }
+
+}
+
+
+scenarioSearch.addEventListener(
+  "input",
+  updateScenarioList
+);
+
+
+scenarioSort.addEventListener(
+  "change",
+  updateScenarioList
+);
+
+
+</script>
 
 </body>
 
