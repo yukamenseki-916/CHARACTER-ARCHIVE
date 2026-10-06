@@ -2282,6 +2282,613 @@ function closeQuestions() {
 
 
 /* =========================================================
+   SPECIAL CONVERSATION DATA
+   =========================================================
+   
+   特別会話はここに追加していきます。
+
+   condition:
+   特別会話が発生する条件
+
+   id:
+   一度発生した特別会話を記録するための名前
+
+   message:
+   実際に表示される会話
+
+   ※ discoveredSecrets に記録されるため、
+      一度見た特別会話は基本的に再発生しません。
+   ========================================================= */
+
+const specialConversations = {
+
+  /* -------------------------------------------------------
+     月下 香
+     ------------------------------------------------------- */
+
+  kaoru: [
+
+    {
+      id: "kaoru_intimacy_25",
+      condition: data =>
+        data.intimacy >= 25,
+
+      message:
+        "ねぇ……私、あなたとお話するの、けっこう好きかも！",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 25"
+    },
+
+    {
+      id: "kaoru_intimacy_50",
+      condition: data =>
+        data.intimacy >= 50,
+
+      message:
+        "ねぇ、もっと私のこと知りたい？　……じゃあ、私もあなたのこと、もっと知りたい！",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 50"
+    },
+
+    {
+      id: "kaoru_intimacy_75",
+      condition: data =>
+        data.intimacy >= 75,
+
+      message:
+        "あなたが来てくれると嬉しいんだぁ。……だから、これからも遊びに来てね？",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 75"
+    },
+
+    {
+      id: "kaoru_intimacy_100",
+      condition: data =>
+        data.intimacy >= 100,
+
+      message:
+        "えへへ……あなたは、私にとって特別だよ！　これからもずーっと一緒に遊ぼうね！",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP MAX"
+    },
+
+    {
+      id: "kaoru_night",
+      condition: (data, now) =>
+        now.getHours() >= 22 ||
+        now.getHours() < 5,
+
+      message:
+        "こんな時間に来るなんて、変なの。……でも、まだ一緒にいてくれる？",
+
+      system:
+        "SPECIAL EVENT / NIGHT"
+    }
+
+  ],
+
+
+  /* -------------------------------------------------------
+     花園 美桜
+     ------------------------------------------------------- */
+
+  mio: [
+
+    {
+      id: "mio_intimacy_25",
+      condition: data =>
+        data.intimacy >= 25,
+
+      message:
+        "あなたとお話するの、やっぱり好きだよ。……なんだか落ち着くから。",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 25"
+    },
+
+    {
+      id: "mio_intimacy_50",
+      condition: data =>
+        data.intimacy >= 50,
+
+      message:
+        "ねえ……これからも、私と一緒にいてくれる？",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 50"
+    },
+
+    {
+      id: "mio_intimacy_75",
+      condition: data =>
+        data.intimacy >= 75,
+
+      message:
+        "あなたに会えるの、楽しみにしてるんだ。……だから、また来てね。",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 75"
+    }
+
+  ],
+
+
+  /* -------------------------------------------------------
+     御薬袋 渉羽
+     ------------------------------------------------------- */
+
+  shou: [
+
+    {
+      id: "shou_intimacy_25",
+      condition: data =>
+        data.intimacy >= 25,
+
+      message:
+        "君と話していると、僕自身のことも少し話したくなるんだよね。",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 25"
+    },
+
+    {
+      id: "shou_intimacy_50",
+      condition: data =>
+        data.intimacy >= 50,
+
+      message:
+        "君がここに来てくれること、僕も嬉しく思ってるよ。……これからも、無理のない範囲で話そうね。",
+
+      system:
+        "SPECIAL EVENT / RELATIONSHIP 50"
+    },
+
+    {
+      id: "shou_night",
+      condition: (data, now) =>
+        now.getHours() >= 22 ||
+        now.getHours() < 5,
+
+      message:
+        "こんな時間まで起きてるの？　……僕も人のことは言えないけどね。",
+
+      system:
+        "SPECIAL EVENT / NIGHT"
+    }
+
+  ]
+
+};
+
+
+/* =========================================================
+   SPECIAL CONVERSATION
+   ========================================================= */
+
+function hasDiscoveredSecret(data, id) {
+
+  if (!data.discoveredSecrets) {
+
+    data.discoveredSecrets = [];
+
+  }
+
+  return data.discoveredSecrets.includes(id);
+
+}
+
+
+/* ---------------------------------------------------------
+   発生可能な特殊会話を探す
+   --------------------------------------------------------- */
+
+function findSpecialConversation(data) {
+
+  if (!character) return null;
+
+  const list =
+    specialConversations[characterId];
+
+  if (!list) return null;
+
+  const now =
+    new Date();
+
+  for (const event of list) {
+
+    /*
+     * 一度見た特殊会話は再発生させない
+     */
+
+    if (
+      hasDiscoveredSecret(
+        data,
+        event.id
+      )
+    ) {
+
+      continue;
+
+    }
+
+
+    /*
+     * 条件を満たしているか確認
+     */
+
+    let available =
+      false;
+
+    try {
+
+      available =
+        event.condition(
+          data,
+          now
+        );
+
+    } catch (error) {
+
+      available =
+        false;
+
+    }
+
+
+    if (available) {
+
+      return event;
+
+    }
+
+  }
+
+  return null;
+
+}
+
+
+/* ---------------------------------------------------------
+   特殊会話を発生させる
+   --------------------------------------------------------- */
+
+function triggerSpecialConversation(event, data) {
+
+  if (!event) return false;
+
+  if (!data.discoveredSecrets) {
+
+    data.discoveredSecrets = [];
+
+  }
+
+
+  /*
+   * 発見済みとして記録
+   */
+
+  data.discoveredSecrets.push(
+    event.id
+  );
+
+
+  /*
+   * 会話表示
+   */
+
+  dialogueText.textContent =
+    event.message;
+
+
+  /*
+   * システム表示
+   */
+
+  systemMessage.textContent =
+    event.system ||
+    "SPECIAL EVENT / UNLOCKED";
+
+
+  saveCharacterData(data);
+
+  updateRelationshipUI();
+
+
+  return true;
+
+}
+
+
+/* =========================================================
+   NORMAL TALK
+   ========================================================= */
+
+let talkIndex = 0;
+
+
+function talk() {
+
+  if (!character) return;
+
+  const data =
+    getCharacterData();
+
+  const today =
+    getDateString();
+
+
+  /*
+   * 今日のTALK回数を初期化
+   */
+
+  if (
+    data.lastTalkDate !== today
+  ) {
+
+    data.dailyTalks = 0;
+
+    data.lastTalkDate =
+      today;
+
+  }
+
+
+  /*
+   * 親密度上昇
+   *
+   * 1日に5回まで
+   */
+
+  if (
+    data.dailyTalks < 5
+  ) {
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 1
+      );
+
+    data.dailyTalks += 1;
+
+  }
+
+
+  data.talks += 1;
+
+
+  /*
+   * まず特殊会話を確認
+   *
+   * 通常会話より特殊会話を優先する。
+   */
+
+  const specialEvent =
+    findSpecialConversation(data);
+
+
+  if (
+    specialEvent
+  ) {
+
+    triggerSpecialConversation(
+      specialEvent,
+      data
+    );
+
+    return;
+
+  }
+
+
+  /*
+   * 特殊会話がなければ通常会話
+   */
+
+  const line =
+    character.lines[
+      talkIndex %
+      character.lines.length
+    ];
+
+  talkIndex += 1;
+
+
+  dialogueText.textContent =
+    line;
+
+
+  systemMessage.textContent =
+    "TALK / " +
+    character.file +
+    " / RELATIONSHIP " +
+    data.intimacy;
+
+
+  saveCharacterData(data);
+
+  updateRelationshipUI();
+
+}
+
+
+/* =========================================================
+   ASK OPEN
+   ========================================================= */
+
+function openQuestions() {
+
+  if (!character) return;
+
+  mainButtons.style.display =
+    "none";
+
+  questionArea.style.display =
+    "block";
+
+  dialogueText.textContent =
+    character.askMessage;
+
+  systemMessage.textContent =
+    "QUESTION SYSTEM / SELECT A QUESTION";
+
+  renderQuestions();
+
+}
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+function renderQuestions() {
+
+  questionList.innerHTML = "";
+
+  character.questions.forEach(
+    (item, index) => {
+
+      const button =
+        document.createElement("button");
+
+      button.className =
+        "question-button";
+
+      button.textContent =
+        item.question;
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          answerQuestion(
+            item,
+            index
+          );
+
+        }
+      );
+
+      questionList.appendChild(
+        button
+      );
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   ANSWER QUESTION
+   ========================================================= */
+
+function answerQuestion(item, index) {
+
+  const data =
+    getCharacterData();
+
+  const today =
+    getDateString();
+
+
+  /*
+   * 今日のASK回数を初期化
+   */
+
+  if (
+    data.lastAskDate !== today
+  ) {
+
+    data.dailyAsks = 0;
+
+    data.lastAskDate =
+      today;
+
+  }
+
+
+  /*
+   * 1日に5回まで親密度上昇
+   */
+
+  if (
+    data.dailyAsks < 5
+  ) {
+
+    data.intimacy =
+      clampIntimacy(
+        data.intimacy + 1
+      );
+
+    data.dailyAsks += 1;
+
+  }
+
+
+  data.asks += 1;
+
+
+  /*
+   * 回答表示
+   */
+
+  dialogueText.textContent =
+    item.answer;
+
+
+  systemMessage.textContent =
+    "ANSWER " +
+    String(index + 1)
+      .padStart(2, "0") +
+    " / RELATIONSHIP " +
+    data.intimacy;
+
+
+  saveCharacterData(data);
+
+  updateRelationshipUI();
+
+
+  /*
+   * 質問を選んだあとも、
+   * 別の質問を選べるようにする。
+   */
+
+  questionArea.style.display =
+    "block";
+
+  mainButtons.style.display =
+    "none";
+
+}
+
+
+/* =========================================================
+   QUESTION BACK
+   ========================================================= */
+
+function closeQuestions() {
+
+  questionArea.style.display =
+    "none";
+
+  mainButtons.style.display =
+    "flex";
+
+  dialogueText.textContent =
+    character.askMessage;
+
+  systemMessage.textContent =
+    "QUESTION SYSTEM / READY";
+
+}
+
+
+/* =========================================================
    EVENTS
    ========================================================= */
 
