@@ -284,6 +284,72 @@ body {
   }
 
 }
+
+  /* =========================
+   TEST MODE
+========================= */
+
+.test-panel {
+  display: none;
+  margin-top: 25px;
+  padding: 18px;
+  border: 1px dashed #8b7440;
+  background: #151b13;
+}
+
+.test-panel.show {
+  display: block;
+}
+
+.test-title {
+  margin: 0 0 12px;
+  color: #d7b866;
+  font-size: 15px;
+  letter-spacing: .12em;
+}
+
+.test-note {
+  margin: 0 0 15px;
+  color: #99927f;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.test-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.test-button {
+  padding: 7px 10px;
+  border: 1px solid #625536;
+  background: #0d120c;
+  color: #b9ad91;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.test-button:hover {
+  color: #d7b866;
+  border-color: #d7b866;
+}
+
+.test-button.danger {
+  border-color: #754d45;
+  color: #b98b80;
+}
+
+.test-status {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #3f392b;
+  color: #99927f;
+  font-size: 11px;
+  line-height: 1.8;
+}
+  
 </style>
 
 <link rel="stylesheet" href="menu.css">
@@ -352,7 +418,67 @@ body {
 
   </div>
 
+ <!-- テストモード -->
+  
+<div id="testPanel" class="test-panel">
 
+  <h3 class="test-title">TEST MODE</h3>
+
+  <p class="test-note">
+    この画面は URL に test=1 を付けた場合のみ表示されます。<br>
+    条件分岐・特殊イベントの確認用です。
+  </p>
+
+  <div class="test-buttons">
+
+    <button class="test-button" onclick="testSetIntimacy(25)">
+      好感度 25
+    </button>
+
+    <button class="test-button" onclick="testSetIntimacy(50)">
+      好感度 50
+    </button>
+
+    <button class="test-button" onclick="testSetIntimacy(75)">
+      好感度 75
+    </button>
+
+    <button class="test-button" onclick="testSetIntimacy(90)">
+      好感度 90
+    </button>
+
+    <button class="test-button" onclick="testSetIntimacy(100)">
+      好感度 100
+    </button>
+
+    <button class="test-button" onclick="testAddIntimacy(10)">
+      好感度 +10
+    </button>
+
+    <button class="test-button" onclick="testSetTalks(10)">
+      TALK 10回
+    </button>
+
+    <button class="test-button" onclick="testSetAsks(10)">
+      ASK 10回
+    </button>
+
+    <button class="test-button" onclick="testResetSecrets()">
+      イベント記録リセット
+    </button>
+
+    <button class="test-button danger" onclick="testResetCharacter()">
+      このキャラのデータをリセット
+    </button>
+
+  </div>
+
+  <div id="testStatus" class="test-status">
+    TEST MODE READY
+  </div>
+
+</div>
+  
   <!-- 会話 -->
 
   <div class="dialogue-area">
@@ -2922,6 +3048,196 @@ if (character) {
   updateRelationshipUI();
 
 }
+
+  /* =========================
+   TEST MODE
+========================= */
+
+const TEST_MODE =
+  new URLSearchParams(window.location.search).get("test") === "1";
+
+function getCurrentCharacterDataForTest() {
+  return getCharacterData();
+}
+
+function saveTestData(data) {
+  const allData = loadAllData();
+  allData[characterId] = data;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(allData));
+}
+
+function updateTestStatus() {
+
+  if (!TEST_MODE) return;
+
+  const data = getCurrentCharacterDataForTest();
+  const status = document.getElementById("testStatus");
+
+  if (!status) return;
+
+  status.textContent =
+    "INTIMACY: " + data.intimacy +
+    "　／　TALK: " + data.talks +
+    "　／　ASK: " + data.asks +
+    "　／　SPECIAL: " +
+    (data.discoveredSecrets || []).length;
+}
+
+
+/* 好感度を指定値にする */
+
+function testSetIntimacy(value) {
+
+  if (!TEST_MODE) return;
+
+  const data = getCurrentCharacterDataForTest();
+
+  data.intimacy = value;
+
+  saveTestData(data);
+
+  updateRelationshipUI();
+  updateTestStatus();
+
+  dialogueText.textContent =
+    "TEST MODE：好感度を " + value + " に変更しました。";
+
+  systemMessage.textContent =
+    "TEST / INTIMACY SET " + value;
+}
+
+
+/* 好感度を増やす */
+
+function testAddIntimacy(value) {
+
+  if (!TEST_MODE) return;
+
+  const data = getCurrentCharacterDataForTest();
+
+  data.intimacy = clampIntimacy(data.intimacy + value);
+
+  saveTestData(data);
+
+  updateRelationshipUI();
+  updateTestStatus();
+
+  dialogueText.textContent =
+    "TEST MODE：好感度を " + value + " 増加させました。";
+
+  systemMessage.textContent =
+    "TEST / INTIMACY +" + value;
+}
+
+
+/* TALK回数を指定 */
+
+function testSetTalks(value) {
+
+  if (!TEST_MODE) return;
+
+  const data = getCurrentCharacterDataForTest();
+
+  data.talks = value;
+
+  saveTestData(data);
+
+  updateTestStatus();
+
+  dialogueText.textContent =
+    "TEST MODE：TALK回数を " + value + " にしました。";
+
+  systemMessage.textContent =
+    "TEST / TALKS SET " + value;
+}
+
+
+/* ASK回数を指定 */
+
+function testSetAsks(value) {
+
+  if (!TEST_MODE) return;
+
+  const data = getCurrentCharacterDataForTest();
+
+  data.asks = value;
+
+  saveTestData(data);
+
+  updateTestStatus();
+
+  dialogueText.textContent =
+    "TEST MODE：ASK回数を " + value + " にしました。";
+
+  systemMessage.textContent =
+    "TEST / ASKS SET " + value;
+}
+
+
+/* 特殊イベントの発見記録を消す */
+
+function testResetSecrets() {
+
+  if (!TEST_MODE) return;
+
+  const data = getCurrentCharacterDataForTest();
+
+  data.discoveredSecrets = [];
+
+  saveTestData(data);
+
+  updateTestStatus();
+
+  dialogueText.textContent =
+    "TEST MODE：特殊イベントの記録をリセットしました。";
+
+  systemMessage.textContent =
+    "TEST / SPECIAL EVENTS RESET";
+}
+
+
+/* キャラクターのデータを初期化 */
+
+function testResetCharacter() {
+
+  if (!TEST_MODE) return;
+
+  const allData = loadAllData();
+
+  allData[characterId] = createDefaultData();
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(allData)
+  );
+
+  updateRelationshipUI();
+  updateTestStatus();
+
+  dialogueText.textContent =
+    "TEST MODE：このキャラクターのデータを初期化しました。";
+
+  systemMessage.textContent =
+    "TEST / CHARACTER DATA RESET";
+}
+
+
+/* TEST MODEを表示 */
+
+function initializeTestMode() {
+
+  if (!TEST_MODE) return;
+
+  const panel = document.getElementById("testPanel");
+
+  if (panel) {
+    panel.classList.add("show");
+  }
+
+  updateTestStatus();
+}
+
+initializeTestMode();
 
 </script>
 
